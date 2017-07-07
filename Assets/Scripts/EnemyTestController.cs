@@ -35,12 +35,12 @@ public class EnemyTestController : MonoBehaviour {
 	
 	}
 	void OnTriggerEnter2D(Collider2D col){
-		if(col.tag == "Player"){ 
-			enemyHP = enemyHP - 1;
-			if (enemyHP <= 0) {
-				GameObject.Destroy(gameObject);
-			}
+		//if(col.tag == "Player"){ 
+		//	enemyHP = enemyHP - 1;
+		//	if (enemyHP <= 0) {
+		//		GameObject.Destroy(gameObject);
+		//	}
 
-		} 
+		//} 
 	}
 }
