@@ -34,4 +34,4 @@ sysinfo.txt
 *.unitypackage
 
 # Project Version
-ProjectSettings/ProjectVersion.txt
+/ProjectSettings/ProjectVersion.txt
