@@ -1,21 +1,18 @@
 fileFormatVersion: 2
-guid: 37e05ef77c743d44a94430806d95d5f9
-timeCreated: 1499438513
+guid: 9285305635f3f4800872bf5c01c4696b
+timeCreated: 1499439625
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GidoTemplate2_0
-    21300002: GidoTemplate2_1
-    21300004: GidoTemplate2_2
-    21300006: GidoTemplate2_3
-    21300008: GidoTemplate2_4
-    21300010: GidoTemplate2_5
-    21300012: GidoTemplate2_6
-    21300014: GidoTemplate2_7
-    21300016: GidoTemplate2_8
-    21300018: GidoTemplate2_9
-    21300020: GidoTemplate2_10
-    21300022: GidoTemplate2_11
+    21300000: GidoTemplate_0
+    21300002: GidoTemplate_1
+    21300004: GidoTemplate_2
+    21300006: GidoTemplate_3
+    21300008: GidoTemplate_4
+    21300010: GidoTemplate_5
+    21300012: GidoTemplate_6
+    21300014: GidoTemplate_7
+    21300016: GidoTemplate_8
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -63,17 +60,57 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Tizen
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Samsung TV
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,59 +119,20 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GidoTemplate2_0
+      name: GidoTemplate_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 0
         y: 262
-        width: 13
-        height: 21
+        width: 512
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GidoTemplate2_1
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 262
-        width: 13
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: GidoTemplate2_2
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 263
-        width: 13
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: GidoTemplate2_3
-      rect:
-        serializedVersion: 2
-        x: 106
-        y: 263
-        width: 13
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: GidoTemplate2_4
+      name: GidoTemplate_1
       rect:
         serializedVersion: 2
         x: 8
@@ -147,12 +145,12 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GidoTemplate2_5
+      name: GidoTemplate_2
       rect:
         serializedVersion: 2
         x: 40
         y: 226
-        width: 17
+        width: 16
         height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -160,7 +158,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GidoTemplate2_6
+      name: GidoTemplate_3
       rect:
         serializedVersion: 2
         x: 72
@@ -173,7 +171,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GidoTemplate2_7
+      name: GidoTemplate_4
       rect:
         serializedVersion: 2
         x: 104
@@ -186,7 +184,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GidoTemplate2_8
+      name: GidoTemplate_5
       rect:
         serializedVersion: 2
         x: 8
@@ -199,12 +197,12 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GidoTemplate2_9
+      name: GidoTemplate_6
       rect:
         serializedVersion: 2
-        x: 39
+        x: 40
         y: 194
-        width: 17
+        width: 16
         height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -212,7 +210,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GidoTemplate2_10
+      name: GidoTemplate_7
       rect:
         serializedVersion: 2
         x: 72
@@ -225,7 +223,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GidoTemplate2_11
+      name: GidoTemplate_8
       rect:
         serializedVersion: 2
         x: 104
