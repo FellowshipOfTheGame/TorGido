@@ -18,6 +18,12 @@ public class EnemyTestController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (hp) {
+			enemyHP = hp.HP;
+		}
+		if (enemyHP <= 0) {
+			GameObject.Destroy (gameObject);
+		}
 		ColorControl ();
 	}
 	void ColorControl(){
@@ -26,7 +32,7 @@ public class EnemyTestController : MonoBehaviour {
 		} else if (enemyHP == 2f) {
 			gameObject.GetComponent<SpriteRenderer> ().color = Color.yellow;
 		} else if (enemyHP == 1f) {
-			gameObject.GetComponent<SpriteRenderer> ().color = Color.red;
+			gameObject.GetComponent<SpriteRenderer> ().color = Color.black;
 		}
 
 
