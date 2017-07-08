@@ -56,7 +56,11 @@ public class EnemyController : MonoBehaviour {
 			}
 
 		}
+	}
 
+	void attack_gido(){
+		if (attack) {
 
+		}
 	}
 }
