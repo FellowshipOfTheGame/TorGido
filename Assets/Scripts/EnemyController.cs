@@ -67,7 +67,7 @@ public class EnemyController : MonoBehaviour {
 
 	void attack_gido(){
 		if (attack) {
-			GOTarget.gameObject.GetComponent<PlayerController>().CalculateDamage (damage);
+			GOTarget.gameObject.GetComponent<GidoController>().CalculateDamage (damage);
 		}
 	}
 }
