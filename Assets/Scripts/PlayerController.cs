@@ -1,8 +1,8 @@
-﻿using System.Collections;
+﻿   using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovePlayer : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
 	private Rigidbody2D Rigid;
 	private Animator anim;
@@ -36,6 +36,8 @@ public class MovePlayer : MonoBehaviour {
 		} else 
 			anim.SetBool ("isWalking", false);
 
-		Rigid.velocity = new Vector2 (MoveSpeed * h, MoveSpeed * v);
+		Vector2 movement= new Vector2 (h, v);
+
+		Rigid.velocity = movement.normalized * MoveSpeed;
 	}
 }
