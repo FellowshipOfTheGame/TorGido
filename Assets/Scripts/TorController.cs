@@ -9,7 +9,7 @@ public class TorController : MonoBehaviour {
 	private GameObject wayPoint; 
 	private float speed = 3.0f;
 	private Vector3 wayPointPos;
-	public float damage;
+	public float damage = 1.0f;
 	private float rangex = 3.0f;
 	private float rangey = 3.0f;
 	[SerializeField] private LayerMask m_WhatIsEnemy;
@@ -21,7 +21,7 @@ public class TorController : MonoBehaviour {
 	}
 
 	void Update () {
-		
+		rangex = 3f;
 		Move ();
 
 		if (Input.GetMouseButtonDown (0)) {
@@ -39,12 +39,13 @@ public class TorController : MonoBehaviour {
 
 				wayPointPos = new Vector3 (wayPoint.transform.position.x,wayPoint.transform.position.y, wayPoint.transform.position.z);
 			}
-			if (transform.position.x > wayPointPos.x) { 
+			
+			if (transform.position.x > wayPointPos.x) {  // player esta a direita do Mouse 
 				transform.eulerAngles = new Vector3 (0, 0, 0);
-				rangex = 3f;
-			} else { // player esta a esquerda 
-				transform.eulerAngles = new Vector3 (0, 180, 0);
 				rangex = -3f;
+			} else {
+				transform.eulerAngles = new Vector3 (0, 180, 0);
+				//rangex = -3f;
 			}
 			if (transform.position.y > wayPointPos.y) { // player esta numa posicao acima do Mouse
 			
@@ -65,10 +66,11 @@ public class TorController : MonoBehaviour {
 		Collider2D[] colliders = Physics2D.OverlapAreaAll( Boxcenter, Boxsize,m_WhatIsEnemy);
 		for (int i = 0; i < colliders.Length; i++)
 		{
-			if (colliders[i].gameObject != gameObject)
-			{
-				GameObject.Destroy(colliders[i].gameObject);
-			}
+
+			GameObject enemy = colliders [i].gameObject;
+
+			enemy.gameObject.GetComponent<EnemyTestController> ().GetComponent<HPManager> ().HP -= damage; 
+
 		}
 	
 	
