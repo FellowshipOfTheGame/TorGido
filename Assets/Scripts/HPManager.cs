@@ -20,11 +20,15 @@ public class HPManager : MonoBehaviour {
 		set { kHP = value; }
 	}
 
-	public void decreaseHP (float value){
+	public bool decreaseHP (float value){
 		kHP -= value;
 
-		if(kHP <= 0)
+		if (kHP <= 0) {
 			Debug.Log ("O hp chegou a 0");
+			return false;
+		}
+
+		return true;
 	}
 
 }

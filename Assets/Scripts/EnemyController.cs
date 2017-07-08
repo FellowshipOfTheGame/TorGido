@@ -11,8 +11,11 @@ public class EnemyController : MonoBehaviour {
 	private float e_field = 5f; //campo de visao - circulo ao redor do inimigo
 
 	private float damage = 1.0f;
-
 	private bool attack = false;
+	private float attack_speed = 1.0f;
+	private float next_attack = 0.0f;
+
+	private float defense = 0.0f;
 
 	private bool facingRight = true;
 
@@ -27,7 +30,10 @@ public class EnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		move();
-		attack_gido ();
+
+		if (Time.time > next_attack) {
+			attack_gido ();
+		}
 	}
 
 	/*public float range{
@@ -38,8 +44,6 @@ public class EnemyController : MonoBehaviour {
 	void move() {
 
 		var distance = Vector2.Distance(transform.position, target.position);
-			
-
 
 		if (distance <= e_field) {
 
@@ -68,6 +72,19 @@ public class EnemyController : MonoBehaviour {
 	void attack_gido(){
 		if (attack) {
 			GOTarget.gameObject.GetComponent<GidoController>().CalculateDamage (damage);
+
+			next_attack = Time.time + attack_speed;
+		}
+	}
+
+	public void CalculateDamage(float damage){
+		float final = damage - defense;
+
+		if (final < 0)
+			final = 0;
+
+		if (!gameObject.GetComponent<HPManager> ().decreaseHP (final)) {
+			Destroy (gameObject);
 		}
 	}
 }
