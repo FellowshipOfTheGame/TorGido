@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class GidoController : MonoBehaviour {
 
 	private Rigidbody2D Rigid;
 	private Animator anim;
@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour {
 
 	public void CalculateDamage(float damage){
 		float final = damage - defense;
+
+		anim.SetTrigger ("Damage");
 
 		if (final < 0)
 			final = 0;
