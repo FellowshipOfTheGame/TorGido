@@ -5,9 +5,12 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour {
 
 	private Transform target;
+	private GameObject GOTarget;
 	private float e_speed = 5f;
 	private float e_range = 1f;
 	private float e_field = 5f; //campo de visao - circulo ao redor do inimigo
+
+	private float damage = 1.0f;
 
 	private bool attack = false;
 
@@ -16,11 +19,15 @@ public class EnemyController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		target = GameObject.FindGameObjectWithTag("Player").transform;
+		GOTarget = GameObject.FindGameObjectWithTag ("Player");
+
+		gameObject.GetComponent<HPManager> ().HP = 10; //setando 10 de hp para o inimigo
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		move();
+		attack_gido ();
 	}
 
 	/*public float range{
@@ -32,7 +39,7 @@ public class EnemyController : MonoBehaviour {
 
 		var distance = Vector2.Distance(transform.position, target.position);
 			
-		Debug.Log ("Distancia = " + distance + ", field: "+ e_field);
+
 
 		if (distance <= e_field) {
 
@@ -60,7 +67,7 @@ public class EnemyController : MonoBehaviour {
 
 	void attack_gido(){
 		if (attack) {
-
+			GOTarget.gameObject.GetComponent<PlayerController>().CalculateDamage (damage);
 		}
 	}
 }

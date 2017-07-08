@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HPManager : MonoBehaviour {
-	public float HP;
+	private float kHP;
 
 
 	void Start () {
@@ -15,6 +15,16 @@ public class HPManager : MonoBehaviour {
 		
 	}
 
+	public float HP{
+		get { return kHP; }
+		set { kHP = value; }
+	}
 
+	public void decreaseHP (float value){
+		kHP -= value;
+
+		if(kHP <= 0)
+			Debug.Log ("O hp chegou a 0");
+	}
 
 }
