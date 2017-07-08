@@ -55,8 +55,11 @@ public class TorController : MonoBehaviour {
 				rangey = 3.0f;
 
 			}
-
-			transform.position = Vector3.MoveTowards (transform.position,wayPointPos, speed * Time.deltaTime);
+			
+			var distance = Vector3.Distance(transform.position, wayPointPos);
+			
+			if(distance > 0.1f)
+				transform.position = Vector3.MoveTowards (transform.position,wayPointPos, speed * Time.deltaTime);
 
 		}
 
