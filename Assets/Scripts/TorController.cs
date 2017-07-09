@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TorController : MonoBehaviour {
-
+	[SerializeField] private LayerMask m_WhatIsEnemy;
 	private Vector3 UltimatePosition = new Vector3(0,0,0);
-	//float X, Y;
 	private GameObject wayPoint; 
 	private float speed = 3.0f;
 	private Vector3 wayPointPos;
 	public float damage = 1.0f;
 	private float rangex = 3.0f;
 	private float rangey = 3.0f;
-	[SerializeField] private LayerMask m_WhatIsEnemy;
-	//private int booleanFlag; // vai dar true quando o ataque acontecer
+
 
 
 	void Start () {
@@ -25,10 +23,9 @@ public class TorController : MonoBehaviour {
 		Move ();
 
 		if (Input.GetMouseButtonDown (0)) {
-			//booleanFlag = 1;
-			//speed = 0f;
+			
 			NormalAttack();
-			//speed = 3.0f;
+
 		}
 
 	}
@@ -45,7 +42,8 @@ public class TorController : MonoBehaviour {
 				rangex = -3f;
 			} else {
 				transform.eulerAngles = new Vector3 (0, 180, 0);
-				//rangex = -3f;
+
+				
 			}
 			if (transform.position.y > wayPointPos.y) { // player esta numa posicao acima do Mouse
 			
