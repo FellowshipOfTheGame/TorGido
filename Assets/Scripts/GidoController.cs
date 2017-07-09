@@ -8,10 +8,8 @@ public class GidoController : MonoBehaviour {
 	private Animator anim;
 	private SpriteRenderer spriteRend;
 	private bool facingRight = true;
-	//public float MoveSpeed;
-	//float defense;
 
-	private StatusManager sm;
+	private StatsManager sm;
 
 	// Use this for initialization
 	void Start () {
@@ -19,11 +17,9 @@ public class GidoController : MonoBehaviour {
 		anim = gameObject.GetComponent<Animator> ();
 		spriteRend = gameObject.GetComponent<SpriteRenderer> ();
 
-		//defense = 0.0f;
-
 		gameObject.GetComponent<HPManager> ().HP = 10; //setando 10 de hp para o gido
 
-		sm = gameObject.GetComponent<StatusManager> ();
+		sm = gameObject.GetComponent<StatsManager> ();
 		sm.defense = 0f;
 		sm.speed = 6f;
 	}
@@ -58,13 +54,7 @@ public class GidoController : MonoBehaviour {
 
 	public void CalculateDamage(float damage){
 		gameObject.GetComponent<AttackManager> ().CalculateDamage (damage);
-		//float final = damage - sm.defense;
 
 		anim.SetTrigger ("Damage");
-
-		/*if (final < 0)
-			final = 0;
-
-		gameObject.GetComponent<HPManager> ().DealDamage (final);*/
 	}
 }

@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Movimentacao do Tor e do inimigo
 public class MovementManager : MonoBehaviour {
 
 	private Transform tTarget;
 	private GameObject goTarget;
 	private Rigidbody2D Rigid;
 	private SpriteRenderer spriteRend;
-	private StatusManager sm;
+	private StatsManager sm;
 
 	private bool facingRight = true;
 	//private bool attack = false;
@@ -18,14 +20,14 @@ public class MovementManager : MonoBehaviour {
 	void Start () {
 		Rigid = gameObject.GetComponent<Rigidbody2D>();
 		spriteRend = gameObject.GetComponent<SpriteRenderer> ();
-		sm = gameObject.GetComponent<StatusManager> ();
+		sm = gameObject.GetComponent<StatsManager> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-
+	
 	public GameObject Target{
 		get { return goTarget; }
 		set { 
@@ -39,6 +41,7 @@ public class MovementManager : MonoBehaviour {
 
 		if (distance <= sm.field) {
 
+			//verificacao da orientacao do sprite
 			if (transform.position.x > tTarget.position.x) {
 				if (!facingRight) {
 					//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
@@ -53,6 +56,7 @@ public class MovementManager : MonoBehaviour {
 				}
 			}
 
+			//movimento
 			if (sm.range < distance && canMove) {
 				if(gameObject.tag == "Enemy")
 					gameObject.GetComponent<EnemyController>().attack = false;
@@ -69,22 +73,22 @@ public class MovementManager : MonoBehaviour {
 		}
 	}
 
+	//inimmigo nao move quando colide com o player
 	void OnCollisionEnter2D(Collision2D coll){
 		if (gameObject.tag == "Enemy") {
-			if (coll.gameObject.tag == "Player") {
+			if (coll.gameObject.tag == "Player" ) {
 				canMove = false;
-				//Debug.Log ("entrei na colisao");
 			} else {
 				Rigid.velocity = new Vector2 (0f, 0f);
 			}
 		}
 	}
 
+	//inimmigo pode mover quando sai da colisao com o player
 	void OnCollisionExit2D(Collision2D coll){
 		if (gameObject.tag == "Enemy") {
 			if (coll.gameObject.tag == "Player") {
 				canMove = true;
-				//Debug.Log ("sai na colisao");
 			} else {
 				Rigid.velocity = new Vector2 (0f, 0f);
 			}

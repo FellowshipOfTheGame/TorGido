@@ -5,24 +5,17 @@ using UnityEngine;
 public class TorController : MonoBehaviour {
 	[SerializeField] private LayerMask m_WhatIsEnemy;
 	private Vector3 UltimatePosition = new Vector3(0,0,0);
-	//private GameObject wayPoint; 
-	//private Rigidbody2D Rigid;
 
-	//private float speed = 5.0f;
-	//private Vector3 wayPointPos;
-	//public float damage = 1.0f;
 	private float rangex = 3.0f;
 	private float rangey = 3.0f;
 
-	private StatusManager sm;
+	private StatsManager sm;
 
 	void Start () {
-		//wayPoint = GameObject.Find("wayPoint");
-		//Rigid = gameObject.GetComponent<Rigidbody2D>();
 
 		gameObject.GetComponent<MovementManager> ().Target = GameObject.FindGameObjectWithTag ("Mouse"); 
 
-		sm = gameObject.GetComponent<StatusManager> ();
+		sm = gameObject.GetComponent<StatsManager> ();
 
 		sm.speed = 5f;
 		sm.damage = 1f;
@@ -44,41 +37,10 @@ public class TorController : MonoBehaviour {
 
 	void Move(){
 		gameObject.GetComponent<MovementManager> ().move();
-		/*
-			if (wayPointPos.x != wayPoint.transform.position.x || wayPointPos.y != wayPoint.transform.position.y || wayPointPos.z != wayPoint.transform.position.z ) {
-
-				wayPointPos = new Vector3 (wayPoint.transform.position.x,wayPoint.transform.position.y, wayPoint.transform.position.z);
-			}
-			
-			if (transform.position.x > wayPointPos.x) {  // player esta a direita do Mouse 
-				transform.eulerAngles = new Vector3 (0, 0, 0);
-				rangex = -3f;
-			} else {
-				transform.eulerAngles = new Vector3 (0, 180, 0);
-
-				
-			}
-			if (transform.position.y > wayPointPos.y) { // player esta numa posicao acima do Mouse
-			
-				rangey = -3.0f;
-			} else { // player esta numa posicao a baixo do Mouse
-				
-				rangey = 3.0f;
-
-			}
-			
-			var distance = Vector3.Distance(transform.position, wayPointPos);
-			
-			if (distance > 0.2f) {
-				Vector2 direction = new Vector2 (wayPointPos.x - transform.position.x, wayPointPos.y - transform.position.y);
-				Rigid.velocity = direction.normalized * sm.speed;
-				//transform.position = Vector3.MoveTowards (transform.position, wayPointPos, speed * Time.deltaTime);
-			} else {
-				Rigid.velocity = new Vector2 (0, 0);
-			}*/
-		}
+	}
 
 	void NormalAttack(){
+		//verificação da area do ataque
 		Vector3 wayPointPos = GameObject.FindGameObjectWithTag ("Mouse").transform.position;
 		if (transform.position.x > wayPointPos.x)
 			rangex = -3f;

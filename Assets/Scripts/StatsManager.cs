@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatusManager : MonoBehaviour {
+//script que contem os stats base do gido, tor e inimigos.
+//Os efeitos dos itens serao tratados nesse script
+public class StatsManager : MonoBehaviour {
 
 	private float kSpeed = 0f;
 	private float kDamage = 0f;

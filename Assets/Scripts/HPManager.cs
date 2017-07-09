@@ -24,9 +24,6 @@ public class HPManager : MonoBehaviour {
 
 
 	void Start () {
-		//MaxHealth = HP;
-		//CurrentHealth = MaxHealth;
-		//bar.value = CalculateHealth ();
 
 	}
 	
@@ -53,17 +50,5 @@ public class HPManager : MonoBehaviour {
 		return CurrentHealth / MaxHealth;
 	
 	}
-
-
-//	public bool decreaseHP (float value){
-//		kHP -= value;
-//
-//		if (kHP <= 0) {
-//			Debug.Log ("O hp chegou a 0");
-//			return false;
-//		}
-//
-//		return true;
-//	}
 
 }
