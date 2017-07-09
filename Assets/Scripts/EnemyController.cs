@@ -8,16 +8,18 @@ public class EnemyController : MonoBehaviour {
 	private GameObject GOTarget;
 	private Rigidbody2D Rigid;
 	private SpriteRenderer spriteRend;
-	private float e_speed = 5f;
-	private float e_range = 1f;
-	private float e_field = 5f; //campo de visao - circulo ao redor do inimigo
+	//private float e_speed = 5f;
+	//private float e_range = 1f;
+	//private float e_field = 5f; //campo de visao - circulo ao redor do inimigo
 
-	private float damage = 1.0f;
+	//private float damage = 1.0f;
 	private bool attack = false;
-	private float attack_speed = 1.0f;
+	//private float attack_speed = 1.0f;
 	private float next_attack = 0.0f;
 
-	private float defense = 0.0f;
+	//private float defense = 0.0f;
+
+	private StatusManager sm;
 
 	private bool facingRight = true;
 	private bool canMove = true;
@@ -31,6 +33,15 @@ public class EnemyController : MonoBehaviour {
 		spriteRend = gameObject.GetComponent<SpriteRenderer> ();
 
 		gameObject.GetComponent<HPManager> ().HP = 3; //setando 10 de hp para o inimigo
+
+		sm = gameObject.GetComponent<StatusManager> ();
+
+		sm.speed = 5f;
+		sm.range = 1f;
+		sm.field = 5f;
+		sm.damage = 1f;
+		sm.attack_speed = 1f;
+		sm.defense = 0;
 	}
 	
 	// Update is called once per frame
@@ -51,7 +62,7 @@ public class EnemyController : MonoBehaviour {
 
 		var distance = Vector2.Distance(transform.position, target.position);
 
-		if (distance <= e_field) {
+		if (distance <= sm.field) {
 
 			if (transform.position.x > target.position.x) {
 				if (!facingRight) {
@@ -67,12 +78,12 @@ public class EnemyController : MonoBehaviour {
 				}
 			}
 
-			if (e_range < distance && canMove) {
+			if (sm.range < distance && canMove) {
 				attack = false;
 				//transform.position = Vector2.MoveTowards(transform.position, target.position, e_speed * Time.deltaTime);
 				Vector2 direction = new Vector2( target.position.x - transform.position.x, target.position.y - transform.position.y);
 
-				Rigid.velocity = direction.normalized * e_speed;
+				Rigid.velocity = direction.normalized * sm.speed;
 
 			} else {
 				Rigid.velocity = new Vector2 (0f, 0f);
@@ -102,14 +113,14 @@ public class EnemyController : MonoBehaviour {
 
 	void attack_gido(){
 		if (attack) {
-			GOTarget.gameObject.GetComponent<GidoController>().CalculateDamage (damage);
+			GOTarget.gameObject.GetComponent<GidoController>().CalculateDamage (sm.damage);
 
-			next_attack = Time.time + attack_speed;
+			next_attack = Time.time + sm.attack_speed;
 		}
 	}
 
 	public void CalculateDamage(float damage){
-		float final = damage - defense;
+		float final = damage - sm.defense;
 
 		if (final < 0)
 			final = 0;

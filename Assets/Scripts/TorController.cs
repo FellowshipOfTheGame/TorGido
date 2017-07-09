@@ -8,17 +8,22 @@ public class TorController : MonoBehaviour {
 	private GameObject wayPoint; 
 	private Rigidbody2D Rigid;
 
-	private float speed = 5.0f;
+	//private float speed = 5.0f;
 	private Vector3 wayPointPos;
-	public float damage = 1.0f;
+	//public float damage = 1.0f;
 	private float rangex = 3.0f;
 	private float rangey = 3.0f;
 
-
+	private StatusManager sm;
 
 	void Start () {
 		wayPoint = GameObject.Find("wayPoint");
 		Rigid = gameObject.GetComponent<Rigidbody2D>();
+
+		sm = gameObject.GetComponent<StatusManager> ();
+
+		sm.speed = 5f;
+		sm.damage = 1f;
 	}
 
 	void Update () {
@@ -61,7 +66,7 @@ public class TorController : MonoBehaviour {
 			
 			if (distance > 0.2f) {
 				Vector2 direction = new Vector2 (wayPointPos.x - transform.position.x, wayPointPos.y - transform.position.y);
-				Rigid.velocity = direction.normalized * speed;
+				Rigid.velocity = direction.normalized * sm.speed;
 				//transform.position = Vector3.MoveTowards (transform.position, wayPointPos, speed * Time.deltaTime);
 			} else {
 				Rigid.velocity = new Vector2 (0, 0);
@@ -78,7 +83,7 @@ public class TorController : MonoBehaviour {
 			GameObject enemy = colliders [i].gameObject;
 
 			//enemy.gameObject.GetComponent<EnemyTestController> ().GetComponent<HPManager> ().DealDamage (damage);
-			enemy.gameObject.GetComponent<EnemyController> ().CalculateDamage(damage);
+			enemy.gameObject.GetComponent<EnemyController> ().CalculateDamage(sm.damage);
 			Debug.Log ("ataquei o " + i + " inimigo ");
 
 		}
