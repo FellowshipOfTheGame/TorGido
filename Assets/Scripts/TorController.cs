@@ -8,7 +8,7 @@ public class TorController : MonoBehaviour {
 	private GameObject wayPoint; 
 	private Rigidbody2D Rigid;
 
-	private float speed = 3.0f;
+	private float speed = 5.0f;
 	private Vector3 wayPointPos;
 	public float damage = 1.0f;
 	private float rangex = 3.0f;
