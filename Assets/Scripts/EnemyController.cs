@@ -83,6 +83,10 @@ public class EnemyController : MonoBehaviour {
 		if (final < 0)
 			final = 0;
 
+
+		//if (!gameObject.GetComponent<HPManager> ().decreaseHP (final)) {
+		//	Destroy (gameObject);
+		//}
 		//if (!gameObject.GetComponent<HPManager> ().decreaseHP (final)) {
 		//	Destroy (gameObject);
 		//}
