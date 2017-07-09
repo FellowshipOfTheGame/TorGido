@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour {
 	private float defense = 0.0f;
 
 	private bool facingRight = true;
+	private bool canMove = true;
 
 	// Use this for initialization
 	void Start () {
@@ -62,7 +63,7 @@ public class EnemyController : MonoBehaviour {
 				}
 			}
 
-			if (e_range < distance) {
+			if (e_range < distance && canMove) {
 				attack = false;
 				//transform.position = Vector2.MoveTowards(transform.position, target.position, e_speed * Time.deltaTime);
 				Vector2 direction = new Vector2( target.position.x - transform.position.x, target.position.y - transform.position.y);
@@ -70,9 +71,24 @@ public class EnemyController : MonoBehaviour {
 				Rigid.velocity = direction.normalized * e_speed;
 
 			} else {
+				Rigid.velocity = new Vector2 (0f, 0f);
 				attack = true;
 			}
 
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D coll){
+		if (coll.gameObject.tag == "Player") {
+			canMove = false;
+			//Debug.Log ("entrei na colisao");
+		}
+	}
+
+	void OnCollisionExit2D(Collision2D coll){
+		if (coll.gameObject.tag == "Player") {
+			canMove = true;
+			//Debug.Log ("sai na colisao");
 		}
 	}
 
