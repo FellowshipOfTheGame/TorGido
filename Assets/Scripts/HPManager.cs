@@ -12,7 +12,7 @@ public class HPManager : MonoBehaviour {
 
 	void Start () {
 		MaxHealth = HP;
-		CurrentHealth = MaxHealth;
+		CurrentHealth = MaxHealth - 1;
 		bar.value = CalculateHealth ();
 
 	}
