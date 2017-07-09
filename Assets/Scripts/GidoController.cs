@@ -6,18 +6,22 @@ public class GidoController : MonoBehaviour {
 
 	private Rigidbody2D Rigid;
 	private Animator anim;
+	private SpriteRenderer spriteRend;
 	private bool facingRight = true;
-	public float MoveSpeed;
-	float defense;
+
+	private StatsManager sm;
 
 	// Use this for initialization
 	void Start () {
 		Rigid = gameObject.GetComponent<Rigidbody2D>();
 		anim = gameObject.GetComponent<Animator> ();
-
-		defense = 0.0f;
+		spriteRend = gameObject.GetComponent<SpriteRenderer> ();
 
 		gameObject.GetComponent<HPManager> ().HP = 10; //setando 10 de hp para o gido
+
+		sm = gameObject.GetComponent<StatsManager> ();
+		sm.defense = 0f;
+		sm.speed = 6f;
 	}
 	
 	// Update is called once per frame
@@ -32,10 +36,12 @@ public class GidoController : MonoBehaviour {
 		if (h != 0.0f || v != 0.0f) {
 			if (h > 0.0f && !facingRight) {
 				facingRight = true;
-				transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
+				//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
+				spriteRend.flipX = false;
 			} else if (h < 0.0f && facingRight) {
 				facingRight = false;
-				transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
+				//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
+				spriteRend.flipX = true;
 			}
 			anim.SetBool ("isWalking", true);
 		} else 
@@ -43,19 +49,12 @@ public class GidoController : MonoBehaviour {
 
 		Vector2 movement= new Vector2 (h, v);
 
-		Rigid.velocity = movement.normalized * MoveSpeed;
+		Rigid.velocity = movement.normalized * sm.speed;
 	}
 
 	public void CalculateDamage(float damage){
-		float final = damage - defense;
+		gameObject.GetComponent<AttackManager> ().CalculateDamage (damage);
 
 		anim.SetTrigger ("Damage");
-
-		if (final < 0)
-			final = 0;
-
-		gameObject.GetComponent<HPManager> ().DealDamage (final);
 	}
-
-
 }
