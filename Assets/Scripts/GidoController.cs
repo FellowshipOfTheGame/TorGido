@@ -6,6 +6,7 @@ public class GidoController : MonoBehaviour {
 
 	private Rigidbody2D Rigid;
 	private Animator anim;
+	private SpriteRenderer spriteRend;
 	private bool facingRight = true;
 	public float MoveSpeed;
 	float defense;
@@ -14,6 +15,7 @@ public class GidoController : MonoBehaviour {
 	void Start () {
 		Rigid = gameObject.GetComponent<Rigidbody2D>();
 		anim = gameObject.GetComponent<Animator> ();
+		spriteRend = gameObject.GetComponent<SpriteRenderer> ();
 
 		defense = 0.0f;
 
@@ -32,10 +34,12 @@ public class GidoController : MonoBehaviour {
 		if (h != 0.0f || v != 0.0f) {
 			if (h > 0.0f && !facingRight) {
 				facingRight = true;
-				transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
+				//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
+				spriteRend.flipX = false;
 			} else if (h < 0.0f && facingRight) {
 				facingRight = false;
-				transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
+				//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
+				spriteRend.flipX = true;
 			}
 			anim.SetBool ("isWalking", true);
 		} else 

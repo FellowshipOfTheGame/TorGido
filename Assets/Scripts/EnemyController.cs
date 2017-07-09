@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour {
 	private Transform target;
 	private GameObject GOTarget;
 	private Rigidbody2D Rigid;
+	private SpriteRenderer spriteRend;
 	private float e_speed = 5f;
 	private float e_range = 1f;
 	private float e_field = 5f; //campo de visao - circulo ao redor do inimigo
@@ -27,6 +28,7 @@ public class EnemyController : MonoBehaviour {
 		GOTarget = GameObject.FindGameObjectWithTag ("Player");
 
 		Rigid = gameObject.GetComponent<Rigidbody2D>();
+		spriteRend = gameObject.GetComponent<SpriteRenderer> ();
 
 		gameObject.GetComponent<HPManager> ().HP = 10; //setando 10 de hp para o inimigo
 	}
@@ -53,13 +55,15 @@ public class EnemyController : MonoBehaviour {
 
 			if (transform.position.x > target.position.x) {
 				if (!facingRight) {
-					transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
+					//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
 					facingRight = true;
+					spriteRend.flipX = false;
 				}
 			} else {
 				if (facingRight) {
-					transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
+					//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
 					facingRight = false;
+					spriteRend.flipX = true;
 				}
 			}
 
