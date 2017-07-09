@@ -21,9 +21,7 @@ public class EnemyTestController : MonoBehaviour {
 		if (hp) {
 			enemyHP = hp.HP;
 		}
-		if (enemyHP <= 0) {
-			GameObject.Destroy (gameObject);
-		}
+
 		ColorControl ();
 	}
 	void ColorControl(){

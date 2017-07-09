@@ -69,7 +69,7 @@ public class TorController : MonoBehaviour {
 
 			GameObject enemy = colliders [i].gameObject;
 
-			enemy.gameObject.GetComponent<EnemyTestController> ().GetComponent<HPManager> ().HP -= damage; 
+			enemy.gameObject.GetComponent<EnemyTestController> ().GetComponent<HPManager> ().DealDamage (damage);
 
 		}
 	
