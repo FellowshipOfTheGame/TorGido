@@ -57,15 +57,14 @@ public class GidoController : MonoBehaviour {
 	}
 
 	public void CalculateDamage(float damage){
-		float final = damage - sm.defense;
+		gameObject.GetComponent<AttackManager> ().CalculateDamage (damage);
+		//float final = damage - sm.defense;
 
 		anim.SetTrigger ("Damage");
 
-		if (final < 0)
+		/*if (final < 0)
 			final = 0;
 
-		gameObject.GetComponent<HPManager> ().DealDamage (final);
+		gameObject.GetComponent<HPManager> ().DealDamage (final);*/
 	}
-
-
 }

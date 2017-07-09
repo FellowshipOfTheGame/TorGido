@@ -34,13 +34,6 @@ public class MovementManager : MonoBehaviour {
 		}
 	}
 
-	public void getInput(){
-		float h = Input.GetAxis ("Horizontal");
-		float v = Input.GetAxis ("Vertical");
-
-		Vector2 movement = new Vector2 (h, v);
-	}
-
 	public void move(){
 		var distance = Vector2.Distance (transform.position, tTarget.position);
 

@@ -37,13 +37,10 @@
 			}
 		},
 		{
-			"contents": "-matar gido quando hp chegar em 0\n\n-matar inimigo quando hp chegar em 0 (somente destroi atualmente)\n\n-separar 'movimento' do eneyController\n\n-componente 'status base' -> efeitos dos itens ficam nesse script\n\n-componentes:\n\t-atk/dano?\n\t-hp\n\t-movimento\n\t-status\n\t",
 			"file": "/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/ToDo.txt",
-			"file_size": 215,
-			"file_write_time": 131440256560165123,
 			"settings":
 			{
-				"buffer_size": 262,
+				"buffer_size": 1200,
 				"encoding": "UTF-8",
 				"line_ending": "Windows",
 				"name": "-matar gido quando hp chegar em 0"
@@ -191,15 +188,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 262,
+						"buffer_size": 1200,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								262,
-								262
+								234,
+								234
 							]
 						],
 						"settings":

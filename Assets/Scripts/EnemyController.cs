@@ -123,7 +123,8 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	public void CalculateDamage(float damage){
-		float final = damage - sm.defense;
+		gameObject.GetComponent<AttackManager> ().CalculateDamage (damage);
+		/*float final = damage - sm.defense;
 
 		if (final < 0)
 			final = 0;
@@ -131,7 +132,7 @@ public class EnemyController : MonoBehaviour {
 
 		if (!gameObject.GetComponent<HPManager> ().DealDamage(final)) {
 			Destroy(gameObject);
-		}
+		}*/
 		//if (!gameObject.GetComponent<HPManager> ().decreaseHP (final)) {
 		//	Destroy (gameObject);
 		//}
