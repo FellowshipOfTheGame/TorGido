@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovementManager : MonoBehaviour {
 
-	private Vector3 posTarget;
+	private Transform tTarget;
 	private GameObject goTarget;
 	private Rigidbody2D Rigid;
 	private SpriteRenderer spriteRend;
@@ -30,7 +30,7 @@ public class MovementManager : MonoBehaviour {
 		get { return goTarget; }
 		set { 
 			goTarget = value;
-			posTarget = goTarget.transform.position;
+			tTarget = goTarget.transform;
 		}
 	}
 
@@ -38,15 +38,15 @@ public class MovementManager : MonoBehaviour {
 		float h = Input.GetAxis ("Horizontal");
 		float v = Input.GetAxis ("Vertical");
 
-		posTarget = new Vector2 (h, v, 0);
+		Vector2 movement = new Vector2 (h, v);
 	}
 
 	public void move(){
-		var distance = Vector2.Distance (transform.position, posTarget);
+		var distance = Vector2.Distance (transform.position, tTarget.position);
 
 		if (distance <= sm.field) {
 
-			if (transform.position.x > posTarget.x) {
+			if (transform.position.x > tTarget.position.x) {
 				if (!facingRight) {
 					//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
 					facingRight = true;
@@ -64,7 +64,7 @@ public class MovementManager : MonoBehaviour {
 				if(gameObject.tag == "Enemy")
 					gameObject.GetComponent<EnemyController>().attack = false;
 				//transform.position = Vector2.MoveTowards(transform.position, target.position, e_speed * Time.deltaTime);
-				Vector2 direction = new Vector2 (posTarget.x - transform.position.x, tposTarget.y - transform.position.y);
+				Vector2 direction = new Vector2 (tTarget.position.x - transform.position.x, tTarget.position.y - transform.position.y);
 
 				Rigid.velocity = direction.normalized * sm.speed;
 
