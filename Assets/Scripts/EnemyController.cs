@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour {
 		Rigid = gameObject.GetComponent<Rigidbody2D>();
 		spriteRend = gameObject.GetComponent<SpriteRenderer> ();
 
-		gameObject.GetComponent<HPManager> ().HP = 10; //setando 10 de hp para o inimigo
+		gameObject.GetComponent<HPManager> ().HP = 3; //setando 10 de hp para o inimigo
 	}
 	
 	// Update is called once per frame
@@ -86,6 +86,8 @@ public class EnemyController : MonoBehaviour {
 		if (coll.gameObject.tag == "Player") {
 			canMove = false;
 			//Debug.Log ("entrei na colisao");
+		} else {
+			Rigid.velocity = new Vector2 (0f, 0f);
 		}
 	}
 
@@ -93,6 +95,8 @@ public class EnemyController : MonoBehaviour {
 		if (coll.gameObject.tag == "Player") {
 			canMove = true;
 			//Debug.Log ("sai na colisao");
+		} else {
+			Rigid.velocity = new Vector2 (0f, 0f);
 		}
 	}
 
@@ -112,7 +116,7 @@ public class EnemyController : MonoBehaviour {
 
 
 		if (!gameObject.GetComponent<HPManager> ().DealDamage(final)) {
-			Destroy (gameObject);
+			Destroy(gameObject);
 		}
 		//if (!gameObject.GetComponent<HPManager> ().decreaseHP (final)) {
 		//	Destroy (gameObject);

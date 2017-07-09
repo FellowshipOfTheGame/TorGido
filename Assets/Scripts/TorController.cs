@@ -6,6 +6,8 @@ public class TorController : MonoBehaviour {
 	[SerializeField] private LayerMask m_WhatIsEnemy;
 	private Vector3 UltimatePosition = new Vector3(0,0,0);
 	private GameObject wayPoint; 
+	private Rigidbody2D Rigid;
+
 	private float speed = 3.0f;
 	private Vector3 wayPointPos;
 	public float damage = 1.0f;
@@ -16,6 +18,7 @@ public class TorController : MonoBehaviour {
 
 	void Start () {
 		wayPoint = GameObject.Find("wayPoint");
+		Rigid = gameObject.GetComponent<Rigidbody2D>();
 	}
 
 	void Update () {
@@ -56,9 +59,13 @@ public class TorController : MonoBehaviour {
 			
 			var distance = Vector3.Distance(transform.position, wayPointPos);
 			
-			if(distance > 0.1f)
-				transform.position = Vector3.MoveTowards (transform.position,wayPointPos, speed * Time.deltaTime);
-
+			if (distance > 0.2f) {
+				Vector2 direction = new Vector2 (wayPointPos.x - transform.position.x, wayPointPos.y - transform.position.y);
+				Rigid.velocity = direction.normalized * speed;
+				//transform.position = Vector3.MoveTowards (transform.position, wayPointPos, speed * Time.deltaTime);
+			} else {
+				Rigid.velocity = new Vector2 (0, 0);
+			}
 		}
 
 	void NormalAttack(){
@@ -69,7 +76,6 @@ public class TorController : MonoBehaviour {
 		{
 
 			GameObject enemy = colliders [i].gameObject;
-
 
 			//enemy.gameObject.GetComponent<EnemyTestController> ().GetComponent<HPManager> ().DealDamage (damage);
 			enemy.gameObject.GetComponent<EnemyController> ().CalculateDamage(damage);
