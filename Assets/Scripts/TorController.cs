@@ -5,11 +5,11 @@ using UnityEngine;
 public class TorController : MonoBehaviour {
 	[SerializeField] private LayerMask m_WhatIsEnemy;
 	private Vector3 UltimatePosition = new Vector3(0,0,0);
-	private GameObject wayPoint; 
-	private Rigidbody2D Rigid;
+	//private GameObject wayPoint; 
+	//private Rigidbody2D Rigid;
 
 	//private float speed = 5.0f;
-	private Vector3 wayPointPos;
+	//private Vector3 wayPointPos;
 	//public float damage = 1.0f;
 	private float rangex = 3.0f;
 	private float rangey = 3.0f;
@@ -17,17 +17,21 @@ public class TorController : MonoBehaviour {
 	private StatusManager sm;
 
 	void Start () {
-		wayPoint = GameObject.Find("wayPoint");
-		Rigid = gameObject.GetComponent<Rigidbody2D>();
+		//wayPoint = GameObject.Find("wayPoint");
+		//Rigid = gameObject.GetComponent<Rigidbody2D>();
+
+		gameObject.GetComponent<MovementManager> ().Target = GameObject.FindGameObjectWithTag ("Mouse"); 
 
 		sm = gameObject.GetComponent<StatusManager> ();
 
 		sm.speed = 5f;
 		sm.damage = 1f;
+		sm.range = 0.2f; // para movimentação
 	}
 
 	void Update () {
 		rangex = 3f;
+		rangey = 3f;
 		Move ();
 
 		if (Input.GetMouseButtonDown (0)) {
@@ -39,7 +43,8 @@ public class TorController : MonoBehaviour {
 	}
 
 	void Move(){
-		
+		gameObject.GetComponent<MovementManager> ().move();
+		/*
 			if (wayPointPos.x != wayPoint.transform.position.x || wayPointPos.y != wayPoint.transform.position.y || wayPointPos.z != wayPoint.transform.position.z ) {
 
 				wayPointPos = new Vector3 (wayPoint.transform.position.x,wayPoint.transform.position.y, wayPoint.transform.position.z);
@@ -70,10 +75,16 @@ public class TorController : MonoBehaviour {
 				//transform.position = Vector3.MoveTowards (transform.position, wayPointPos, speed * Time.deltaTime);
 			} else {
 				Rigid.velocity = new Vector2 (0, 0);
-			}
+			}*/
 		}
 
 	void NormalAttack(){
+		Vector3 wayPointPos = GameObject.FindGameObjectWithTag ("Mouse").transform.position;
+		if (transform.position.x > wayPointPos.x)
+			rangex = -3f;
+		if (transform.position.y > wayPointPos.y)
+			rangey = -3f;
+
 		Vector2 Boxcenter = new Vector2 (transform.position.x, transform.position.y);
 		Vector2 Boxsize = new Vector2 (transform.position.x + rangex, transform.position.y + rangey);
 		Collider2D[] colliders = Physics2D.OverlapAreaAll( Boxcenter, Boxsize,m_WhatIsEnemy);

@@ -9,7 +9,7 @@ public class StatusManager : MonoBehaviour {
 	private float kDefense = 0f;
 	private float kAttack_speed = 0f;
 	private float kRange = 0f;
-	private float kField = 0f; //campo de visão
+	private float kField = 1000f; //campo de visão
 
 	// Use this for initialization
 	void Start () {

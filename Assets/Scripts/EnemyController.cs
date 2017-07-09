@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
-	private Transform target;
-	private GameObject GOTarget;
-	private Rigidbody2D Rigid;
-	private SpriteRenderer spriteRend;
+	//private Transform target;
+	//private GameObject GOTarget;
+	//private Rigidbody2D Rigid;
+	//private SpriteRenderer spriteRend;
 	//private float e_speed = 5f;
 	//private float e_range = 1f;
 	//private float e_field = 5f; //campo de visao - circulo ao redor do inimigo
 
 	//private float damage = 1.0f;
-	private bool attack = false;
+	private bool kAttack = false; //não sei onde deixar essa variavel
 	//private float attack_speed = 1.0f;
 	private float next_attack = 0.0f;
 
@@ -21,18 +21,20 @@ public class EnemyController : MonoBehaviour {
 
 	private StatusManager sm;
 
-	private bool facingRight = true;
-	private bool canMove = true;
+	//private bool facingRight = true;
+//	private bool canMove = true;
 
 	// Use this for initialization
 	void Start () {
-		target = GameObject.FindGameObjectWithTag("Player").transform;
-		GOTarget = GameObject.FindGameObjectWithTag ("Player");
+		//target = GameObject.FindGameObjectWithTag("Player").transform;
+		//GOTarget = GameObject.FindGameObjectWithTag ("Player");
 
-		Rigid = gameObject.GetComponent<Rigidbody2D>();
-		spriteRend = gameObject.GetComponent<SpriteRenderer> ();
+		//Rigid = gameObject.GetComponent<Rigidbody2D>();
+		//spriteRend = gameObject.GetComponent<SpriteRenderer> ();
 
 		gameObject.GetComponent<HPManager> ().HP = 3; //setando 10 de hp para o inimigo
+
+		gameObject.GetComponent<MovementManager> ().Target = GameObject.FindGameObjectWithTag ("Player"); 
 
 		sm = gameObject.GetComponent<StatusManager> ();
 
@@ -53,14 +55,14 @@ public class EnemyController : MonoBehaviour {
 		}
 	}
 
-	/*public float range{
-		get { return e_range; }
-		set { e_range = value; }
-	}*/
+	public bool attack{
+		get { return kAttack; }
+		set { kAttack = value; }
+	}
 
 	void move() {
-
-		var distance = Vector2.Distance(transform.position, target.position);
+		gameObject.GetComponent<MovementManager> ().move();
+		/*var distance = Vector2.Distance(transform.position, target.position);
 
 		if (distance <= sm.field) {
 
@@ -90,10 +92,10 @@ public class EnemyController : MonoBehaviour {
 				attack = true;
 			}
 
-		}
+		}*/
 	}
 
-	void OnCollisionEnter2D(Collision2D coll){
+	/*void OnCollisionEnter2D(Collision2D coll){
 		if (coll.gameObject.tag == "Player") {
 			canMove = false;
 			//Debug.Log ("entrei na colisao");
@@ -109,11 +111,12 @@ public class EnemyController : MonoBehaviour {
 		} else {
 			Rigid.velocity = new Vector2 (0f, 0f);
 		}
-	}
+	}*/
 
 	void attack_gido(){
-		if (attack) {
-			GOTarget.gameObject.GetComponent<GidoController>().CalculateDamage (sm.damage);
+		if (kAttack) {
+			//GOTarget.gameObject.GetComponent<GidoController>().CalculateDamage (sm.damage);
+			gameObject.GetComponent<MovementManager> ().Target.gameObject.GetComponent<GidoController>().CalculateDamage (sm.damage);
 
 			next_attack = Time.time + sm.attack_speed;
 		}
