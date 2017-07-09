@@ -45,20 +45,20 @@ public class HPManager : MonoBehaviour {
 	void Die(){
 		GameObject.Destroy (gameObject);
 	}
-//	public float HP{
-//		get { return kHP; }
-//		set { kHP = value; }
-//	}
+/*	public float HP{
+		get { return kHP; }
+		set { kHP = value; }
+	}
 
-//	public bool decreaseHP (float value){
-//		kHP -= value;
-//
-//		if (kHP <= 0) {
-//			Debug.Log ("O hp chegou a 0");
-//			return false;
-//		}
-//
-//		return true;
-//	}
+	public bool decreaseHP (float value){
+		kHP -= value;
 
+		if (kHP <= 0) {
+			Debug.Log ("O hp chegou a 0");
+			return false;
+		}
+
+		return true;
+	}
+*/
 }
