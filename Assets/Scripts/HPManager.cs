@@ -5,19 +5,28 @@ using UnityEngine;
 
 public class HPManager : MonoBehaviour {
 
-	public float HP;
-	private float CurrentHealth { set; get; }
-	private float MaxHealth { set; get; }
+	//public float HP;
+	private float CurrentHealth;
+	private float MaxHealth = 0.0f;
 	public Slider bar;
 
-	private float kHP;
-
+	//caso precise, alterar...
+	public float HP{
+		get { return CurrentHealth; }
+		set { 
+			if (MaxHealth == 0) {
+				MaxHealth = value; 
+				CurrentHealth = MaxHealth;
+				bar.value = CalculateHealth ();
+			}
+		}
+	}
 
 
 	void Start () {
-		MaxHealth = HP;
-		CurrentHealth = MaxHealth - 1;
-		bar.value = CalculateHealth ();
+		//MaxHealth = HP;
+		//CurrentHealth = MaxHealth;
+		//bar.value = CalculateHealth ();
 
 	}
 	
@@ -26,13 +35,17 @@ public class HPManager : MonoBehaviour {
 		
 	}
 
-	public void DealDamage(float damage){
+	public bool DealDamage(float damage){
 	
 		CurrentHealth -= damage;
 		bar.value = CalculateHealth ();
+
 		if (CurrentHealth <= 0) {
-			Die ();
+	//	-	Die ();
+			return false;
 		}
+
+		return true;
 
 	}
 	float CalculateHealth(){
@@ -41,14 +54,6 @@ public class HPManager : MonoBehaviour {
 	
 	}
 
-
-	void Die(){
-		GameObject.Destroy (gameObject);
-	}
-//	public float HP{
-//		get { return kHP; }
-//		set { kHP = value; }
-//	}
 
 //	public bool decreaseHP (float value){
 //		kHP -= value;

@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour {
 
 	private Transform target;
 	private GameObject GOTarget;
+	private Rigidbody2D Rigid;
 	private float e_speed = 5f;
 	private float e_range = 1f;
 	private float e_field = 5f; //campo de visao - circulo ao redor do inimigo
@@ -23,6 +24,8 @@ public class EnemyController : MonoBehaviour {
 	void Start () {
 		target = GameObject.FindGameObjectWithTag("Player").transform;
 		GOTarget = GameObject.FindGameObjectWithTag ("Player");
+
+		Rigid = gameObject.GetComponent<Rigidbody2D>();
 
 		gameObject.GetComponent<HPManager> ().HP = 10; //setando 10 de hp para o inimigo
 	}
@@ -61,7 +64,11 @@ public class EnemyController : MonoBehaviour {
 
 			if (e_range < distance) {
 				attack = false;
-				transform.position = Vector2.MoveTowards(transform.position, target.position, e_speed * Time.deltaTime);
+				//transform.position = Vector2.MoveTowards(transform.position, target.position, e_speed * Time.deltaTime);
+				Vector2 direction = new Vector2( target.position.x - transform.position.x, target.position.y - transform.position.y);
+
+				Rigid.velocity = direction.normalized * e_speed;
+
 			} else {
 				attack = true;
 			}
@@ -84,9 +91,9 @@ public class EnemyController : MonoBehaviour {
 			final = 0;
 
 
-		//if (!gameObject.GetComponent<HPManager> ().decreaseHP (final)) {
-		//	Destroy (gameObject);
-		//}
+		if (!gameObject.GetComponent<HPManager> ().DealDamage(final)) {
+			Destroy (gameObject);
+		}
 		//if (!gameObject.GetComponent<HPManager> ().decreaseHP (final)) {
 		//	Destroy (gameObject);
 		//}

@@ -35,6 +35,19 @@
 				"line_ending": "Windows",
 				"name": "101--"
 			}
+		},
+		{
+			"contents": "-matar gido quando hp chegar em 0\n\n-matar inimigo quando hp chegar em 0 (somente destroi atualmente)\n\n-separar 'movimento' do eneyController\n\n-componente 'status base' -> efeitos dos itens ficam nesse script\n\n-componentes:\n\t-atk/dano?\n\t-hp\n\t-movimento\n\t-status\n\t",
+			"file": "/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/ToDo.txt",
+			"file_size": 215,
+			"file_write_time": 131440256560165123,
+			"settings":
+			{
+				"buffer_size": 262,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "-matar gido quando hp chegar em 0"
+			}
 		}
 	],
 	"build_system": "",
@@ -141,7 +154,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -163,6 +176,35 @@
 						"settings":
 						{
 							"auto_name": "101--",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/ToDo.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 262,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								262,
+								262
+							]
+						],
+						"settings":
+						{
+							"auto_name": "-matar gido quando hp chegar em 0",
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
