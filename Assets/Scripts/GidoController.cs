@@ -1,18 +1,23 @@
-﻿using System.Collections;
+﻿   using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovePlayer : MonoBehaviour {
+public class GidoController : MonoBehaviour {
 
 	private Rigidbody2D Rigid;
 	private Animator anim;
 	private bool facingRight = true;
 	public float MoveSpeed;
+	float defense;
 
 	// Use this for initialization
 	void Start () {
 		Rigid = gameObject.GetComponent<Rigidbody2D>();
 		anim = gameObject.GetComponent<Animator> ();
+
+		defense = 0.0f;
+
+		gameObject.GetComponent<HPManager> ().HP = 10; //setando 10 de hp para o gido
 	}
 	
 	// Update is called once per frame
@@ -36,6 +41,21 @@ public class MovePlayer : MonoBehaviour {
 		} else 
 			anim.SetBool ("isWalking", false);
 
-		Rigid.velocity = new Vector2 (MoveSpeed * h, MoveSpeed * v);
+		Vector2 movement= new Vector2 (h, v);
+
+		Rigid.velocity = movement.normalized * MoveSpeed;
 	}
+
+	public void CalculateDamage(float damage){
+		float final = damage - defense;
+
+		anim.SetTrigger ("Damage");
+
+		if (final < 0)
+			final = 0;
+
+		gameObject.GetComponent<HPManager> ().DealDamage (final);
+	}
+
+
 }

@@ -1,0 +1,260 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"transformp",
+				"Transform.position"
+			],
+			[
+				"Moveto",
+				"Vector2.MoveTowards(current, target, maxDistanceDelta)"
+			],
+			[
+				"comparetag",
+				"GameObject.CompareTag(tag)"
+			],
+			[
+				"compareta",
+				"GameObject.CompareTag(tag)"
+			],
+			[
+				"gameo",
+				"GameObject"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "\t101--\n\t102\n\t103\n\t104\n\t110\n\t112\n\t113\n\t116\n\t117\n\tslateport city\n\trusturf tunnel\n\tfiery path\n\tpetalburg woods\n\t\n\tdewford city\n\tgranite cave\n-----\n111\n114\n115\nvendaturf town\nlavaridge town\nfallbor \nmeteor falls\nrustboro city\npetalburg city\nlittleroot town\noldale town",
+			"settings":
+			{
+				"buffer_size": 264,
+				"line_ending": "Windows",
+				"name": "101--"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 129.0,
+		"last_filter": "nstall",
+		"selected_items":
+		[
+			[
+				"nstall",
+				"Package Control: Install Package"
+			],
+			[
+				"add repo",
+				"Package Control: Add Repository"
+			],
+			[
+				"install packa",
+				"Package Control: Install Package"
+			],
+			[
+				"add re",
+				"Package Control: Add Repository"
+			],
+			[
+				"package control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Install Package Control"
+			]
+		],
+		"width": 567.0
+	},
+	"console":
+	{
+		"height": 254.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/TorGido/Assets/Scripts"
+	],
+	"file_history":
+	[
+		"/C/Git/g8-scc0147-2016_novo/Assets/Scripts/EnemySystem/EnemyManager.cs",
+		"/C/Git/g8-scc0147-2016_novo/Assets/Scripts/EnemySystem/Enemy.cs",
+		"/C/Git/g8-scc0147-2016_novo/Assets/Scripts/EnemySystem/EnemyData.cs",
+		"/C/Git/g8-scc0147-2016_novo/Assets/Scripts/EnemySystem/Asteroid.cs",
+		"/C/Git/g8-scc0147-2016_novo/Assets/Scripts/EnemySystem/EnemySpaceship.cs",
+		"/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/TorGido/Assets/Scripts/EnemyController.cs",
+		"/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/TorGido/TorGido.sublime-project",
+		"/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/TorGido/Assets/Scripts/EnemyMovement.cs"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<path-to-Unity-folder>"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"C:\\\\Programas\\\\Unity\\\\Editor\\\\Data"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								31,
+								31
+							]
+						],
+						"settings":
+						{
+							"auto_name": "101--",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "TorGido.sublime-project",
+	"replace":
+	{
+		"height": 80.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 63.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
