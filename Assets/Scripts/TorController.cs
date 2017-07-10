@@ -17,7 +17,7 @@ public class TorController : MonoBehaviour {
 
 		sm = gameObject.GetComponent<StatsManager> ();
 
-		sm.speed = 5f;
+		sm.speed = 10f;
 		sm.damage = 1f;
 		sm.range = 0.2f; // para movimentação
 	}

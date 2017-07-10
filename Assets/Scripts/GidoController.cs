@@ -1,4 +1,4 @@
-﻿   using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -47,7 +47,7 @@ public class GidoController : MonoBehaviour {
 		} else 
 			anim.SetBool ("isWalking", false);
 
-		Vector2 movement= new Vector2 (h, v);
+		Vector2 movement = new Vector2 (h, v);
 
 		Rigid.velocity = movement.normalized * sm.speed;
 	}
