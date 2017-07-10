@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUps : MonoBehaviour {
+public class DefenseUP : MonoBehaviour {
+
+	public int Increase;
 
 	// Use this for initialization
 	void Start () {
@@ -13,10 +15,9 @@ public class PowerUps : MonoBehaviour {
 	void Update () {
 		
 	}
-
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "Player") {
-			col.gameObject.GetComponent<StatsManager> ().speed += 1;
+			col.gameObject.GetComponent<StatsManager> ().defense += Increase;
 			Destroy (gameObject);
 		}
 	}

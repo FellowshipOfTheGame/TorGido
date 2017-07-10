@@ -6,8 +6,8 @@ using UnityEngine;
 public class HPManager : MonoBehaviour {
 
 	//public float HP;
-	private float CurrentHealth;
-	private float MaxHealth = 0.0f;
+	public float CurrentHealth;
+	public float MaxHealth = 0.0f;
 	public Slider bar;
 
 	//caso precise, alterar...
@@ -45,7 +45,7 @@ public class HPManager : MonoBehaviour {
 		return true;
 
 	}
-	float CalculateHealth(){
+	public float CalculateHealth(){
 	
 		return CurrentHealth / MaxHealth;
 	
