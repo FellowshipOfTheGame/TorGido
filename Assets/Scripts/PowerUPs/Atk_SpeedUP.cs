@@ -5,11 +5,11 @@ using UnityEngine;
 public class Atk_SpeedUP : MonoBehaviour {
 
 	public int Increase;
-	public GameObject Tor;
+	private GameObject Tor;
 
 	// Use this for initialization
 	void Start () {
-		
+		Tor = GameObject.FindGameObjectWithTag ("Tor");
 	}
 	
 	// Update is called once per frame
