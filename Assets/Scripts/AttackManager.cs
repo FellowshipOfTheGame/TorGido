@@ -30,5 +30,6 @@ public class AttackManager : MonoBehaviour {
 			if(gameObject.tag == "Enemy")
 				Destroy (gameObject);
 		}
+
 	}
 }
