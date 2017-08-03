@@ -94,4 +94,12 @@ public class MovementManager : MonoBehaviour {
 			}
 		}
 	}
+
+	public void push(Vector2 direction){
+		//Rigid.AddForce (direction*1);
+		if(gameObject.tag == "Player")
+			Rigid.AddForce (direction*500 );
+		else
+			Rigid.AddForce (direction*50 );
+	}
 }

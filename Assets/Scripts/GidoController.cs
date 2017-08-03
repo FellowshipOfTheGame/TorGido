@@ -52,9 +52,14 @@ public class GidoController : MonoBehaviour {
 		Rigid.velocity = movement.normalized * sm.speed;
 	}
 
-	public void CalculateDamage(float damage){
+	public void CalculateDamage(float damage, Vector3 attackDir){
 		gameObject.GetComponent<AttackManager> ().CalculateDamage (damage);
 
+		Vector2 direction = new Vector2 (Rigid.position.x - attackDir.x, Rigid.position.y - attackDir.y);
+
+		gameObject.GetComponent<MovementManager> ().push (direction.normalized);
+
 		anim.SetTrigger ("Damage");
+
 	}
 }

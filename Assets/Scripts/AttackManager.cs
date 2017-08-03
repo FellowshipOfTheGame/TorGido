@@ -7,6 +7,10 @@ public class AttackManager : MonoBehaviour {
 
 	private StatsManager sm;
 
+	public GameObject Heal;	// spawn hp
+	public float Chance;	// chance de cair um um heal do inimigo
+	private Vector3 EnemyPosition;
+
 	// Use this for initialization
 	void Start () {
 		sm = gameObject.GetComponent<StatsManager> ();
@@ -27,8 +31,17 @@ public class AttackManager : MonoBehaviour {
 	
 		//tratar as mortes
 		if (!gameObject.GetComponent<HPManager> ().DealDamage (final)) {
-			if(gameObject.tag == "Enemy")
+			if (gameObject.tag == "Enemy") {
+				// spawn hp
+				int WillDrop = Random.Range (0, 100);
+				if (WillDrop < Chance) {
+					EnemyPosition = gameObject.transform.position;
+					Instantiate (Heal, EnemyPosition, Quaternion.identity);
+				}
+
 				Destroy (gameObject);
+			}
 		}
+
 	}
 }

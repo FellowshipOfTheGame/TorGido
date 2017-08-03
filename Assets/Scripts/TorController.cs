@@ -56,7 +56,7 @@ public class TorController : MonoBehaviour {
 			GameObject enemy = colliders [i].gameObject;
 
 			//enemy.gameObject.GetComponent<EnemyTestController> ().GetComponent<HPManager> ().DealDamage (damage);
-			enemy.gameObject.GetComponent<EnemyController> ().CalculateDamage(sm.damage);
+			enemy.gameObject.GetComponent<EnemyController> ().CalculateDamage(sm.damage, gameObject.GetComponent<Rigidbody2D>().position);
 			Debug.Log ("ataquei o " + i + " inimigo ");
 
 		}
