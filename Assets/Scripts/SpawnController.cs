@@ -12,9 +12,15 @@ public class SpawnController : MonoBehaviour {
 	private int max = 5;
 	private int current = 0;
 	private bool isSpawning = true;
+
+	//criar tempo de espera entre waves
+	private int wave = 1;
+	private int cycle = 5; //numeros de waves em um ciclo (normais + boss/semi-boss)
+	private int numEnemy = 5 - 1; //numero de inimigos na primeira wave do ciclo - 1
+
 	// Use this for initialization
 	void Start () {
-
+		max = wave % cycle + numEnemy;
 	}
 	
 	// Update is called once per frame
@@ -50,7 +56,8 @@ public class SpawnController : MonoBehaviour {
 			GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 
 			if (enemies.Length == 0) {
-				max += 1;
+				wave += 1;
+				max = wave % cycle + numEnemy;
 				current = 0;
 				isSpawning = true;
 			}

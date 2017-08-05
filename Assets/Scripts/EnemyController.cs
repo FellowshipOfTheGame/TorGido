@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
+	public enum EnemyType{
+		melee = 0,
+		Boss = 100
+	}
+
 	private Rigidbody2D Rigid;
 	private bool kAttack = false; //não sei onde deixar essa variavel
 	private float next_attack = 0.0f;
 
 	private StatsManager sm;
+
+
+//	private Dictionary<EnemyType, StatsManager> EnemyList = new List<int> ();
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -20,12 +30,12 @@ public class EnemyController : MonoBehaviour {
 
 		sm = gameObject.GetComponent<StatsManager> ();
 
-		sm.speed = 5f;
+		/*sm.speed = 5f;
 		sm.range = 1f;
 		sm.field = 5f;
 		sm.damage = 1f;
 		sm.attack_speed = 1f;
-		sm.defense = 0;
+		sm.defense = 0;*/
 	}
 	
 	// Update is called once per frame
@@ -53,8 +63,6 @@ public class EnemyController : MonoBehaviour {
 			gameObject.GetComponent<MovementManager> ().Target.gameObject.GetComponent<GidoController>().CalculateDamage (sm.damage, Rigid.position);
 
 			next_attack = Time.time + sm.attack_speed;
-
-
 		}
 	}
 
