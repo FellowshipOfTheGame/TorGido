@@ -14,17 +14,17 @@ public class HPManager : MonoBehaviour {
 	public float HP{
 		get { return CurrentHealth; }
 		set { 
-			if (MaxHealth == 0) {
+			/*if (MaxHealth == 0) {
 				MaxHealth = value; 
 				CurrentHealth = MaxHealth;
 				bar.value = CalculateHealth ();
-			}
+			}*/
 		}
 	}
 
 
 	void Start () {
-
+		bar.value = CalculateHealth ();
 	}
 	
 	// Update is called once per frame
@@ -49,6 +49,14 @@ public class HPManager : MonoBehaviour {
 	
 		return CurrentHealth / MaxHealth;
 	
+	}
+
+
+	public void IncreaseHP(float value) {
+		value = value/2 + 1; 
+		MaxHealth *= value;
+		CurrentHealth *= value;
+		bar.value = CalculateHealth ();
 	}
 
 }

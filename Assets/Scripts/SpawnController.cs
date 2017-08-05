@@ -12,11 +12,14 @@ public class SpawnController : MonoBehaviour {
 	private int max = 5;
 	private int current = 0;
 	private bool isSpawning = true;
+	private bool bossWave = false; 
 
 	//criar tempo de espera entre waves
 	private int wave = 1;
-	private int cycle = 5; //numeros de waves em um ciclo (normais + boss/semi-boss)
+	private int cycle = 2; //numeros de waves em um ciclo (normais + boss/semi-boss)
 	private int numEnemy = 5 - 1; //numero de inimigos na primeira wave do ciclo - 1
+
+	private Object newObject;
 
 	// Use this for initialization
 	void Start () {
@@ -41,11 +44,17 @@ public class SpawnController : MonoBehaviour {
 			Vector3 newPosition = new Vector3 (Random.Range (-14.5f, 14.5f), Random.Range (-8.9f, 8.9f), 0);
 			if (Vector2.Distance (newPosition, PlayerPossition) > 4.0f) { //verificação de spawn proximo do Gido
 
-				Instantiate (Resources.Load ("Enemy1"), newPosition, Quaternion.identity);
+				if (bossWave) {
+					(Instantiate (Resources.Load ("Boss"), newPosition, Quaternion.identity) as GameObject).GetComponent<EnemyController>().IncreaseStats ((wave - 1 )/ cycle) ;
+				} else {
+					(Instantiate (Resources.Load ("Enemy1"), newPosition, Quaternion.identity) as GameObject).GetComponent<EnemyController>().IncreaseStats ( (wave - 1) / cycle) ;
+				}
+
 				current++;
 			}
 		} else {
 			isSpawning = false;
+			bossWave = false;
 		}
 	}
 
@@ -57,9 +66,15 @@ public class SpawnController : MonoBehaviour {
 
 			if (enemies.Length == 0) {
 				wave += 1;
-				max = wave % cycle + numEnemy;
+				if (wave % cycle == 0) {
+					bossWave = true;
+					max = 1;
+				} else {
+					max = wave % cycle + numEnemy;
+				}
 				current = 0;
 				isSpawning = true;
+
 			}
 		}
 	}
