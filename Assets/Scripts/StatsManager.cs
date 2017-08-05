@@ -6,12 +6,12 @@ using UnityEngine;
 //Os efeitos dos itens serao tratados nesse script
 public class StatsManager : MonoBehaviour {
 
-	private float kSpeed = 0f;
-	private float kDamage = 0f;
-	private float kDefense = 0f;
-	private float kAttack_speed = 0f;
-	private float kRange = 0f;
-	private float kField = 1000f; //campo de visão
+	public float speed = 0f;
+	public float damage = 0f;
+	public float defense = 0f;
+	public float attack_speed = 0f;
+	public float range = 0f;
+	public float field = 1000f; //campo de visão
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +23,7 @@ public class StatsManager : MonoBehaviour {
 		
 	}
 
-	public float speed{
+	/*public float speed{
 		get { return kSpeed; }
 		set { kSpeed = value; }
 	}
@@ -51,5 +51,5 @@ public class StatsManager : MonoBehaviour {
 	public float field{
 		get { return kField; }
 		set { kField = value; }
-	}
+	}*/
 }

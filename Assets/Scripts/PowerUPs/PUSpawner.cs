@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour {
+public class PUSpawner : MonoBehaviour {
 
 	public float Delay;
 	public GameObject[] PowerUP;
@@ -13,7 +13,6 @@ public class Spawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_time = 0f;
-		//PowerUP = new GameObject[PowerUP.Length];
 	}
 	
 	// Update is called once per frame
