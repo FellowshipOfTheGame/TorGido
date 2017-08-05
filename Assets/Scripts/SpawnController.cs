@@ -63,8 +63,9 @@ public class SpawnController : MonoBehaviour {
 	void VerifyWave(){
 		if (!isSpawning) {
 			GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+			GameObject[] bossess = GameObject.FindGameObjectsWithTag ("Boss");
 
-			if (enemies.Length == 0) {
+			if (enemies.Length + bossess.Length == 0) {
 				wave += 1;
 				if (wave % cycle == 0) {
 					bossWave = true;
