@@ -18,6 +18,10 @@ public class EnemyTestController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (hp) {
+			enemyHP = hp.HP;
+		}
+
 		ColorControl ();
 	}
 	void ColorControl(){
@@ -26,7 +30,7 @@ public class EnemyTestController : MonoBehaviour {
 		} else if (enemyHP == 2f) {
 			gameObject.GetComponent<SpriteRenderer> ().color = Color.yellow;
 		} else if (enemyHP == 1f) {
-			gameObject.GetComponent<SpriteRenderer> ().color = Color.red;
+			gameObject.GetComponent<SpriteRenderer> ().color = Color.black;
 		}
 
 
@@ -35,12 +39,12 @@ public class EnemyTestController : MonoBehaviour {
 	
 	}
 	void OnTriggerEnter2D(Collider2D col){
-		if(col.tag == "Player"){ 
-			enemyHP = enemyHP - 1;
-			if (enemyHP <= 0) {
-				GameObject.Destroy(gameObject);
-			}
+		//if(col.tag == "Player"){ 
+		//	enemyHP = enemyHP - 1;
+		//	if (enemyHP <= 0) {
+		//		GameObject.Destroy(gameObject);
+		//	}
 
-		} 
+		//} 
 	}
 }
