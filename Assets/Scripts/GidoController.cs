@@ -17,7 +17,7 @@ public class GidoController : MonoBehaviour {
 		anim = gameObject.GetComponent<Animator> ();
 		spriteRend = gameObject.GetComponent<SpriteRenderer> ();
 
-		gameObject.GetComponent<HPManager> ().HP = 10; //setando 10 de hp para o gido
+		//gameObject.GetComponent<HPManager> ().HP = 10; //setando 10 de hp para o gido
 
 		sm = gameObject.GetComponent<StatsManager> ();
 		//sm.defense = 0f;
