@@ -4,59 +4,66 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
-	private Transform target;
-	private float e_speed = 5f;
-	private float e_range = 1f;
-	private float e_field = 5f; //campo de visao - circulo ao redor do inimigo
+	private Rigidbody2D Rigid;
+	private bool kAttack = false; //não sei onde deixar essa variavel
+	private float next_attack = 0.0f;
 
-	private bool attack = false;
-
-	private bool facingRight = true;
+	private StatsManager sm;
 
 	// Use this for initialization
 	void Start () {
-		target = GameObject.FindGameObjectWithTag("Player").transform;
+		Rigid = gameObject.GetComponent<Rigidbody2D>();
+
+		gameObject.GetComponent<HPManager> ().HP = 3; //setando 3 de hp para o inimigo
+
+		gameObject.GetComponent<MovementManager> ().Target = GameObject.FindGameObjectWithTag ("Player"); 
+
+		sm = gameObject.GetComponent<StatsManager> ();
+
+		sm.speed = 5f;
+		sm.range = 1f;
+		sm.field = 5f;
+		sm.damage = 1f;
+		sm.attack_speed = 1f;
+		sm.defense = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		move();
+
+		if (Time.time > next_attack) {
+			attack_gido ();
+		}
 	}
 
-	/*public float range{
-		get { return e_range; }
-		set { e_range = value; }
-	}*/
+	public bool attack{
+		get { return kAttack; }
+		set { kAttack = value; }
+	}
 
 	void move() {
+		gameObject.GetComponent<MovementManager> ().move();
 
-		var distance = Vector2.Distance(transform.position, target.position);
-			
-		Debug.Log ("Distancia = " + distance + ", field: "+ e_field);
+	}
 
-		if (distance <= e_field) {
+	void attack_gido(){
+		if (kAttack) {
+			//GOTarget.gameObject.GetComponent<GidoController>().CalculateDamage (sm.damage);
+			gameObject.GetComponent<MovementManager> ().Target.gameObject.GetComponent<GidoController>().CalculateDamage (sm.damage, Rigid.position);
 
-			if (transform.position.x > target.position.x) {
-				if (!facingRight) {
-					transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
-					facingRight = true;
-				}
-			} else {
-				if (facingRight) {
-					transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
-					facingRight = false;
-				}
-			}
+			next_attack = Time.time + sm.attack_speed;
 
-			if (e_range < distance) {
-				attack = false;
-				transform.position = Vector2.MoveTowards(transform.position, target.position, e_speed * Time.deltaTime);
-			} else {
-				attack = true;
-			}
 
 		}
+	}
 
+	public void CalculateDamage(float damage, Vector3 attackDir){
+		gameObject.GetComponent<AttackManager> ().CalculateDamage (damage);
+
+		Vector2 direction = new Vector2 (Rigid.position.x - attackDir.x, Rigid.position.y - attackDir.y);
+
+		gameObject.GetComponent<MovementManager> ().push (direction.normalized);
 
 	}
 }

@@ -3,64 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TorController : MonoBehaviour {
-
+	[SerializeField] private LayerMask m_WhatIsEnemy;
 	private Vector3 UltimatePosition = new Vector3(0,0,0);
-	//float X, Y;
-	private GameObject wayPoint; 
-	private float speed = 3.0f;
-	private Vector3 wayPointPos;
-	public float damage = 1.0f;
+
 	private float rangex = 3.0f;
 	private float rangey = 3.0f;
-	[SerializeField] private LayerMask m_WhatIsEnemy;
-	//private int booleanFlag; // vai dar true quando o ataque acontecer
 
+	private StatsManager sm;
 
 	void Start () {
-		wayPoint = GameObject.Find("wayPoint");
+
+		gameObject.GetComponent<MovementManager> ().Target = GameObject.FindGameObjectWithTag ("Mouse"); 
+
+		sm = gameObject.GetComponent<StatsManager> ();
+
+		sm.speed = 10f;
+		sm.damage = 1f;
+		sm.range = 0.2f; // para movimentação
 	}
 
 	void Update () {
 		rangex = 3f;
+		rangey = 3f;
 		Move ();
 
 		if (Input.GetMouseButtonDown (0)) {
-			//booleanFlag = 1;
-			//speed = 0f;
+			
 			NormalAttack();
-			//speed = 3.0f;
+
 		}
 
 	}
 
 	void Move(){
-		
-			if (wayPointPos.x != wayPoint.transform.position.x || wayPointPos.y != wayPoint.transform.position.y || wayPointPos.z != wayPoint.transform.position.z ) {
-
-				wayPointPos = new Vector3 (wayPoint.transform.position.x,wayPoint.transform.position.y, wayPoint.transform.position.z);
-			}
-			
-			if (transform.position.x > wayPointPos.x) {  // player esta a direita do Mouse 
-				transform.eulerAngles = new Vector3 (0, 0, 0);
-				rangex = -3f;
-			} else {
-				transform.eulerAngles = new Vector3 (0, 180, 0);
-				//rangex = -3f;
-			}
-			if (transform.position.y > wayPointPos.y) { // player esta numa posicao acima do Mouse
-			
-				rangey = -3.0f;
-			} else { // player esta numa posicao a baixo do Mouse
-				
-				rangey = 3.0f;
-
-			}
-
-			transform.position = Vector3.MoveTowards (transform.position,wayPointPos, speed * Time.deltaTime);
-
-		}
+		gameObject.GetComponent<MovementManager> ().move();
+	}
 
 	void NormalAttack(){
+		//verificação da area do ataque
+		Vector3 wayPointPos = GameObject.FindGameObjectWithTag ("Mouse").transform.position;
+		if (transform.position.x > wayPointPos.x)
+			rangex = -3f;
+		if (transform.position.y > wayPointPos.y)
+			rangey = -3f;
+
 		Vector2 Boxcenter = new Vector2 (transform.position.x, transform.position.y);
 		Vector2 Boxsize = new Vector2 (transform.position.x + rangex, transform.position.y + rangey);
 		Collider2D[] colliders = Physics2D.OverlapAreaAll( Boxcenter, Boxsize,m_WhatIsEnemy);
@@ -69,7 +55,9 @@ public class TorController : MonoBehaviour {
 
 			GameObject enemy = colliders [i].gameObject;
 
-			enemy.gameObject.GetComponent<EnemyTestController> ().GetComponent<HPManager> ().HP -= damage; 
+			//enemy.gameObject.GetComponent<EnemyTestController> ().GetComponent<HPManager> ().DealDamage (damage);
+			enemy.gameObject.GetComponent<EnemyController> ().CalculateDamage(sm.damage, gameObject.GetComponent<Rigidbody2D>().position);
+			Debug.Log ("ataquei o " + i + " inimigo ");
 
 		}
 	

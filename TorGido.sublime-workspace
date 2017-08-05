@@ -28,33 +28,31 @@
 	"buffers":
 	[
 		{
-			"file": "TorGido.sublime-project",
+			"contents": "\t101--\n\t102\n\t103\n\t104\n\t110\n\t112\n\t113\n\t\t114\n\t116\n\t117\n\tlevaridge town\n\tslateport city\n\trusturf tunnel\n\tfiery path\n\tpetalburg woods\n\t\n\tdewford city\n\tgranite cave\n-----\n111\n114\n115\nvendaturf town\nlavaridge town\nfallbor \nmeteor falls\nrustboro city\npetalburg city\nlittleroot town\noldale town\n\n1x 5*\n3x 4*MAX\n5x 3*MAX (possivel 3 quando colocar 4 4* lv MAX)\n\nfalta:\n1x 4*MAX\n11x 4* (5- rainbowmon)\n\ntotal duas quests:\n15 4* -> 15+3*15 = 60 3* -> 60+2*60 = 180 2*\n\n\n====\n\n   using System.Collections;\nusing System.Collections.Generic;\nusing UnityEngine;\n\npublic class GidoController : MonoBehaviour {\n\n\tprivate Rigidbody2D Rigid;\n\tprivate Animator anim;\n\tprivate SpriteRenderer spriteRend;\n\tprivate bool facingRight = true;\n\n\tprivate StatsManager sm;\n\n\t// Use this for initialization\n\tvoid Start () {\n\t\tRigid = gameObject.GetComponent<Rigidbody2D>();\n\t\tanim = gameObject.GetComponent<Animator> ();\n\t\tspriteRend = gameObject.GetComponent<SpriteRenderer> ();\n\n\t\tgameObject.GetComponent<HPManager> ().HP = 10; //setando 10 de hp para o gido\n\n\t\tsm = gameObject.GetComponent<StatsManager> ();\n\t\tsm.defense = 0f;\n\t\tsm.speed = 6f;\n\t}\n\t\n\t// Update is called once per frame\n\tvoid Update () {\n\t\tMove ();\n\t}\n\n\tvoid Move() {\n\t\tfloat h = Input.GetAxis (\"Horizontal\");\n\t\tfloat v = Input.GetAxis (\"Vertical\");\n\n\t\tif (h != 0.0f || v != 0.0f) {\n\t\t\tif (h > 0.0f && !facingRight) {\n\t\t\t\tfacingRight = true;\n\t\t\t\t//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);\n\t\t\t\tspriteRend.flipX = false;\n\t\t\t} else if (h < 0.0f && facingRight) {\n\t\t\t\tfacingRight = false;\n\t\t\t\t//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);\n\t\t\t\tspriteRend.flipX = true;\n\t\t\t}\n\t\t\tanim.SetBool (\"isWalking\", true);\n\t\t} else \n\t\t\tanim.SetBool (\"isWalking\", false);\n\n\t\tVector2 movement= new Vector2 (h, v);\n\n\t\t//Rigid.velocity = movement.normalized * sm.speed;\n\t\tRigid.AddForce( new Vector2 (h*sm.speed, v*sm.speed));\n\t}\n\n\tpublic void CalculateDamage(float damage){\n\t\tgameObject.GetComponent<AttackManager> ().CalculateDamage (damage);\n\n\t\tanim.SetTrigger (\"Damage\");\n\t}\n}\n",
 			"settings":
 			{
-				"buffer_size": 1280,
+				"buffer_size": 2145,
+				"line_ending": "Windows",
+				"name": "101--"
+			}
+		},
+		{
+			"file": "/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/ToDo.txt",
+			"settings":
+			{
+				"buffer_size": 1223,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows",
+				"name": "-matar gido quando hp chegar em 0"
 			}
 		},
 		{
-			"file": "Assets/Scripts/EnemyMovement.cs",
+			"file": "/C/jogos/terraria/link-mods.txt",
 			"settings":
 			{
-				"buffer_size": 486,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "using System.Collections;\nusing System.Collections.Generic;\nusing UnityEngine;\n\npublic class EnemyController : MonoBehaviour {\n\n\tprivate Transform target;\n\tprivate float speed = 1f;\n\tpublic float distance = 1f;\n\n\t// Use this for initialization\n\tvoid Start () {\n\t\ttarget = GameObject.FindGameObjectWithTag(\"Player\").transform;\n\t}\n\t\n\t// Update is called once per frame\n\tvoid Update () {\n\t\tmove();\n\t}\n\n\tvoid move() {\n\t\t\n\t\ttransform.position = Vector2.MoveTowards(transform.position, target.position, speed*Time.deltaTime);\n\t}\n}\n",
-			"file": "Assets/Scripts/EnemyController.cs",
-			"file_size": 496,
-			"file_write_time": 131439232576253864,
-			"settings":
-			{
-				"buffer_size": 525,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Unix"
+				"buffer_size": 1310,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -118,10 +116,20 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Henrique/Desktop/USP/BCC/FoG/FoxRunner/Assets/Scrips/PlatformerCharacter2D.cs",
+		"/C/Users/Henrique/Desktop/USP/BCC/FoG/FoxRunner/Assets/Scrips/Platformer2DUserControl.cs",
+		"/C/Git/g8-scc0147-2016_novo/Assets/Scripts/EnemySystem/EnemyManager.cs",
+		"/C/Git/g8-scc0147-2016_novo/Assets/Scripts/EnemySystem/Enemy.cs",
+		"/C/Git/g8-scc0147-2016_novo/Assets/Scripts/EnemySystem/EnemyData.cs",
+		"/C/Git/g8-scc0147-2016_novo/Assets/Scripts/EnemySystem/Asteroid.cs",
+		"/C/Git/g8-scc0147-2016_novo/Assets/Scripts/EnemySystem/EnemySpaceship.cs",
+		"/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/TorGido/Assets/Scripts/EnemyController.cs",
+		"/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/TorGido/TorGido.sublime-project",
+		"/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/TorGido/Assets/Scripts/EnemyMovement.cs"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 43.0
 	},
 	"find_in_files":
 	{
@@ -159,28 +167,27 @@
 			[
 				{
 					"buffer": 0,
-					"file": "TorGido.sublime-project",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1280,
+						"buffer_size": 2145,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								139,
-								139
+								1990,
+								1936
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"auto_name": "101--",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 31.0,
+						"translation.y": 1409.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -188,24 +195,25 @@
 				},
 				{
 					"buffer": 1,
-					"file": "Assets/Scripts/EnemyMovement.cs",
+					"file": "/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/ToDo.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 486,
+						"buffer_size": 1223,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								122,
-								483
+								393,
+								393
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
+							"auto_name": "-matar gido quando hp chegar em 0",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -216,24 +224,24 @@
 				},
 				{
 					"buffer": 2,
-					"file": "Assets/Scripts/EnemyController.cs",
+					"file": "/C/jogos/terraria/link-mods.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 525,
+						"buffer_size": 1310,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								59,
-								59
+								82,
+								82
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -322,7 +330,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 220.0,
+	"side_bar_width": 63.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
