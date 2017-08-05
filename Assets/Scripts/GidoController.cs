@@ -20,8 +20,8 @@ public class GidoController : MonoBehaviour {
 		gameObject.GetComponent<HPManager> ().HP = 10; //setando 10 de hp para o gido
 
 		sm = gameObject.GetComponent<StatsManager> ();
-		sm.defense = 0f;
-		sm.speed = 6f;
+		//sm.defense = 0f;
+		//sm.speed = 6f;
 	}
 	
 	// Update is called once per frame
