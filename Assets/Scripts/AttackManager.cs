@@ -41,6 +41,9 @@ public class AttackManager : MonoBehaviour {
 
 				Destroy (gameObject);
 			}
+			if (gameObject.tag == "Boss") {
+				
+			}
 		}
 
 	}
