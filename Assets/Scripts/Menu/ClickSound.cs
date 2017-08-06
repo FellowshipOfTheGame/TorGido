@@ -13,14 +13,14 @@ public class ClickSound : MonoBehaviour  {
 		gameObject.AddComponent<AudioSource>();         
 		source.clip = sound;         
 		source.playOnAwake = false;         
-		button.onClick.AddListener(() => PlaySoud()); 
+		button.onClick.AddListener(() => PlaySound()); 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-	void PlaySoud (){         
+	public void PlaySound (){         
 		source.PlayOneShot (sound);     
 	}
 }
