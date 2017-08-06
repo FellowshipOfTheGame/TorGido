@@ -16,6 +16,10 @@ public class MovementManager : MonoBehaviour {
 	//private bool attack = false;
 	private bool canMove = true;
 
+	private bool isOnPush = false;
+	private float timeOnPush = 0.2f;
+	private float nextMoveTime = 0f;
+
 	// Use this for initialization
 	void Start () {
 		Rigid = gameObject.GetComponent<Rigidbody2D>();
@@ -25,6 +29,9 @@ public class MovementManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Time.time > nextMoveTime) {
+			isOnPush = false;
+		}
 		
 	}
 	
@@ -39,7 +46,9 @@ public class MovementManager : MonoBehaviour {
 	public void move(){
 		var distance = Vector2.Distance (transform.position, tTarget.position);
 
-		if (distance <= sm.field) {
+		if (!isOnPush && distance <= sm.field) {
+			
+			sm.SetFieldGlobal ();
 
 			//verificacao da orientacao do sprite
 			if (transform.position.x > tTarget.position.x) {
@@ -96,10 +105,15 @@ public class MovementManager : MonoBehaviour {
 	}
 
 	public void push(Vector2 direction){
+		isOnPush = true;
+		nextMoveTime = Time.time + timeOnPush;
+
+		Rigid.velocity = new Vector2(0f, 0f);
+
 		//Rigid.AddForce (direction*1);
 		if(gameObject.tag == "Player")
 			Rigid.AddForce (direction*500 );
 		else
-			Rigid.AddForce (direction*50 );
+			Rigid.AddForce (direction*40 );
 	}
 }
