@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour {
 
 	private Rigidbody2D Rigid;
 	private bool kAttack = false; //não sei onde deixar essa variavel
-	private float next_attack = 0.0f;
+	protected float next_attack = 0.0f;
 
 	private StatsManager sm;
 
@@ -40,9 +40,11 @@ public class EnemyController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.y);
+
 		move();
 
-		if (Time.time > next_attack) {
+		if (Time.time > next_attack && gameObject.tag == "Enemy") {
 			attack_gido ();
 		}
 	}
