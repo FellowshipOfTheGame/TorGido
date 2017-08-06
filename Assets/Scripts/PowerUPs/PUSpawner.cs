@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PUSpawner : MonoBehaviour {
+public class PUSpawner : CameraLimits {
 
 	public float Delay;
 	public GameObject[] PowerUP;
@@ -37,19 +37,6 @@ public class PUSpawner : MonoBehaviour {
 
 			Instantiate (PU, newPosition, Quaternion.identity);
 		}
-	}
-
-	public float MaxVerticalPosition() {
-		return Camera.main.orthographicSize;
-	}
-	public float MinVerticalPosition() {
-		return - Camera.main.orthographicSize;
-	}
-	public float MaxHorizontalPosition() {
-		return Camera.main.orthographicSize * Screen.width / Screen.height;
-	}
-	public float MinHorizontalPosition() {
-		return - Camera.main.orthographicSize * Screen.width / Screen.height;
 	}
 
 }

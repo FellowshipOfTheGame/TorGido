@@ -40,9 +40,9 @@ public class AttackManager : MonoBehaviour {
 				}
 
 				Destroy (gameObject);
-			}
-			if (gameObject.tag == "Boss") {
-				
+			} else if (gameObject.tag == "Boss") {
+				gameObject.GetComponent<BossController> ().boss_death ();
+				Destroy (gameObject);
 			}
 		}
 

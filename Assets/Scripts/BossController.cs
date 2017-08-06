@@ -27,6 +27,10 @@ public class BossController : EnemyController {
 		case 3:
 			Status.speed += 5 * PowerUP [3].GetComponent<SpeedUP> ().Increase;
 			break;
+		case 4:
+			gameObject.GetComponent<HPManager> ().MaxHealth += 5 * PowerUP [4].GetComponent<Max_HpUP> ().Increase;
+			gameObject.GetComponent<HPManager> ().CurrentHealth += 5 * PowerUP [4].GetComponent<Max_HpUP> ().Increase;
+			break;
 		}
 	}
 	
@@ -34,6 +38,10 @@ public class BossController : EnemyController {
 	void Update () {
 		
 	}
-//		EnemyPosition = gameObject.transform.position;
-//		Instantiate (Heal, EnemyPosition, Quaternion.identity);
+
+	public void boss_death () {
+		EnemyPosition = gameObject.transform.position;
+		Instantiate (PowerUP [my_powerup], EnemyPosition, Quaternion.identity);
+	}
+
 }
