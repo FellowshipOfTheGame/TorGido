@@ -19,7 +19,8 @@ public class SpawnController : CameraLimits {
 	private int cycle = 5; //numeros de waves em um ciclo (normais + boss/semi-boss)
 	private int numEnemy = 5 - 1; //numero de inimigos na primeira wave do ciclo - 1
 
-	private Object newObject;
+	private float nextWave = 0f;
+	private float waveInterval = 3f;
 
 	// Use this for initialization
 	void Start () {
@@ -28,8 +29,10 @@ public class SpawnController : CameraLimits {
 	
 	// Update is called once per frame
 	void Update () {
-		Spawn ();
-		VerifyWave ();
+		if(Time.time > nextWave){
+			Spawn ();
+			VerifyWave ();
+		}
 	}
 		
 	//Gera 'max' inimigos em lugares random da arena, garantindo uma distancia minima do Gido
@@ -68,6 +71,8 @@ public class SpawnController : CameraLimits {
 			GameObject[] bossess = GameObject.FindGameObjectsWithTag ("Boss");
 
 			if (enemies.Length + bossess.Length == 0) {
+				nextWave = Time.time + waveInterval;
+
 				wave += 1;
 				if (wave % cycle == 0) {
 					bossWave = true;
