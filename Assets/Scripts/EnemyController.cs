@@ -71,7 +71,11 @@ public class EnemyController : MonoBehaviour {
 
 		Vector2 direction = new Vector2 (Rigid.position.x - attackDir.x, Rigid.position.y - attackDir.y);
 
+		sm.SetFieldGlobal ();
+
 		gameObject.GetComponent<MovementManager> ().push (direction.normalized);
+
+
 
 	}
 
