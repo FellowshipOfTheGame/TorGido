@@ -30,6 +30,8 @@ public class GidoController : MonoBehaviour {
 	}
 
 	void Move() {
+		transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.y);
+
 		float h = Input.GetAxis ("Horizontal");
 		float v = Input.GetAxis ("Vertical");
 
