@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour {
+public class PUSpawner : CameraLimits {
 
 	public float Delay;
 	public GameObject[] PowerUP;
@@ -13,7 +13,6 @@ public class Spawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_time = 0f;
-		//PowerUP = new GameObject[PowerUP.Length];
 	}
 	
 	// Update is called once per frame
@@ -38,19 +37,6 @@ public class Spawner : MonoBehaviour {
 
 			Instantiate (PU, newPosition, Quaternion.identity);
 		}
-	}
-
-	public float MaxVerticalPosition() {
-		return Camera.main.orthographicSize;
-	}
-	public float MinVerticalPosition() {
-		return - Camera.main.orthographicSize;
-	}
-	public float MaxHorizontalPosition() {
-		return Camera.main.orthographicSize * Screen.width / Screen.height;
-	}
-	public float MinHorizontalPosition() {
-		return - Camera.main.orthographicSize * Screen.width / Screen.height;
 	}
 
 }

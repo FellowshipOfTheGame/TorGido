@@ -58,7 +58,7 @@ public class MovementManager : MonoBehaviour {
 
 			//movimento
 			if (sm.range < distance && canMove) {
-				if(gameObject.tag == "Enemy")
+				if(gameObject.tag == "Enemy" || gameObject.tag == "Boss")
 					gameObject.GetComponent<EnemyController>().attack = false;
 				//transform.position = Vector2.MoveTowards(transform.position, target.position, e_speed * Time.deltaTime);
 				Vector2 direction = new Vector2 (tTarget.position.x - transform.position.x, tTarget.position.y - transform.position.y);
@@ -67,7 +67,7 @@ public class MovementManager : MonoBehaviour {
 
 			} else {
 				Rigid.velocity = new Vector2 (0f, 0f);
-				if(gameObject.tag == "Enemy")
+				if(gameObject.tag == "Enemy" || gameObject.tag == "Boss")
 					gameObject.GetComponent<EnemyController>().attack = true;
 			}
 		}
@@ -75,7 +75,7 @@ public class MovementManager : MonoBehaviour {
 
 	//inimmigo nao move quando colide com o player
 	void OnCollisionEnter2D(Collision2D coll){
-		if (gameObject.tag == "Enemy") {
+		if (gameObject.tag == "Enemy" || gameObject.tag == "Boss") {
 			if (coll.gameObject.tag == "Player" ) {
 				canMove = false;
 			} else {
@@ -86,7 +86,7 @@ public class MovementManager : MonoBehaviour {
 
 	//inimmigo pode mover quando sai da colisao com o player
 	void OnCollisionExit2D(Collision2D coll){
-		if (gameObject.tag == "Enemy") {
+		if (gameObject.tag == "Enemy" || gameObject.tag == "Boss") {
 			if (coll.gameObject.tag == "Player") {
 				canMove = true;
 			} else {

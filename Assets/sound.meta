@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 7ae2a1b14a183284298533983a1144d6
+folderAsset: yes
+timeCreated: 1501445879
+=======
 guid: 308615cfdf9bd441f8777784ec5967ca
 folderAsset: yes
 timeCreated: 1501888878
+>>>>>>> origin/fernanda
 licenseType: Free
 DefaultImporter:
   userData: 

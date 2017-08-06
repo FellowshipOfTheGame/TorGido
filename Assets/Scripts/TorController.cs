@@ -8,6 +8,7 @@ public class TorController : MonoBehaviour {
 
 	private float rangex = 3.0f;
 	private float rangey = 3.0f;
+	private float next_attack = 0.0f;
 
 	private StatsManager sm;
 
@@ -17,9 +18,9 @@ public class TorController : MonoBehaviour {
 
 		sm = gameObject.GetComponent<StatsManager> ();
 
-		sm.speed = 10f;
-		sm.damage = 1f;
-		sm.range = 0.2f; // para movimentação
+		//sm.speed = 10f;
+		//sm.damage = 1f;
+		//sm.range = 0.2f; // para movimentação
 	}
 
 	void Update () {
@@ -28,9 +29,10 @@ public class TorController : MonoBehaviour {
 		Move ();
 
 		if (Input.GetMouseButtonDown (0)) {
-			
-			NormalAttack();
-
+			if (Time.time > next_attack) {
+				NormalAttack ();
+				next_attack = Time.time + (float)(1f/(sm.attack_speed));
+			}
 		}
 
 	}
