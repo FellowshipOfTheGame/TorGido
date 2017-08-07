@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class AxeController : MonoBehaviour {
 
-	public AnimationCurve X;
-	public AnimationCurve Y;
+	public float Speed;
+	public float MoreDist; // Distancia que o machado percorrerá a mais da distancia original do Gido
+	public Vector2 BossPos;
+	public Vector2 GidoPos;
+	private Vector2 Direction;
 
-	public float BossX;
-	public float BossY;
-	public float GidoX;
-	public float GidoY;
-	private float time_counter = 0;
+	private Rigidbody2D Rigid;
+	private float acceleration;
+	private float DescrutingTime;
 
 	// Use this for initialization
 	void Start () {
-		gameObject.transform.position = new Vector2 (BossX, BossY);
+		Rigid = gameObject.GetComponent<Rigidbody2D> ();
+		Direction = GidoPos - BossPos;
+		Rigid.velocity = (Vector2)Vector3.Normalize (Direction) * Speed;
+		acceleration = (-Mathf.Pow (Speed, 2)) / (2 * (Vector2.Distance (BossPos, GidoPos) + MoreDist));	// Eq. de Torricelli :D
+		DescrutingTime = (-2 * Speed / acceleration);	// Função horária do MUV :D
+		Debug.Log ("Destructing time = " + DescrutingTime);
+		Destroy (gameObject, DescrutingTime);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		time_counter += Time.deltaTime;
-		float x = gameObject.transform.position.x + Mathf.Sin (time_counter);
-		float y = gameObject.transform.position.y + Mathf.Sin (time_counter);
-		gameObject.transform.position = new Vector2 (x, y);
+		Rigid.AddForce ((Vector2)Vector3.Normalize (Direction) * acceleration);
+//		Rigid.velocity += (Vector2)Vector3.Normalize (Direction) * acceleration * Time.fixedDeltaTime;
 	}
 }

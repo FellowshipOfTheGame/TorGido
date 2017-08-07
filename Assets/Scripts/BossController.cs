@@ -18,6 +18,8 @@ public class BossController : EnemyController {
 	public float rangeSpecialAttack2 = 1000f;
 	private float nextSpecialAttack2 = 0f;
 
+	public GameObject AXE;
+	private Vector3 MyPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -64,6 +66,12 @@ public class BossController : EnemyController {
 			Debug.Log ("boss usou S. Attack 2");
 			nextSpecialAttack2 = Time.time + CDspecialAttack2;
 			next_attack = Time.time + (float)(1f/(Status.attack_speed));
+			// Testando arremessar o machado :D
+			MyPosition = gameObject.transform.position;
+			EnemyPosition = gameObject.GetComponent<MovementManager> ().Target.gameObject.transform.position;
+			Instantiate (AXE, MyPosition, Quaternion.identity);
+			AXE.GetComponent<AxeController> ().BossPos = (Vector2)MyPosition;
+			AXE.GetComponent<AxeController> ().GidoPos = (Vector2)EnemyPosition;
 
 		} else if (Time.time > nextSpecialAttack1 && rangeSpecialAttack1 >= distance) {
 			Debug.Log ("boss usou S. Attack 1");
