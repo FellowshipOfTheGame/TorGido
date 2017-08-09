@@ -44,7 +44,7 @@ public class MovementManager : MonoBehaviour {
 	}
 
 	public void move(){
-		var distance = Vector2.Distance (transform.position, tTarget.position);
+		float distance = Vector2.Distance (transform.position, tTarget.position);
 
 		if (!isOnPush && distance <= sm.field) {
 			
@@ -67,7 +67,7 @@ public class MovementManager : MonoBehaviour {
 
 			//movimento
 			if (sm.range < distance && canMove) {
-				if(gameObject.tag == "Enemy" || gameObject.tag == "Boss")
+				if(gameObject.tag == "Enemy" /*|| gameObject.tag == "Boss"*/)
 					gameObject.GetComponent<EnemyController>().attack = false;
 				//transform.position = Vector2.MoveTowards(transform.position, target.position, e_speed * Time.deltaTime);
 				Vector2 direction = new Vector2 (tTarget.position.x - transform.position.x, tTarget.position.y - transform.position.y);
