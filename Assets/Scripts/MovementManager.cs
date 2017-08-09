@@ -14,7 +14,7 @@ public class MovementManager : MonoBehaviour {
 
 	private bool facingRight = true;
 	//private bool attack = false;
-	private bool canMove = true;
+	public bool canMove = true;
 
 	private bool isOnPush = false;
 	private float timeOnPush = 0.2f;

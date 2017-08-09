@@ -7,7 +7,6 @@ public class BossController : EnemyController {
 	public GameObject[] PowerUP;
 	private StatsManager Status;
 	private Rigidbody2D RigidB;
-	private Vector3 EnemyPosition;
 	private int my_powerup;
 
 	public float CDspecialAttack1 = 5f;
@@ -16,18 +15,21 @@ public class BossController : EnemyController {
 
 	public float CDspecialAttack2 = 10f;
 	public float rangeSpecialAttack2 = 1000f;
-	private float nextSpecialAttack2 = 0f;
+	private float nextSpecialAttack2 = 10f;
 
 	public GameObject AXE;
-	private Vector3 MyPosition;
+	private Vector3 GidoPosition;
+	private Vector3 BossPosition;
 
 	// Use this for initialization
 	void Start () {
 		Status = gameObject.GetComponent<StatsManager> ();
-		RigidB = gameObject.GetComponent<Rigidbody2D>();
+		RigidB = gameObject.GetComponent<Rigidbody2D> ();
 
+		nextSpecialAttack2 = CDspecialAttack2;
 		my_powerup = Random.Range (0, PowerUP.Length);
 		GameObject PU = PowerUP [my_powerup];
+
 		switch(my_powerup) {
 		case 0:
 			Status.attack_speed += 5 * PowerUP [0].GetComponent<Atk_SpeedUP> ().Increase;
@@ -67,11 +69,15 @@ public class BossController : EnemyController {
 			nextSpecialAttack2 = Time.time + CDspecialAttack2;
 			next_attack = Time.time + (float)(1f/(Status.attack_speed));
 			// Testando arremessar o machado :D
-			MyPosition = gameObject.transform.position;
-			EnemyPosition = gameObject.GetComponent<MovementManager> ().Target.gameObject.transform.position;
-			Instantiate (AXE, MyPosition, Quaternion.identity);
-			AXE.GetComponent<AxeController> ().BossPos = (Vector2)MyPosition;
-			AXE.GetComponent<AxeController> ().GidoPos = (Vector2)EnemyPosition;
+			gameObject.GetComponent<MovementManager> ().canMove = false;
+			BossPosition = gameObject.transform.position;
+			GidoPosition = gameObject.GetComponent<MovementManager> ().Target.gameObject.transform.position;
+			BossPosition.y += 1f;		// Fazer o machado sair do centro da sprite do boss
+			GidoPosition.y += 0.5f;
+			AXE.GetComponent<AxeController> ().BossPos = (Vector2)BossPosition;
+			AXE.GetComponent<AxeController> ().GidoPos = (Vector2)GidoPosition;
+			Instantiate (AXE, BossPosition, Quaternion.identity);
+
 
 		} else if (Time.time > nextSpecialAttack1 && rangeSpecialAttack1 >= distance) {
 			Debug.Log ("boss usou S. Attack 1");
@@ -80,16 +86,18 @@ public class BossController : EnemyController {
 
 		} else if (Status.range >= distance) {
 			Debug.Log ("boss usou attack normal");
-			gameObject.GetComponent<MovementManager> ().Target.gameObject.GetComponent<GidoController>().CalculateDamage (Status.damage, RigidB.position);
+			Attack (Status.damage, RigidB.position);
 			next_attack = Time.time + (float)(1f/(Status.attack_speed));
 		}
 	}
 
-
-
+	public void Attack(float Damage,Vector3 Pos) {
+		gameObject.GetComponent<MovementManager> ().Target.gameObject.GetComponent<GidoController> ().CalculateDamage (Damage, Pos);
+	}
+	
 	public void boss_death () {
-		EnemyPosition = gameObject.transform.position;
-		Instantiate (PowerUP [my_powerup], EnemyPosition, Quaternion.identity);
+		BossPosition = gameObject.transform.position;
+		Instantiate (PowerUP [my_powerup], BossPosition, Quaternion.identity);
 	}
 
 }
