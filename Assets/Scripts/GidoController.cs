@@ -11,6 +11,12 @@ public class GidoController : MonoBehaviour {
 
 	private StatsManager sm;
 
+	private float nextDamage = 0.0f;
+	private float imunityTime = 1f;
+
+	private float blinkTime = 0.1f;
+	private float nextBlink = 0f;
+
 	// Use this for initialization
 	void Start () {
 		Rigid = gameObject.GetComponent<Rigidbody2D>();
@@ -27,6 +33,16 @@ public class GidoController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Move ();
+
+		if (nextDamage >= Time.time) {
+
+			if (nextBlink <= Time.time) {
+				nextBlink += blinkTime;
+				spriteRend.enabled = !spriteRend.enabled;
+			}
+		} else if(!spriteRend.enabled){
+			spriteRend.enabled = true;
+		}
 	}
 
 	void Move() {
@@ -55,13 +71,17 @@ public class GidoController : MonoBehaviour {
 	}
 
 	public void CalculateDamage(float damage, Vector3 attackDir){
-		gameObject.GetComponent<AttackManager> ().CalculateDamage (damage);
+		if (nextDamage < Time.time) {
+			gameObject.GetComponent<AttackManager> ().CalculateDamage (damage);
 
-		Vector2 direction = new Vector2 (Rigid.position.x - attackDir.x, Rigid.position.y - attackDir.y);
+			Vector2 direction = new Vector2 (Rigid.position.x - attackDir.x, Rigid.position.y - attackDir.y);
 
-		gameObject.GetComponent<MovementManager> ().push (direction.normalized);
+			gameObject.GetComponent<MovementManager> ().push (direction.normalized);
 
-		anim.SetTrigger ("Damage");
+			anim.SetTrigger ("Damage");
 
+			nextDamage = Time.time + imunityTime;
+			nextBlink = Time.time;
+		}
 	}
 }
