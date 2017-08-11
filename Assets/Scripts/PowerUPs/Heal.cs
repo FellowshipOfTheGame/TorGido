@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Heal : MonoBehaviour {
+public class Heal : PowerUP {
 
 	public int Increase;
 
 	// Use this for initialization
 	void Start () {
-		
+		Initialization ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		Refresh ();
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {

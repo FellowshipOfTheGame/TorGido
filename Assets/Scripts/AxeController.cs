@@ -21,8 +21,8 @@ public class AxeController : MonoBehaviour {
 	private float DescrutingTime;
 	private float timeCounter = 0;
 	private Vector2 InitialVelocity;
-	private float Invulnerability = 2;	// Evitar que o Gido apanhe sucessivas vezes, em um curto espaço de tempo, do mesmo machado
-	private float counter2 = 0;
+//	private float Invulnerability = 2;	// Evitar que o Gido apanhe sucessivas vezes, em um curto espaço de tempo, do mesmo machado
+//	private float counter2 = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -78,10 +78,10 @@ public class AxeController : MonoBehaviour {
 	}*/
 
 	void OnTriggerEnter2D(Collider2D col) {
-		if (col.gameObject.tag == "Player" && timeCounter >= counter2) {
-			counter2 = timeCounter + Invulnerability;
+		if (col.gameObject.tag == "Player") //&& timeCounter >= counter2) {
+//			counter2 = timeCounter + Invulnerability;
 			Boss.gameObject.GetComponent<BossController> ().Attack (AxeDamage, Rigid.position);
-		}
+//		}
 	}
 
 }

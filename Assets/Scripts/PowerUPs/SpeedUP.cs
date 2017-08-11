@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedUP : MonoBehaviour {
+public class SpeedUP : PowerUP {
 
 	public int Increase;
 
 	// Use this for initialization
 	void Start () {
-		
+		Initialization ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		Refresh ();
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
