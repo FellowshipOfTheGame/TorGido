@@ -7,6 +7,7 @@ public class BossController : EnemyController {
 	public GameObject[] PowerUP;
 	private StatsManager Status;
 	private Rigidbody2D RigidB;
+	private MovementManager Move;
 	private int my_powerup;
 
 	public float CDspecialAttack1 = 5f;
@@ -25,6 +26,7 @@ public class BossController : EnemyController {
 	void Start () {
 		Status = gameObject.GetComponent<StatsManager> ();
 		RigidB = gameObject.GetComponent<Rigidbody2D> ();
+		Move = gameObject.GetComponent<MovementManager> ();
 
 		nextSpecialAttack2 = CDspecialAttack2;
 		my_powerup = Random.Range (0, PowerUP.Length);
@@ -57,6 +59,7 @@ public class BossController : EnemyController {
 		if (Time.time > next_attack) {
 			tryAttack();
 		}
+		gameObject.GetComponent<Animator> ().SetBool ("IsWalking", Move.canMove);
 	}
 
 	public void tryAttack(){
@@ -69,13 +72,13 @@ public class BossController : EnemyController {
 			nextSpecialAttack2 = Time.time + CDspecialAttack2;
 			next_attack = Time.time + (float)(1f/(Status.attack_speed));
 			// Testando arremessar o machado :D
-			gameObject.GetComponent<MovementManager> ().canMove = false;
+			Move.canMove = false;
 			BossPosition = gameObject.transform.position;
 			GidoPosition = gameObject.GetComponent<MovementManager> ().Target.gameObject.transform.position;
 			BossPosition.y += 1f;		// Fazer o machado sair do centro da sprite do boss
 			GidoPosition.y += 0.5f;
-			AXE.GetComponent<AxeController> ().BossPos = (Vector2)BossPosition;
-			AXE.GetComponent<AxeController> ().GidoPos = (Vector2)GidoPosition;
+			AXE.GetComponent<AxeController> ().BossPos = BossPosition;
+			AXE.GetComponent<AxeController> ().GidoPos = GidoPosition;
 			Instantiate (AXE, BossPosition, Quaternion.identity);
 
 
