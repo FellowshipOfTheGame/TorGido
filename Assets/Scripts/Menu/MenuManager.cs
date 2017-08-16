@@ -11,6 +11,12 @@ public class MenuManager : MonoBehaviour {
 	public GameObject MenuInstrucoes;
 	public GameObject BotaoSom;
 
+	public GameObject InstructionPanel1;
+	public GameObject InstructionPanel2;
+	public GameObject InstructionPanel3;
+	public GameObject InstructionPanel4;
+	public GameObject InstructionPanel5;
+
 	public void Jogar() {
 		BotaoSom.GetComponent<ClickSound> ().PlaySound ();
 		//SceneManager.LoadScene ("Game");
@@ -29,6 +35,23 @@ public class MenuManager : MonoBehaviour {
 			
 
 	}
+
+	public void PricipalInstructions() {
+		
+		BotaoSom.GetComponent<ClickSound> ().PlaySound ();
+		MenuCreditos.SetActive (false);
+		MenuInstrucoes.SetActive (false);
+		MenuConfiguracoes.SetActive (false);
+		MenuPrincipal.SetActive (true);
+		InstructionPanel5.SetActive (false);
+		InstructionPanel4.SetActive (false);
+		InstructionPanel3.SetActive (false);
+		InstructionPanel2.SetActive (false);
+		InstructionPanel1.SetActive (true);
+
+
+	}
+
 	public void Creditos() {
 		BotaoSom.GetComponent<ClickSound> ().PlaySound ();
 		MenuPrincipal.SetActive (false);
