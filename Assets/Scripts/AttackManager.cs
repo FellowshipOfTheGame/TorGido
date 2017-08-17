@@ -21,7 +21,7 @@ public class AttackManager : MonoBehaviour {
 		
 	}
 
-	public void CalculateDamage(float damage){
+	public bool CalculateDamage(float damage){
 		//formula do dano/defesa
 
 		float final = damage - sm.defense;
@@ -43,8 +43,12 @@ public class AttackManager : MonoBehaviour {
 			} else if (gameObject.tag == "Boss") {
 				gameObject.GetComponent<BossController> ().boss_death ();
 				Destroy (gameObject);
+			} else if (gameObject.tag == "Player") {
+				return false;
 			}
 		}
+
+		return true;
 
 	}
 }
