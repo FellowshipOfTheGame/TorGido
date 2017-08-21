@@ -17,12 +17,17 @@ public class CreateArena : MonoBehaviour {
 
 	private float k = -1f;
 
+	public List<Vector3> possiblePositions = new List<Vector3>();
+	public bool ArenaFinished = false;
+
 	// Use this for initialization
 	void Start () {
 
 		Vector3 newPosition;
 
 		GameObject newTile;
+
+		possiblePositions.Clear ();
 
 		float Xmax = (rows - 1) * incX; //(rows / 2) * incX;
 		float Ymax = rows * incY; //(rows / 2) * incY;
@@ -38,8 +43,12 @@ public class CreateArena : MonoBehaviour {
 				newTile = tiles [Random.Range (0, tiles.Length)];
 
 				Instantiate (newTile, newPosition, Quaternion.identity);
+
+				possiblePositions.Add (newPosition);
 			}
 		}
+
+		ArenaFinished = true;
 
 	}
 

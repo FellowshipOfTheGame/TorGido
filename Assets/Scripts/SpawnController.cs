@@ -40,11 +40,12 @@ public class SpawnController : CameraLimits {
 	// Update is called once per frame
 	void Update () {
 		if (!isGO) {
-			if (Time.time > nextWave) {
+			//Debug.Log ("valor de ArenaFinished: " + ArenaFinished);
+			if (gameObject.GetComponent<CreateArena>().ArenaFinished && Time.time > nextWave) {
 				Spawn ();
 				VerifyWave ();
 			}
-		} else if(Input.GetKey("space")){
+		} else if(Input.anyKey){
 			Time.timeScale = 1;
 			
 			//voltar ao menu
@@ -54,30 +55,39 @@ public class SpawnController : CameraLimits {
 		
 	//Gera 'max' inimigos em lugares random da arena, garantindo uma distancia minima do Gido
 	void Spawn(){
-		PlayerPossition = GameObject.FindGameObjectWithTag ("Player").transform.position;
 
-		//if (Time.time > next_spawn && current < max) {
-		if (current < max) {
-			//	next_spawn = Time.time + spawn_speed;
-			//verificar se gera inimigo muito perto do gido....
-			float PosX = Random.Range (MinHorizontalPosition (), MaxHorizontalPosition ());
-			float PosY = Random.Range (MinVerticalPosition (), MaxVerticalPosition ());
-			Vector3 newPosition = new Vector3 (PosX, PosY, 0);
+		//if (possiblePositions.Count == rows * rows) {
+			PlayerPossition = GameObject.FindGameObjectWithTag ("Player").transform.position;
 
-			if (Vector2.Distance (newPosition, PlayerPossition) > 4.0f) { //verificação de spawn proximo do Gido
+			//if (Time.time > next_spawn && current < max) {
+			if (current < max) {
+				//	next_spawn = Time.time + spawn_speed;
+				//verificar se gera inimigo muito perto do gido....
+				//float PosX = Random.Range (MinHorizontalPosition (), MaxHorizontalPosition ());
+				//float PosY = Random.Range (MinVerticalPosition (), MaxVerticalPosition ());
 
-				if (bossWave) {
-					(Instantiate (Resources.Load ("Boss"), newPosition, Quaternion.identity) as GameObject).GetComponent<EnemyController>().IncreaseStats ((wave - 1 )/ cycle) ;
-				} else {
-					(Instantiate (Resources.Load ("Enemy1"), newPosition, Quaternion.identity) as GameObject).GetComponent<EnemyController>().IncreaseStats ( (wave - 1) / cycle) ;
+				int idx = Random.Range (0, gameObject.GetComponent<CreateArena>().possiblePositions.Count);
+
+				Debug.Log ("valores na lista: " + gameObject.GetComponent<CreateArena>().possiblePositions.Count);
+
+				//Vector3 newPosition = new Vector3 (PosX, PosY, 0);
+				Vector3 newPosition = gameObject.GetComponent<CreateArena>().possiblePositions [idx];
+
+				if (Vector2.Distance (newPosition, PlayerPossition) > 4.0f) { //verificação de spawn proximo do Gido
+
+					if (bossWave) {
+						(Instantiate (Resources.Load ("Boss"), newPosition, Quaternion.identity) as GameObject).GetComponent<EnemyController> ().IncreaseStats ((wave - 1) / cycle);
+					} else {
+						(Instantiate (Resources.Load ("Enemy1"), newPosition, Quaternion.identity) as GameObject).GetComponent<EnemyController> ().IncreaseStats ((wave - 1) / cycle);
+					}
+
+					current++;
 				}
-
-				current++;
+			} else {
+				isSpawning = false;
+				bossWave = false;
 			}
-		} else {
-			isSpawning = false;
-			bossWave = false;
-		}
+		//}
 	}
 
 
@@ -109,7 +119,7 @@ public class SpawnController : CameraLimits {
 		Time.timeScale = 0;
 
 		GOcanvas.SetActive(true);
-		GOtext.text = "You reached the wave " + wave + "!" + "\n... and failed!" ;
+		GOtext.text = "Voce alcancou a wave " + wave + "!";
 
 		isGO = true;
 	}
