@@ -7,9 +7,9 @@ public class PowerUP : MonoBehaviour {
 	public float DurationTime;
 	public float BlinkTime;
 	public float BlinkRefresh;
-	public float NextBlink = 0;
-	public float Counter = 0;
-	public SpriteRenderer spriteRend;
+	private float NextBlink = 0;
+	private float Counter = 0;
+	private SpriteRenderer spriteRend;
 
 	// Use this for initialization
 	void Start () {
@@ -22,8 +22,8 @@ public class PowerUP : MonoBehaviour {
 	}
 
 	public void Initialization() {
-		DurationTime = 5;
-		BlinkTime = 1;
+		DurationTime = 15;
+		BlinkTime = 5;
 		BlinkRefresh = 0.2f;
 		spriteRend = gameObject.GetComponent<SpriteRenderer> ();
 		Destroy (gameObject, DurationTime);
