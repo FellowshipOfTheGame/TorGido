@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 273967b9602afa84d9171e2f22050b5c
-timeCreated: 1502318295
+timeCreated: 1502911150
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -10,6 +10,11 @@ TextureImporter:
     21300006: Boss1SpriteSheet_3
     21300008: Boss1SpriteSheet_4
     21300010: Boss1SpriteSheet_5
+    21300012: Boss1SpriteSheet_6
+    21300014: Boss1SpriteSheet_7
+    21300016: Boss1SpriteSheet_8
+    21300018: Boss1SpriteSheet_9
+    21300020: Boss1SpriteSheet_10
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -79,10 +84,10 @@ TextureImporter:
       name: Boss1SpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
-        width: 96
-        height: 96
+        x: 13
+        y: 166
+        width: 68
+        height: 84
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -92,10 +97,10 @@ TextureImporter:
       name: Boss1SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 96
-        y: 192
-        width: 96
-        height: 96
+        x: 109
+        y: 166
+        width: 68
+        height: 85
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -105,10 +110,10 @@ TextureImporter:
       name: Boss1SpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
-        width: 96
-        height: 96
+        x: 201
+        y: 166
+        width: 66
+        height: 84
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,10 +123,10 @@ TextureImporter:
       name: Boss1SpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 288
-        y: 192
-        width: 96
-        height: 96
+        x: 301
+        y: 166
+        width: 68
+        height: 84
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +136,10 @@ TextureImporter:
       name: Boss1SpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 384
-        y: 192
-        width: 96
-        height: 96
+        x: 397
+        y: 166
+        width: 68
+        height: 85
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,10 +149,75 @@ TextureImporter:
       name: Boss1SpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 480
-        y: 192
-        width: 96
-        height: 96
+        x: 489
+        y: 167
+        width: 66
+        height: 84
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boss1SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 38
+        width: 71
+        height: 103
+      alignment: 9
+      pivot: {x: 0.605, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boss1SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 38
+        width: 93
+        height: 84
+      alignment: 9
+      pivot: {x: 0.355, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boss1SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 39
+        width: 71
+        height: 103
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boss1SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 39
+        width: 61
+        height: 84
+      alignment: 9
+      pivot: {x: 0.54, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boss1SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 13
+        width: 154
+        height: 140
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

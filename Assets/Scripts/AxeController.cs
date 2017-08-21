@@ -21,8 +21,6 @@ public class AxeController : MonoBehaviour {
 	private float DescrutingTime;
 	private float timeCounter = 0;
 	private Vector2 InitialVelocity;
-//	private float Invulnerability = 2;	// Evitar que o Gido apanhe sucessivas vezes, em um curto espaço de tempo, do mesmo machado
-//	private float counter2 = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -43,7 +41,6 @@ public class AxeController : MonoBehaviour {
 		DescrutingTime = (-Speed / acceleration);					// Função horária do MUV :D
 
 //		Debug.Log ("Destructing time = " + DescrutingTime);
-//		Destroy (gameObject, DescrutingTime);
 	}
 	
 	// Update is called once per frame
@@ -54,34 +51,16 @@ public class AxeController : MonoBehaviour {
 			Boss.gameObject.GetComponent<MovementManager> ().canMove = true;
 			Destroy (gameObject);
 		}
-		if (timeCounter <= DescrutingTime) //|| timeCounter >= (DescrutingTime * 7/6))*/(Vector3.Distance (BossPos, gameObject.transform.position) <= (Distancia / 2))
-//			Rigid.velocity += (Vector2)Perpendicular * Time.fixedDeltaTime;
-			Rigid.AddForce (Perpendicular*acceleration);
-		else 
-//			Rigid.velocity -= (Vector2)Perpendicular * Time.fixedDeltaTime;
-		Rigid.AddForce (-Perpendicular*acceleration);
-
-
-//		if (Vector2.SqrMagnitude (Rigid.velocity) > Vector2.SqrMagnitude (InitialVelocity)) {
-//			Destroy (gameObject);
-//		}
-//		DestroyAxe ();
-//		Rigid.velocity += (Vector2)Vector3.Normalize (Direction) * acceleration * Time.fixedDeltaTime;
+//		if (timeCounter <= (DescrutingTime * 1 / 4) || timeCounter >= (DescrutingTime * 4 / 3))
+		if (timeCounter <= DescrutingTime)
+			Rigid.AddForce (Perpendicular * acceleration);
+		else
+			Rigid.AddForce (-Perpendicular * acceleration);
 	}
 
-/*	public bool DestroyAxe() {
-		if (Time.time >= DescrutingTime) {
-			Destroy (gameObject);
-			return true;
-		}
-		return false;
-	}*/
-
 	void OnTriggerEnter2D(Collider2D col) {
-		if (col.gameObject.tag == "Player") //&& timeCounter >= counter2) {
-//			counter2 = timeCounter + Invulnerability;
+		if (col.gameObject.tag == "Player")
 			Boss.gameObject.GetComponent<BossController> ().Attack (AxeDamage, Rigid.position);
-//		}
 	}
 
 }
