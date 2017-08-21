@@ -15,6 +15,7 @@ public class SpawnController : CameraLimits {
 	private int current = 0;
 	private bool isSpawning = true;
 	private bool bossWave = false; 
+	public Text wavenumber;
 
 	//criar tempo de espera entre waves
 	private int wave = 1;
@@ -33,6 +34,7 @@ public class SpawnController : CameraLimits {
 	// Use this for initialization
 	void Start () {
 		max = wave % cycle + numEnemy;
+		wavenumber.text = wave.ToString();
 	}
 	
 	// Update is called once per frame
@@ -89,6 +91,7 @@ public class SpawnController : CameraLimits {
 				nextWave = Time.time + waveInterval;
 
 				wave += 1;
+				wavenumber.text = wave.ToString();
 				if (wave % cycle == 0) {
 					bossWave = true;
 					max = 1;
