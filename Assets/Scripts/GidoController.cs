@@ -72,16 +72,23 @@ public class GidoController : MonoBehaviour {
 
 	public void CalculateDamage(float damage, Vector3 attackDir){
 		if (nextDamage < Time.time) {
-			gameObject.GetComponent<AttackManager> ().CalculateDamage (damage);
+			if (!gameObject.GetComponent<AttackManager> ().CalculateDamage (damage)) {
+				GameObject SpawnerArena = GameObject.FindGameObjectWithTag ("SpawnerArena");
+				SpawnerArena.GetComponent<SpawnController> ().FinishArena ();
 
-			Vector2 direction = new Vector2 (Rigid.position.x - attackDir.x, Rigid.position.y - attackDir.y);
+				//gameObject.SetActive (false);
 
-			gameObject.GetComponent<MovementManager> ().push (direction.normalized);
+			} else {
 
-			anim.SetTrigger ("Damage");
+				Vector2 direction = new Vector2 (Rigid.position.x - attackDir.x, Rigid.position.y - attackDir.y);
 
-			nextDamage = Time.time + imunityTime;
-			nextBlink = Time.time;
+				gameObject.GetComponent<MovementManager> ().push (direction.normalized);
+
+				anim.SetTrigger ("Damage");
+
+				nextDamage = Time.time + imunityTime;
+				nextBlink = Time.time;
+			}
 		}
 	}
 }

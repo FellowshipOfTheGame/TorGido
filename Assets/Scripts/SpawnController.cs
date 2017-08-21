@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //Controlador do spawn no modo arena
 
@@ -22,6 +24,12 @@ public class SpawnController : CameraLimits {
 	private float nextWave = 0f;
 	private float waveInterval = 3f;
 
+	public GameObject GOcanvas;
+	public Text GOtext;
+	private bool isGO = false;
+
+
+
 	// Use this for initialization
 	void Start () {
 		max = wave % cycle + numEnemy;
@@ -29,9 +37,16 @@ public class SpawnController : CameraLimits {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Time.time > nextWave){
-			Spawn ();
-			VerifyWave ();
+		if (!isGO) {
+			if (Time.time > nextWave) {
+				Spawn ();
+				VerifyWave ();
+			}
+		} else if(Input.anyKey){
+			Time.timeScale = 1;
+			
+			//voltar ao menu
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		}
 	}
 		
@@ -85,5 +100,14 @@ public class SpawnController : CameraLimits {
 
 			}
 		}
+	}
+
+	public void FinishArena(){
+		Time.timeScale = 0;
+
+		GOcanvas.SetActive(true);
+		GOtext.text = "Voce alcancou a wave " + wave + "!";
+
+		isGO = true;
 	}
 }
