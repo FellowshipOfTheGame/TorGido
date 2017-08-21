@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
 public class DefenseUP : PowerUP {
-	private float defense = 0.0f;
-	public Text defensetxt;
+	public GameObject upcounter;
 	public int Increase;
 
 	// Use this for initialization
 	void Start () {
-		defensetxt.text = defense.ToString();
+		upcounter = GameObject.Find ("PUCounter");
 		Initialization ();
 	}
 	
@@ -20,15 +19,11 @@ public class DefenseUP : PowerUP {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "Player") {
-			UpDefense ();
+			upcounter.GetComponent<PUCounterManager>().UpDefense ();
 			//GameObject.Find ("PlayerHealthBarCanvas").GetComponent<UIGidoStatusManager>().UpDefense();
 			col.gameObject.GetComponent<StatsManager> ().defense += Increase;
 			Destroy (gameObject);
 		}
 	}
-	void UpDefense(){
-		defense = defense + 1;
-		defensetxt.text = defense.ToString();
 
-	}
 }

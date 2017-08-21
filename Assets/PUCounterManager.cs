@@ -2,25 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class UIGidoStatusManager : MonoBehaviour {
-
-	private float speed = 0.0f;
+public class PUCounterManager : MonoBehaviour {
 	private float attack = 0.0f;
-	private float defense = 0.0f;
-
-	public Text speedtxt;
 	public Text attacktxt;
+
+	private float defense = 0.0f;
 	public Text defensetxt;
 
-
+	private float speed = 0.0f;
+	public Text speedtxt;
 	// Use this for initialization
 	void Start () {
-
-		speedtxt.text = speed.ToString();
 		attacktxt.text = attack.ToString();
 		defensetxt.text = defense.ToString();
-
+		speedtxt.text = speed.ToString();
 	}
 	
 	// Update is called once per frame
@@ -31,7 +26,7 @@ public class UIGidoStatusManager : MonoBehaviour {
 	public void UpSpeed(){
 		speed = speed + 1;
 		speedtxt.text = speed.ToString();
-	
+
 	}
 
 	public void UpAttack(){
@@ -39,16 +34,11 @@ public class UIGidoStatusManager : MonoBehaviour {
 		attacktxt.text = attack.ToString();
 
 	}
+
 	public void UpDefense(){
 		defense = defense + 1;
 		defensetxt.text = defense.ToString();
 
 	}
-
-
-
-
-
-
 
 }

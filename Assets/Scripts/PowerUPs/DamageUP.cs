@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
 public class DamageUP : PowerUP {
-	private float attack = 0.0f;
-	public Text attacktxt;
+	public GameObject upcounter;
 	public int Increase;
 	private GameObject Tor;
 
 	// Use this for initialization
 	void Start () {
-		attacktxt.text = attack.ToString();
+		upcounter = GameObject.Find ("PUCounter");
 		Initialization ();
 		Tor = GameObject.FindGameObjectWithTag ("Tor");
 	}
@@ -21,14 +20,10 @@ public class DamageUP : PowerUP {
 	}
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "Player") {
-			UpAttack ();
+			upcounter.GetComponent<PUCounterManager>().UpAttack ();
 			Tor.gameObject.GetComponent<StatsManager> ().damage += Increase;
 			Destroy (gameObject);
 		}
 	}
-	void UpAttack(){
-		attack = attack + 1;
-		attacktxt.text = attack.ToString();
 
-	}
 }
