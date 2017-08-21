@@ -23,7 +23,7 @@ public class PUSpawner : CameraLimits {
 			_time = 0f;
 			PlayerPosition = GameObject.FindGameObjectWithTag ("Player").transform.position;
 
-			GameObject PU = PowerUP [Random.Range (0, PowerUP.Length)];
+			GameObject PU = PowerUP [3];//Random.Range (0, PowerUP.Length)];
 
 			float PosX = Random.Range (MinHorizontalPosition (), MaxHorizontalPosition ());
 			float PosY = Random.Range (MinVerticalPosition (), MaxVerticalPosition ());
