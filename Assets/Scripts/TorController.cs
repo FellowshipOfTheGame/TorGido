@@ -46,14 +46,22 @@ public class TorController : MonoBehaviour {
 	void NormalAttack(){
 		//verificação da area do ataque
 		Vector3 wayPointPos = GameObject.FindGameObjectWithTag ("Mouse").transform.position;
-		if (transform.position.x > wayPointPos.x)
-			rangex = -3f;
-		if (transform.position.y > wayPointPos.y)
-			rangey = -3f;
 
-		Vector2 Boxcenter = new Vector2 (transform.position.x, transform.position.y);
-		Vector2 Boxsize = new Vector2 (transform.position.x + rangex, transform.position.y + rangey);
-		Collider2D[] colliders = Physics2D.OverlapAreaAll( Boxcenter, Boxsize,m_WhatIsEnemy);
+		float side = 1f;
+		float offset = 0.5f;
+
+		if (transform.position.x > wayPointPos.x)
+			offset = -1f;
+		//if (transform.position.y > wayPointPos.y)
+		//	offset = -1f;
+		
+
+		rangex = 1.5f;
+		rangey = 1.5f;
+
+		Vector2 LeftBottom = new Vector2 (transform.position.x - rangex + offset * side, transform.position.y - rangey);
+		Vector2 RightUp = new Vector2 (transform.position.x + rangex + offset * side, transform.position.y + rangey);
+		Collider2D[] colliders = Physics2D.OverlapAreaAll( LeftBottom, RightUp,m_WhatIsEnemy);
 		for (int i = 0; i < colliders.Length; i++)
 		{
 

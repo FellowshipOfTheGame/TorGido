@@ -24,7 +24,8 @@ public class AttackManager : MonoBehaviour {
 	public bool CalculateDamage(float damage){
 		//formula do dano/defesa
 
-		float final = damage - sm.defense;
+		float final = Mathf.Max( damage - sm.defense, 0.5f);
+		//float final = (damage*damage) / (damage + sm.defense);
 
 		if (final < 0)
 			final = 0;
