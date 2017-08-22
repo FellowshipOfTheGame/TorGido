@@ -62,7 +62,6 @@ public class BossController : EnemyController {
 		if (Time.time > next_attack) {
 			tryAttack();
 		}
-		gameObject.GetComponent<Animator> ().SetBool ("IsWalking", Move.canMove);
 	}
 
 	public void tryAttack(){
