@@ -15,18 +15,270 @@ Platform assembly: C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\bu
 Loading C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\buildTeste_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\buildTeste_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\buildTeste_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.073 seconds
+- Completed reload, in  0.101 seconds
 Platform assembly: C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\buildTeste_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\buildTeste_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.951932 ms
+UnloadTime: 4.774401 ms
 Can not play a disabled audio source
  
 (Filename:  Line: 1951)
 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.430020 ms
+
+Unloading 30 unused Assets to reduce memory usage. Loaded Objects now: 448.
+Total: 3.773022 ms (FindLiveObjects: 0.085233 ms CreateObjectMapping: 0.101298 ms MarkObjects: 0.666693 ms  DeleteObjects: 2.919351 ms)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+level do inimigo: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+level do inimigo: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+level do inimigo: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+level do inimigo: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+level do inimigo: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ataquei o 0 inimigo 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ataquei o 1 inimigo 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ataquei o 0 inimigo 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ataquei o 0 inimigo 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ataquei o 0 inimigo 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ataquei o 0 inimigo 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 8.195781 ms
+
+Unloading 64 unused Assets to reduce memory usage. Loaded Objects now: 739.
+Total: 2.403935 ms (FindLiveObjects: 0.141014 ms CreateObjectMapping: 0.145030 ms MarkObjects: 1.540446 ms  DeleteObjects: 0.575213 ms)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 1951)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 1951)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 1951)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 1951)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 1951)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.962637 ms
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 448.
+Total: 4.839553 ms (FindLiveObjects: 0.122271 ms CreateObjectMapping: 0.088357 ms MarkObjects: 0.981744 ms  DeleteObjects: 3.644949 ms)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+level do inimigo: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+level do inimigo: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+level do inimigo: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+level do inimigo: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+level do inimigo: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ataquei o 0 inimigo 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ataquei o 1 inimigo 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.903894 ms
+
+Unloading 64 unused Assets to reduce memory usage. Loaded Objects now: 739.
+Total: 2.069695 ms (FindLiveObjects: 0.143691 ms CreateObjectMapping: 0.153955 ms MarkObjects: 1.315091 ms  DeleteObjects: 0.455618 ms)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 1951)
+
+Can not play a disabled audio source
+ 
+(Filename:  Line: 1951)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.213387 ms
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 448.
+Total: 4.557971 ms (FindLiveObjects: 0.111115 ms CreateObjectMapping: 0.123164 ms MarkObjects: 0.977281 ms  DeleteObjects: 3.344178 ms)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+level do inimigo: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+level do inimigo: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+level do inimigo: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+level do inimigo: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+valores na lista: 324
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+level do inimigo: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.711115 ms
+
+Unloading 64 unused Assets to reduce memory usage. Loaded Objects now: 739.
+Total: 2.545395 ms (FindLiveObjects: 0.152616 ms CreateObjectMapping: 0.147261 ms MarkObjects: 1.776957 ms  DeleteObjects: 0.466774 ms)
+
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1834 -> priority: 1 
-  Thread -> id: 2314 -> priority: 1 
+  Thread -> id: 2388 -> priority: 1 
+  Thread -> id: d68 -> priority: 1 
