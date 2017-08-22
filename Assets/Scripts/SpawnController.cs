@@ -45,11 +45,11 @@ public class SpawnController : CameraLimits {
 				Spawn ();
 				VerifyWave ();
 			}
-		} else if(Input.anyKey){
+		} else if(Input.GetKey("space")){
 			Time.timeScale = 1;
 			
 			//voltar ao menu
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			SceneManager.LoadScene("Menu");
 		}
 	}
 		
@@ -119,7 +119,7 @@ public class SpawnController : CameraLimits {
 		Time.timeScale = 0;
 
 		GOcanvas.SetActive(true);
-		GOtext.text = "Voce alcancou a wave " + wave + "!";
+		GOtext.text = "You reached the wave " + wave + "!\n... and failed!";
 
 		isGO = true;
 	}
