@@ -32,7 +32,7 @@ public class MovementManager : MonoBehaviour {
 		if (Time.time > nextMoveTime) {
 			isOnPush = false;
 		}
-		
+		gameObject.GetComponent<Animator> ().SetBool ("IsWalking", canMove);
 	}
 	
 	public GameObject Target{
@@ -51,7 +51,7 @@ public class MovementManager : MonoBehaviour {
 			sm.SetFieldGlobal ();
 
 			//verificacao da orientacao do sprite
-			if (transform.position.x > tTarget.position.x) {
+			if (transform.position.x < tTarget.position.x) {
 				if (!facingRight) {
 					//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
 					facingRight = true;

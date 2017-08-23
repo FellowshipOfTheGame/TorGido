@@ -10,9 +10,9 @@ public class BossController : EnemyController {
 	private MovementManager Move;
 	private int my_powerup;
 
-	public float CDspecialAttack1 = 5f;
-	public float rangeSpecialAttack1 = 5f;
-	private float nextSpecialAttack1 = 0f;
+//	public float CDspecialAttack1 = 5f;
+//	public float rangeSpecialAttack1 = 5f;
+//	private float nextSpecialAttack1 = 0f;
 
 	public float CDspecialAttack2 = 10f;
 	public float rangeSpecialAttack2 = 1000f;
@@ -52,6 +52,9 @@ public class BossController : EnemyController {
 		}
 
 		attack = true;
+
+		CDspecialAttack2 = CDspecialAttack2 - (Mathf.Sqrt (Status.attack_speed));
+		nextSpecialAttack2 = CDspecialAttack2 / 2;
 	}
 	
 	// Update is called once per frame
@@ -59,7 +62,6 @@ public class BossController : EnemyController {
 		if (Time.time > next_attack) {
 			tryAttack();
 		}
-		gameObject.GetComponent<Animator> ().SetBool ("IsWalking", Move.canMove);
 	}
 
 	public void tryAttack(){
@@ -82,11 +84,11 @@ public class BossController : EnemyController {
 			Instantiate (AXE, BossPosition, Quaternion.identity);
 
 
-		} else if (Time.time > nextSpecialAttack1 && rangeSpecialAttack1 >= distance) {
+/*		} else if (Time.time > nextSpecialAttack1 && rangeSpecialAttack1 >= distance) {
 			Debug.Log ("boss usou S. Attack 1");
 			nextSpecialAttack1 = Time.time + CDspecialAttack1;
 			next_attack = Time.time + (float)(1f/(Status.attack_speed));
-
+*/
 		} else if (Status.range >= distance) {
 			Debug.Log ("boss usou attack normal");
 			Attack (Status.damage, RigidB.position);
