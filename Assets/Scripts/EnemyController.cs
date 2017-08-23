@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour {
 	private bool kAttack = false; //não sei onde deixar essa variavel
 	protected float next_attack = 0.0f;
 
+	private MovementManager Move;
 	private StatsManager sm;
 
 
@@ -20,6 +21,7 @@ public class EnemyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Move = gameObject.GetComponent<MovementManager> ();
 		Rigid = gameObject.GetComponent<Rigidbody2D>();
 
 		//gameObject.GetComponent<HPManager> ().HP = 3; //setando 3 de hp para o inimigo
@@ -47,6 +49,7 @@ public class EnemyController : MonoBehaviour {
 		if (Time.time > next_attack && gameObject.tag == "Enemy") {
 			attack_gido ();
 		}
+		gameObject.GetComponent<Animator> ().SetBool ("IsWalking", Move.canMove);
 	}
 
 	public bool attack{

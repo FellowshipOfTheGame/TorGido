@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUP : MonoBehaviour {
+public class PowerUP : PUCounterManager {
 
 	public float DurationTime;
 	public float BlinkTime;

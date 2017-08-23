@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class PUCounterManager : MonoBehaviour {
 	private float attack = 0.0f;
 	public Text attacktxt;

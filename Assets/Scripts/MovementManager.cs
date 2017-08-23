@@ -32,7 +32,6 @@ public class MovementManager : MonoBehaviour {
 		if (Time.time > nextMoveTime) {
 			isOnPush = false;
 		}
-		gameObject.GetComponent<Animator> ().SetBool ("IsWalking", canMove);
 	}
 	
 	public GameObject Target{
