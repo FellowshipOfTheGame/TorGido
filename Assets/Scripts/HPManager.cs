@@ -50,7 +50,7 @@ public class HPManager : MonoBehaviour {
 	public float CalculateHealth(){
 	
 		float r = CurrentHealth / MaxHealth;
-		health.text = r.ToString ();
+		if (health != null)		health.text = r.ToString ();
 		return r;
 	
 	}
