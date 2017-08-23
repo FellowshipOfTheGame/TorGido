@@ -9,6 +9,7 @@ public class HPManager : MonoBehaviour {
 	public float CurrentHealth;
 	public float MaxHealth = 0.0f;
 	public Slider bar;
+	public Text health;
 
 	//caso precise, alterar...
 	public float HP{
@@ -25,6 +26,7 @@ public class HPManager : MonoBehaviour {
 
 	void Start () {
 		bar.value = CalculateHealth ();
+
 	}
 	
 	// Update is called once per frame
@@ -47,7 +49,9 @@ public class HPManager : MonoBehaviour {
 	}
 	public float CalculateHealth(){
 	
-		return CurrentHealth / MaxHealth;
+		float r = CurrentHealth / MaxHealth;
+		if (health != null)		health.text = r.ToString ();
+		return r;
 	
 	}
 
@@ -57,6 +61,7 @@ public class HPManager : MonoBehaviour {
 		MaxHealth *= value;
 		CurrentHealth *= value;
 		bar.value = CalculateHealth ();
+
 	}
 
 }
