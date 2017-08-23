@@ -11,6 +11,12 @@ public class SettingManager : MonoBehaviour {
 	public GameSettings gameSettings;
 	public AudioSource musicSource;
 
+	void Start(){
+		
+		gameSettings.fullScreen = fullscreenToggle.isOn = Screen.fullScreen;		
+		
+	}
+
 	// Use this for initialization
 	void OnEnable() {
 		gameSettings = new GameSettings ();

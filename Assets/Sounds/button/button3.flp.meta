@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 218ccac4b62b44bfda1d7430aadf3ddf
 timeCreated: 1503508752
+=======
+guid: 8575dbc83bce77241997a034fabe2060
+timeCreated: 1503430159
+>>>>>>> origin/henrique
 licenseType: Free
 DefaultImporter:
   userData: 

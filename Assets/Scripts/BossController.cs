@@ -32,22 +32,24 @@ public class BossController : EnemyController {
 		my_powerup = Random.Range (0, PowerUP.Length);
 		GameObject PU = PowerUP [my_powerup];
 
+		nextSpecialAttack2 = Time.time + CDspecialAttack2;
+
 		switch(my_powerup) {
 		case 0:
-			Status.attack_speed += 5 * PowerUP [0].GetComponent<Atk_SpeedUP> ().Increase;
+			Status.attack_speed += 3 * PowerUP [0].GetComponent<Atk_SpeedUP> ().Increase;
 			break;
 		case 1:	
-			Status.damage += 5 * PowerUP [1].GetComponent<DamageUP> ().Increase;
+			Status.damage += 3 * PowerUP [1].GetComponent<DamageUP> ().Increase;
 			break;
 		case 2:
-			Status.defense += 5 * PowerUP [2].GetComponent<DefenseUP> ().Increase;
+			Status.defense += 3 * PowerUP [2].GetComponent<DefenseUP> ().Increase;
 			break;
 		case 3:
-			Status.speed += 5 * PowerUP [3].GetComponent<SpeedUP> ().Increase;
+			Status.speed += 3 * PowerUP [3].GetComponent<SpeedUP> ().Increase;
 			break;
 		case 4:
-			gameObject.GetComponent<HPManager> ().MaxHealth += 5 * PowerUP [4].GetComponent<Max_HpUP> ().Increase;
-			gameObject.GetComponent<HPManager> ().CurrentHealth += 5 * PowerUP [4].GetComponent<Max_HpUP> ().Increase;
+			gameObject.GetComponent<HPManager> ().MaxHealth += 2 * PowerUP [4].GetComponent<Max_HpUP> ().Increase;
+			gameObject.GetComponent<HPManager> ().CurrentHealth += 2 * PowerUP [4].GetComponent<Max_HpUP> ().Increase;
 			break;
 		}
 
