@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 05770f95d92f8481fb93608521e22be9
+timeCreated: 1503508759
+=======
 guid: dc744d12e066f1444adda654a478029e
 timeCreated: 1503430162
+>>>>>>> origin/henrique
 licenseType: Free
 AudioImporter:
   serializedVersion: 6

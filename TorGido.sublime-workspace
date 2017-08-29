@@ -60,7 +60,7 @@
 			"file": "/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/ToDo.txt",
 			"settings":
 			{
-				"buffer_size": 1978,
+				"buffer_size": 2147,
 				"encoding": "UTF-8",
 				"line_ending": "Windows",
 				"name": "-matar gido quando hp chegar em 0"
@@ -220,7 +220,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -313,15 +313,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1978,
+						"buffer_size": 2147,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1978,
-								1978
+								2147,
+								2147
 							]
 						],
 						"settings":
@@ -333,7 +333,7 @@
 						"translation.y": 1040.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -361,7 +361,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{

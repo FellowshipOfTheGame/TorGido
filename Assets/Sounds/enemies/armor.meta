@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: e7fa9b6d087664aa99829e834d557a24
+folderAsset: yes
+timeCreated: 1503508752
+=======
 guid: 0c29d66af3a274046abfa495ce33f781
 folderAsset: yes
 timeCreated: 1503430159
+>>>>>>> origin/henrique
 licenseType: Free
 DefaultImporter:
   userData: 
