@@ -78,7 +78,7 @@ public class SpawnController : CameraLimits {
 					if (bossWave) {
 						(Instantiate (Resources.Load ("Boss"), newPosition, Quaternion.identity) as GameObject).GetComponent<EnemyController> ().IncreaseStats ((wave - 1) / cycle);
 					} else {
-						(Instantiate (Resources.Load ("Enemy1"), newPosition, Quaternion.identity) as GameObject).GetComponent<EnemyController> ().IncreaseStats ((wave - 1) / cycle);
+						(Instantiate (Resources.Load ("EnemyMelee"), newPosition, Quaternion.identity) as GameObject).GetComponent<EnemyController> ().IncreaseStats ((wave - 1) / cycle);
 					}
 
 					current++;
