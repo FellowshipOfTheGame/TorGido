@@ -30,7 +30,7 @@ public class TorController : MonoBehaviour {
 		rangey = 3f;
 		Move ();
 
-		if (Input.GetMouseButtonDown (0)) {
+		if (Input.GetMouseButton (0)) {
 			if (Time.time > next_attack) {
 				NormalAttack ();
 				next_attack = Time.time + (float)(1f/(sm.attack_speed));
