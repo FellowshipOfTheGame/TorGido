@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour {
 
 	public void Jogar() {
 		BotaoSom.GetComponent<ClickSound> ().PlaySound ();
-		SceneManager.LoadScene ("ArenaTeste");
+		SceneManager.LoadScene ("Arena");
 	}
 
 	public void Sair() {

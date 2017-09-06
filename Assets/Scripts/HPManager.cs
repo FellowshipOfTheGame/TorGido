@@ -49,9 +49,9 @@ public class HPManager : MonoBehaviour {
 	}
 	public float CalculateHealth(){
 	
-		float r = CurrentHealth / MaxHealth;
+		float r = (CurrentHealth / MaxHealth)*10;
 		if (health != null)		health.text = r.ToString ();
-		return r;
+		return r/10;
 	
 	}
 
