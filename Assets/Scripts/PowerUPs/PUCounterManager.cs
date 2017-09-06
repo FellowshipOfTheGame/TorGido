@@ -12,6 +12,9 @@ public class PUCounterManager : MonoBehaviour {
 
 	private float speed = 0.0f;
 	public Text speedtxt;
+
+	private float wave = 0.0f;
+	public Text waveText;
 	// Use this for initialization
 	void Start () {
 		attacktxt.text = attack.ToString();

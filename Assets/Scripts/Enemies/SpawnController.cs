@@ -28,7 +28,8 @@ public class SpawnController : CameraLimits {
 	public GameObject GOcanvas;
 	public Text GOtext;
 	private bool isGO = false;
-
+	public int i = 0;
+	public Text WaveTime;
 
 
 	// Use this for initialization
@@ -41,9 +42,12 @@ public class SpawnController : CameraLimits {
 	void Update () {
 		if (!isGO) {
 			//Debug.Log ("valor de ArenaFinished: " + ArenaFinished);
+			//WaveTime.text = (waveInterval-i);
+				
 			if (gameObject.GetComponent<CreateArena>().ArenaFinished && Time.time > nextWave) {
 				Spawn ();
 				VerifyWave ();
+				i = 0;
 			}
 		} else if(Input.GetKey("space")){
 			Time.timeScale = 1;

@@ -13,8 +13,9 @@ public class SettingManager : MonoBehaviour {
 
 	void Start(){
 		
-		gameSettings.fullScreen = fullscreenToggle.isOn = Screen.fullScreen;		
-		
+		gameSettings.fullScreen = fullscreenToggle.isOn = Screen.fullScreen;
+		musicSource.volume = gameSettings.VolumeMusic = MusicVolumeSlider.value = 1;
+		PlayerPrefs.SetFloat ("Volume", MusicVolumeSlider.value);
 	}
 
 	// Use this for initialization
@@ -22,7 +23,7 @@ public class SettingManager : MonoBehaviour {
 		gameSettings = new GameSettings ();
 		fullscreenToggle.onValueChanged.AddListener (delegate { OnFullScreenToggle();});
 		MusicVolumeSlider.onValueChanged.AddListener(delegate { OnMusicVolumeChanges();});
-
+	
 	
 
 	}
@@ -31,6 +32,7 @@ public class SettingManager : MonoBehaviour {
 	}
 	public void OnMusicVolumeChanges(){
 		musicSource.volume = gameSettings.VolumeMusic = MusicVolumeSlider.value;
+		PlayerPrefs.SetFloat ("Volume", MusicVolumeSlider.value);
 	}
 	public void OnEffectsVolumeChanges(){
 	}
