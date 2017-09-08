@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 273967b9602afa84d9171e2f22050b5c
-timeCreated: 1503354064
+timeCreated: 1504051513
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -88,7 +88,7 @@ TextureImporter:
         y: 160
         width: 96
         height: 96
-      alignment: 9
+      alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -163,11 +163,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 31
         width: 96
-        height: 117
-      alignment: 9
-      pivot: {x: 0.5416, y: 0}
+        height: 103
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -180,7 +180,7 @@ TextureImporter:
         width: 119
         height: 96
       alignment: 9
-      pivot: {x: 0.43686, y: 0}
+      pivot: {x: 0.3697, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -189,11 +189,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 220
-        y: 33
+        y: 32
         width: 96
-        height: 117
-      alignment: 9
-      pivot: {x: 0.5731, y: 0}
+        height: 118
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -201,12 +201,12 @@ TextureImporter:
       name: Boss1SpriteSheet_9
       rect:
         serializedVersion: 2
-        x: 316
+        x: 323
         y: 33
         width: 96
         height: 96
-      alignment: 9
-      pivot: {x: 0.573, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

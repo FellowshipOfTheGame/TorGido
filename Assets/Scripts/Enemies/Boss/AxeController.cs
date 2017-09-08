@@ -28,7 +28,7 @@ public class AxeController : MonoBehaviour {
 		Boss = GameObject.FindGameObjectWithTag ("Boss");
 
 		AxisZ = new Vector3 (0, 0, 1);
-		AxeDamage = Boss.gameObject.GetComponent<StatsManager> ().damage + 2;
+		AxeDamage = Boss.gameObject.GetComponent<StatsManager> ().damage * 1.2f;
 		Direction = GidoPos - BossPos;
 		Perpendicular = Vector3.Cross (Direction, AxisZ);
 		Perpendicular = Vector3.Normalize (Perpendicular);
@@ -51,7 +51,6 @@ public class AxeController : MonoBehaviour {
 			Boss.gameObject.GetComponent<MovementManager> ().canMove = true;
 			Destroy (gameObject);
 		}
-//		if (timeCounter <= (DescrutingTime * 1 / 4) || timeCounter >= (DescrutingTime * 4 / 3))
 		if (timeCounter <= DescrutingTime)
 			Rigid.AddForce (Perpendicular * acceleration);
 		else

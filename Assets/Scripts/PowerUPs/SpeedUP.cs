@@ -4,10 +4,12 @@ using UnityEngine;
 
 
 public class SpeedUP : PowerUP {
+	public GameObject upcounter;
 	public int Increase;
 
 	// Use this for initialization
 	void Start () {
+		upcounter = GameObject.Find ("PUCounter");
 		Initialization ();
 	}
 	
@@ -19,7 +21,7 @@ public class SpeedUP : PowerUP {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "Player") {
-			UpSpeed ();
+			upcounter.GetComponent<PUCounterManager>().UpSpeed ();
 			//GameObject.Find ("PlayerHealthBarCanvas").GetComponent<UIGidoStatusManager>().UpSpeed();
 			col.gameObject.GetComponent<StatsManager> ().speed += Increase;
 			Destroy (gameObject);

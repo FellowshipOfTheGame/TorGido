@@ -16,28 +16,28 @@ public class EnemyController : MonoBehaviour {
 	private MovementManager Move;
 	private StatsManager sm;
 
-
+/*	public GameObject Special;
+	private Vector3 EnemyPosition;
+	private Timer t;
+	private bool attacking = false;
+	private bool normal_atk = false;
+	private float anim_time;
+*/
 //	private Dictionary<EnemyType, StatsManager> EnemyList = new List<int> ();
 
 	// Use this for initialization
 	void Start () {
 		Move = gameObject.GetComponent<MovementManager> ();
 		Rigid = gameObject.GetComponent<Rigidbody2D>();
+//		t = gameObject.GetComponent<Timer> ();
 
-		//gameObject.GetComponent<HPManager> ().HP = 3; //setando 3 de hp para o inimigo
+//		anim_time = 25.0f / 60.0f;
 
 		gameObject.GetComponent<MovementManager> ().Target = GameObject.FindGameObjectWithTag ("Player"); 
 
 		if (sm == null) {
 			sm = gameObject.GetComponent<StatsManager> ();
 		}
-
-		/*sm.speed = 5f;
-		sm.range = 1f;
-		sm.field = 5f;
-		sm.damage = 1f;
-		sm.attack_speed = 1f;
-		sm.defense = 0;*/
 	}
 
 	// Update is called once per frame
@@ -46,10 +46,13 @@ public class EnemyController : MonoBehaviour {
 
 		move();
 
-		if (Time.time > next_attack && gameObject.tag == "Enemy") {
-			attack_gido ();
+/*		if (Time.time > next_attack && gameObject.tag == "Enemy") {
+			if (!attacking)
+				attack_gido ();
+			else if (normal_atk && t.Finished)
+				NormalAttack ();
 		}
-		gameObject.GetComponent<Animator> ().SetBool ("IsWalking", Move.canMove);
+*/		gameObject.GetComponent<Animator> ().SetBool ("IsWalking", Move.canMove);
 	}
 
 	public bool attack{
@@ -62,15 +65,15 @@ public class EnemyController : MonoBehaviour {
 
 	}
 
-	void attack_gido(){
+/*	void attack_gido(){
 		if (kAttack) {
-			//GOTarget.gameObject.GetComponent<GidoController>().CalculateDamage (sm.damage);
-			gameObject.GetComponent<MovementManager> ().Target.gameObject.GetComponent<GidoController>().CalculateDamage (sm.damage, Rigid.position);
-
-			next_attack = Time.time + (float)(1f/(sm.attack_speed));
+			gameObject.GetComponent<Animator> ().SetTrigger ("Attack");
+			attacking = true;
+			normal_atk = true;
+			t.Begin (anim_time);
 		}
 	}
-
+*/
 	public void CalculateDamage(float damage, Vector3 attackDir){
 		gameObject.GetComponent<AttackManager> ().CalculateDamage (damage);
 
@@ -79,9 +82,6 @@ public class EnemyController : MonoBehaviour {
 		sm.SetFieldGlobal ();
 
 		gameObject.GetComponent<MovementManager> ().push (direction.normalized);
-
-
-
 	}
 
 	//alterar
@@ -100,4 +100,13 @@ public class EnemyController : MonoBehaviour {
 		sm.attack_speed += 0.5f * level;
 		sm.defense += 0.1f * level;
 	}
+
+/*	private void NormalAttack() {
+		EnemyPosition = gameObject.transform.position;
+		Instantiate (Special, EnemyPosition, Quaternion.identity);
+		gameObject.GetComponent<MovementManager> ().Target.gameObject.GetComponent<GidoController> ().CalculateDamage (sm.damage, Rigid.position);
+		next_attack = Time.time + (float)(1f / (sm.attack_speed));
+		attacking = false;
+		normal_atk = false;
+	}*/
 }
