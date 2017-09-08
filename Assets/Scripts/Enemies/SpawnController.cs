@@ -21,30 +21,48 @@ public class SpawnController : CameraLimits {
 	private int wave = 1;
 	private int cycle = 5; //numeros de waves em um ciclo (normais + boss/semi-boss)
 	private int numEnemy = 5 - 1; //numero de inimigos na primeira wave do ciclo - 1
-
+	private int value = 3;
 	private float nextWave = 0f;
 	private float waveInterval = 3f;
 
 	public GameObject GOcanvas;
 	public Text GOtext;
 	private bool isGO = false;
-
-
+	public int i = 0;
+	public Text WaveTime;
+	public GameObject panelWaveTime;
 
 	// Use this for initialization
 	void Start () {
 		max = wave % cycle + numEnemy;
 		wavenumber.text = wave.ToString();
+		value = (int)waveInterval;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (!isGO) {
-			//Debug.Log ("valor de ArenaFinished: " + ArenaFinished);
-			if (gameObject.GetComponent<CreateArena>().ArenaFinished && Time.time > nextWave) {
+			Debug.Log ("Next Wave " + nextWave);
+
+				
+			if (gameObject.GetComponent<CreateArena> ().ArenaFinished && Time.time > nextWave) {
+				panelWaveTime.SetActive (false);
 				Spawn ();
 				VerifyWave ();
+				value = 3;
+				WaveTime.text = value.ToString();
+
+			} else {
+				panelWaveTime.SetActive (true);
+				value = (int)(Time.time - nextWave);
+				if (value < 0)
+					value = value * (-1);
+				value = value % 3;
+				value = value + 1;
+				WaveTime.text = value.ToString();
+
 			}
+
 		} else if(Input.GetKey("space")){
 			Time.timeScale = 1;
 			
@@ -61,6 +79,7 @@ public class SpawnController : CameraLimits {
 
 			//if (Time.time > next_spawn && current < max) {
 			if (current < max) {
+			
 				//	next_spawn = Time.time + spawn_speed;
 				//verificar se gera inimigo muito perto do gido....
 				//float PosX = Random.Range (MinHorizontalPosition (), MaxHorizontalPosition ());
@@ -68,7 +87,7 @@ public class SpawnController : CameraLimits {
 
 				int idx = Random.Range (0, gameObject.GetComponent<CreateArena>().possiblePositions.Count);
 
-				Debug.Log ("valores na lista: " + gameObject.GetComponent<CreateArena>().possiblePositions.Count);
+				//Debug.Log ("valores na lista: " + gameObject.GetComponent<CreateArena>().possiblePositions.Count);
 
 				//Vector3 newPosition = new Vector3 (PosX, PosY, 0);
 				Vector3 newPosition = gameObject.GetComponent<CreateArena>().possiblePositions [idx];
@@ -99,6 +118,7 @@ public class SpawnController : CameraLimits {
 
 			if (enemies.Length + bossess.Length == 0) {
 				nextWave = Time.time + waveInterval;
+
 
 				wave += 1;
 				wavenumber.text = wave.ToString();
