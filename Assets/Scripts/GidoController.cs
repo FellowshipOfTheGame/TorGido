@@ -17,8 +17,11 @@ public class GidoController : MonoBehaviour {
 	private float blinkTime = 0.1f;
 	private float nextBlink = 0f;
 
+	public AudioClip[] audioClip;
+	private AudioSource audio;
 	// Use this for initialization
 	void Start () {
+		audio =  gameObject.GetComponent<AudioSource> ();
 		Rigid = gameObject.GetComponent<Rigidbody2D>();
 		anim = gameObject.GetComponent<Animator> ();
 		spriteRend = gameObject.GetComponent<SpriteRenderer> ();
@@ -62,6 +65,10 @@ public class GidoController : MonoBehaviour {
 				spriteRend.flipX = true;
 			}
 			anim.SetBool ("isWalking", true);
+			if (!audio.isPlaying) {
+				PlaySound (0);
+			}
+
 		} else 
 			anim.SetBool ("isWalking", false);
 
@@ -69,6 +76,19 @@ public class GidoController : MonoBehaviour {
 
 		Rigid.velocity = movement.normalized * sm.speed;
 	}
+
+	public void PlaySound(int clip){
+		audio.clip = audioClip [clip];
+		audio.Play ();
+		if (clip == 0) {
+			Invoke("StopSound", 0.21f);
+
+		}
+	}
+	void StopSound(){
+		audio.Stop();
+	}
+
 
 	public void CalculateDamage(float damage, Vector3 attackDir){
 		if (nextDamage < Time.time) {

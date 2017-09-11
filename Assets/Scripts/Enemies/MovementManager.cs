@@ -20,8 +20,12 @@ public class MovementManager : MonoBehaviour {
 	private float timeOnPush = 0.2f;
 	private float nextMoveTime = 0f;
 
+	public AudioClip[] audioClip;
+	private AudioSource audio;
+
 	// Use this for initialization
 	void Start () {
+		audio =  gameObject.GetComponent<AudioSource> ();
 		Rigid = gameObject.GetComponent<Rigidbody2D>();
 		spriteRend = gameObject.GetComponent<SpriteRenderer> ();
 		sm = gameObject.GetComponent<StatsManager> ();
@@ -72,6 +76,11 @@ public class MovementManager : MonoBehaviour {
 				Vector2 direction = new Vector2 (tTarget.position.x - transform.position.x, tTarget.position.y - transform.position.y);
 
 				Rigid.velocity = direction.normalized * sm.speed;
+				if (audio != null) {
+					if (!audio.isPlaying) {
+						PlaySound (0);
+					}
+				}
 
 			} else {
 				Rigid.velocity = new Vector2 (0f, 0f);
@@ -115,4 +124,13 @@ public class MovementManager : MonoBehaviour {
 		else
 			Rigid.AddForce (direction*40 );
 	}
+	public void PlaySound(int clip){
+		if (audio != null) {
+			audio.clip = audioClip [clip];
+			audio.Play ();
+		}
+
+	}
 }
+
+
