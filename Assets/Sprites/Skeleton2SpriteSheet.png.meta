@@ -1,9 +1,17 @@
 fileFormatVersion: 2
-guid: 8c5d33c2060be46459b4fefb1ff5db58
-timeCreated: 1505155357
+guid: 5a604652e03b0b9448ce01d6560901a2
+timeCreated: 1505156936
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Skeleton2SpriteSheet_0
+    21300002: Skeleton2SpriteSheet_4
+    21300004: Skeleton2SpriteSheet_5
+    21300006: Skeleton2SpriteSheet_6
+    21300008: Skeleton2SpriteSheet_7
+    21300010: Skeleton2SpriteSheet_8
+    21300012: Skeleton2SpriteSheet_9
+    21300014: Skeleton2SpriteSheet_10
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -27,14 +35,14 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -53,14 +61,126 @@ TextureImporter:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Skeleton2SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 190
+        width: 60
+        height: 66
+      alignment: 9
+      pivot: {x: 0.376, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Skeleton2SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 113
+        width: 60
+        height: 66
+      alignment: 9
+      pivot: {x: 0.376, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Skeleton2SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 113
+        width: 60
+        height: 66
+      alignment: 9
+      pivot: {x: 0.376, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Skeleton2SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 113
+        width: 60
+        height: 66
+      alignment: 9
+      pivot: {x: 0.376, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Skeleton2SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 113
+        width: 60
+        height: 66
+      alignment: 9
+      pivot: {x: 0.3418, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Skeleton2SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 28
+        width: 60
+        height: 70
+      alignment: 9
+      pivot: {x: 0.3418, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Skeleton2SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 28
+        width: 60
+        height: 70
+      alignment: 9
+      pivot: {x: 0.3418, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Skeleton2SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 62
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
