@@ -29,6 +29,9 @@ public class BossController : EnemyController {
 	private bool special_atk = false;
 	private float anim_time;
 
+	public AudioClip[] audioClip;
+	private AudioSource audio;
+
 	// Use this for initialization
 	void Start () {
 		Status = gameObject.GetComponent<StatsManager> ();
@@ -102,7 +105,7 @@ public class BossController : EnemyController {
 	public void Attack(float Damage,Vector3 Pos) {
 		gameObject.GetComponent<MovementManager> ().Target.gameObject.GetComponent<GidoController> ().CalculateDamage (Damage, Pos);
 	}
-	
+
 	public void boss_death () {
 		BossPosition = gameObject.transform.position;
 		Instantiate (PowerUP [my_powerup], BossPosition, Quaternion.identity);
