@@ -1,16 +1,17 @@
 fileFormatVersion: 2
-guid: 89b0952efc0f8434b9a8b4473448325c
-timeCreated: 1505156408
+guid: 5a604652e03b0b9448ce01d6560901a2
+timeCreated: 1505156936
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SkeletonSpriteSheet_0
-    21300002: SkeletonSpriteSheet_1
-    21300004: SkeletonSpriteSheet_2
-    21300006: SkeletonSpriteSheet_3
-    21300008: SkeletonSpriteSheet_4
-    21300010: SkeletonSpriteSheet_5
-    21300012: SkeletonSpriteSheet_6
+    21300000: Skeleton2SpriteSheet_0
+    21300002: Skeleton2SpriteSheet_4
+    21300004: Skeleton2SpriteSheet_5
+    21300006: Skeleton2SpriteSheet_6
+    21300008: Skeleton2SpriteSheet_7
+    21300010: Skeleton2SpriteSheet_8
+    21300012: Skeleton2SpriteSheet_9
+    21300014: Skeleton2SpriteSheet_10
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -77,93 +78,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SkeletonSpriteSheet_0
+      name: Skeleton2SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 190
+        width: 60
+        height: 66
+      alignment: 9
+      pivot: {x: 0.376, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Skeleton2SpriteSheet_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 66
-        width: 31
-        height: 64
+        y: 113
+        width: 60
+        height: 66
       alignment: 9
-      pivot: {x: 0.565, y: 0}
+      pivot: {x: 0.376, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SkeletonSpriteSheet_1
+      name: Skeleton2SpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 58
-        y: 66
-        width: 35
-        height: 64
+        x: 64
+        y: 113
+        width: 60
+        height: 66
       alignment: 9
-      pivot: {x: 0.387, y: 0}
+      pivot: {x: 0.376, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SkeletonSpriteSheet_2
+      name: Skeleton2SpriteSheet_6
       rect:
         serializedVersion: 2
-        x: 31
-        y: 66
-        width: 27
-        height: 64
+        x: 119
+        y: 113
+        width: 60
+        height: 66
       alignment: 9
-      pivot: {x: 0.502, y: 0}
+      pivot: {x: 0.376, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SkeletonSpriteSheet_3
+      name: Skeleton2SpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 93
-        y: 66
-        width: 35
-        height: 64
+        x: 179
+        y: 113
+        width: 60
+        height: 66
       alignment: 9
-      pivot: {x: 0.413, y: 0}
+      pivot: {x: 0.3418, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SkeletonSpriteSheet_4
+      name: Skeleton2SpriteSheet_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 1
+        y: 28
+        width: 60
+        height: 70
+      alignment: 9
+      pivot: {x: 0.3418, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Skeleton2SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 28
+        width: 60
+        height: 70
+      alignment: 9
+      pivot: {x: 0.3418, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Skeleton2SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 62
         width: 32
-        height: 64
-      alignment: 9
-      pivot: {x: 0.641, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: SkeletonSpriteSheet_5
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 32
-        height: 64
-      alignment: 9
-      pivot: {x: 0.485, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: SkeletonSpriteSheet_6
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 32
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
