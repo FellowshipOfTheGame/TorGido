@@ -19,7 +19,7 @@ public class SpawnController : CameraLimits {
 
 	//criar tempo de espera entre waves
 	private int wave = 1;
-	private int cycle = 5; //numeros de waves em um ciclo (normais + boss/semi-boss)
+	public int cycle = 5; //numeros de waves em um ciclo (normais + boss/semi-boss)
 	private int numEnemy = 5 - 1; //numero de inimigos na primeira wave do ciclo - 1
 	private int value = 3;
 	private float nextWave = 0f;

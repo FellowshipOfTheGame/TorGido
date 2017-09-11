@@ -5,6 +5,7 @@ using UnityEngine;
 public class CreateArena : MonoBehaviour {
 
 	public GameObject[] tiles;
+	public GameObject[] walls;
 
 	private int rows = 18;
 	//private int columns = 10;
@@ -34,17 +35,44 @@ public class CreateArena : MonoBehaviour {
 
 
 		for (int x = 0; x < rows; x++) {
+			//wall L
+			newTile = walls [0];
+
+			newPosition = new Vector3 (-Xmax + x*incX - 0.35f, x*incY - 0.185f, 0f);
+			Instantiate (newTile, newPosition, Quaternion.identity);
+
+			newPosition = new Vector3 (-Xmax + x*incX - 0.35f, x*incY + 1.015f, 0f);
+			Instantiate (newTile, newPosition, Quaternion.identity);
+
+
 			for (float y = 0; y < rows; y++) {
 				Xinit = -Xmax + x*incX + y*incX;
 				Yinit = 0 + x*incY - y*incY + k;
 
 				newPosition = new Vector3 (Xinit, Yinit, 0f);
 
-				newTile = tiles [Random.Range (0, tiles.Length)];
+
+				if (Random.Range (0, 9) < 1) {
+					newTile = tiles [Random.Range (0, tiles.Length)];
+				} else {
+					newTile = tiles [0];
+				}
+
+
 
 				Instantiate (newTile, newPosition, Quaternion.identity);
 
 				possiblePositions.Add (newPosition);
+
+				if (x == rows - 1) {
+					newTile = walls [1];
+
+					newPosition = new Vector3 (-Xmax + x*incX + y*incX + 0.35f, x*incY - y*incY - 0.185f, 0f);
+					Instantiate (newTile, newPosition, Quaternion.identity);
+
+					newPosition = new Vector3 (-Xmax + x*incX + y*incX + 0.35f, x*incY - y*incY + 1.015f, 0f);
+					Instantiate (newTile, newPosition, Quaternion.identity);
+				}
 			}
 		}
 
