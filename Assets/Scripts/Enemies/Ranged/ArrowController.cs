@@ -22,7 +22,7 @@ public class ArrowController : MonoBehaviour {
 
 //		ArrowDamage = Skeleton.gameObject.GetComponent<StatsManager> ().damage;
 
-		transform.rotation = Quaternion.Euler (0f, 0f, angle - 138f);
+		transform.rotation = Quaternion.Euler (0f, 0f, angle);
 		Rigid.velocity = Vector3.Normalize (Direction) * Speed;
 	}
 	

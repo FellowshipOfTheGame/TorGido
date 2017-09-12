@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 89b0952efc0f8434b9a8b4473448325c
-timeCreated: 1505156408
+timeCreated: 1505168787
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,7 @@ TextureImporter:
     21300008: SkeletonSpriteSheet_4
     21300010: SkeletonSpriteSheet_5
     21300012: SkeletonSpriteSheet_6
+    21300014: SkeletonSpriteSheet_7
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -81,7 +82,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 66
+        y: 132
         width: 31
         height: 64
       alignment: 9
@@ -94,7 +95,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 58
-        y: 66
+        y: 132
         width: 35
         height: 64
       alignment: 9
@@ -107,7 +108,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 31
-        y: 66
+        y: 132
         width: 27
         height: 64
       alignment: 9
@@ -120,7 +121,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 93
-        y: 66
+        y: 132
         width: 35
         height: 64
       alignment: 9
@@ -133,7 +134,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 66
         width: 32
         height: 64
       alignment: 9
@@ -146,7 +147,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 40
-        y: 0
+        y: 66
         width: 32
         height: 64
       alignment: 9
@@ -159,11 +160,24 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 0
+        y: 79
         width: 32
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 50
+      alignment: 9
+      pivot: {x: 0.5, y: -0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SkeletonSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 2
+        width: 31
+        height: 75
+      alignment: 9
+      pivot: {x: 0.565, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
