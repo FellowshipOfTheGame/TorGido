@@ -38,10 +38,10 @@ public class CreateArena : MonoBehaviour {
 			//wall L
 			newTile = walls [0];
 
-			newPosition = new Vector3 (-Xmax + x*incX - 0.35f, x*incY - 0.185f, 0f);
+			newPosition = new Vector3 (-Xmax + x*incX - 0.35f - 0.125f, x*incY - 0.185f - 0.065f, 10f);
 			Instantiate (newTile, newPosition, Quaternion.identity);
 
-			newPosition = new Vector3 (-Xmax + x*incX - 0.35f, x*incY + 1.015f, 0f);
+			newPosition = new Vector3 (-Xmax + x*incX - 0.35f - 0.125f, x*incY + 1.015f - 0.065f, 0f);
 			Instantiate (newTile, newPosition, Quaternion.identity);
 
 
@@ -71,10 +71,10 @@ public class CreateArena : MonoBehaviour {
 				if (x == rows - 1) {
 					newTile = walls [1];
 
-					newPosition = new Vector3 (-Xmax + x*incX + y*incX + 0.35f, x*incY - y*incY - 0.185f, 0f);
+					newPosition = new Vector3 (-Xmax + x*incX + y*incX + 0.35f + 0.125f, x*incY - y*incY - 0.185f - 0.065f, 10f);
 					Instantiate (newTile, newPosition, Quaternion.identity);
 
-					newPosition = new Vector3 (-Xmax + x*incX + y*incX + 0.35f, x*incY - y*incY + 1.015f, 0f);
+					newPosition = new Vector3 (-Xmax + x*incX + y*incX + 0.35f + 0.125f, x*incY - y*incY + 1.015f - 0.065f, 0f);
 					Instantiate (newTile, newPosition, Quaternion.identity);
 				}
 			}
