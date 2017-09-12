@@ -14,11 +14,26 @@ public class TorController : MonoBehaviour {
 	public AudioClip[] audioClip;
 	private AudioSource audio;
 
+	public float CDspecialAttack = 5f;
+	public float rangeSpecialAttack = 5f;
+	private float nextSpecialAttack = 0f;
+
+	public Vector3 MousePos;
+	public Vector3 TorPos;
+
+	private Vector3 Direction;
+	private Vector2 InitialVelocity;
+	private Rigidbody2D Rigid;
+
+	public float Speed;
+
 	void Start () {
 		audio =  gameObject.GetComponent<AudioSource> ();
 		gameObject.GetComponent<MovementManager> ().Target = GameObject.FindGameObjectWithTag ("Mouse"); 
 
 		sm = gameObject.GetComponent<StatsManager> ();
+
+		Rigid = gameObject.GetComponent<Rigidbody2D> ();
 
 		//sm.speed = 10f;
 		//sm.damage = 1f;
@@ -30,21 +45,53 @@ public class TorController : MonoBehaviour {
 
 		rangex = 3f;
 		rangey = 3f;
-		Move ();
 
-		if (Input.GetMouseButton (0)) {
-			if (Time.time > next_attack) {
-				
+		if (Input.GetMouseButton (1) && Time.time > nextSpecialAttack) {
+			nextSpecialAttack = Time.time + CDspecialAttack;
 
+			Howl();
 
-				gameObject.GetComponent<Animator> ().SetTrigger ("Attack");
+			//proximo ataque normal, somente quando acabar animação do dash
+			//next_attack = Time.time + (float)(1f / (sm.attack_speed));
+		} else {
+			Move ();
 
-				NormalAttack ();
-
-				next_attack = Time.time + (float)(1f/(sm.attack_speed));
+			if (Input.GetMouseButton (0)) {
+				if (Time.time > next_attack) {
+					Debug.Log ("ataque normal do tor");
+					gameObject.GetComponent<Animator> ().SetTrigger ("Attack");
+					NormalAttack ();
+					next_attack = Time.time + (float)(1f / (sm.attack_speed));
+				}
 			}
 		}
 
+	}
+
+	void Howl(){
+		Debug.Log ("ataque especial do tor");
+
+		//MousePos = gameObject.GetComponent<MovementManager> ().Target.gameObject.transform.position;
+		//TorPos = gameObject.transform.position;
+
+		//Direction = MousePos - TorPos;
+		//InitialVelocity = Vector3.Normalize (Direction) * Speed;
+		//Rigid.velocity = InitialVelocity;
+
+		Vector2 Center = new Vector2 (transform.position.x, transform.position.y);
+
+		Collider2D[] colliders = Physics2D.OverlapCircleAll (Center, 5f, m_WhatIsEnemy);
+
+		for (int i = 0; i < colliders.Length; i++)
+		{
+
+			GameObject enemy = colliders [i].gameObject;
+
+			//enemy.gameObject.GetComponent<EnemyTestController> ().GetComponent<HPManager> ().DealDamage (damage);
+			enemy.gameObject.GetComponent<EnemyController> ().CalculateDamage(sm.damage * 2, gameObject.GetComponent<Rigidbody2D>().position);
+			Debug.Log ("ataquei o " + i + " inimigo ");
+
+		}
 	}
 
 	void Move(){
@@ -59,7 +106,7 @@ public class TorController : MonoBehaviour {
 		float offset = 0.5f;
 
 		if (transform.position.x > wayPointPos.x)
-			offset = -1f;
+			offset = -0.5f;
 		//if (transform.position.y > wayPointPos.y)
 		//	offset = -1f;
 		

@@ -46,7 +46,7 @@ public class EnemyController : MonoBehaviour {
 
 		move();
 
-		gameObject.GetComponent<Animator> ().SetBool ("IsWalking", Move.canMove);
+		//gameObject.GetComponent<Animator> ().SetBool ("IsWalking", Move.canMove);
 	}
 
 	public bool attack{

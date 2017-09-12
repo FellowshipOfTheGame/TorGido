@@ -9,6 +9,7 @@ public class RangedAttack : MonoBehaviour {
 	protected float next_attack = 0.0f;
 
 	private StatsManager sm;
+	private MovementManager Move;
 	private Timer t;
 	private EnemyController control;
 
@@ -21,6 +22,8 @@ public class RangedAttack : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Move = gameObject.GetComponent<MovementManager> ();
+
 		sm = gameObject.GetComponent<StatsManager> ();
 		control = gameObject.GetComponent<EnemyController> ();
 		t = gameObject.GetComponent<Timer> ();
@@ -47,6 +50,8 @@ public class RangedAttack : MonoBehaviour {
 			attacking = true;
 			normal_atk = true;
 			t.Begin (anim_time);
+
+			Move.canMove = false;
 		}
 	}
 
@@ -69,5 +74,7 @@ public class RangedAttack : MonoBehaviour {
 		next_attack = Time.time + (float)(1f / (sm.attack_speed));
 		attacking = false;
 		normal_atk = false;
+
+		Move.canMove = true;
 	}
 }

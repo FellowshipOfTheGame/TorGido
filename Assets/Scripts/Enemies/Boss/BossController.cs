@@ -90,6 +90,7 @@ public class BossController : EnemyController {
 			Debug.Log ("boss usou S. Attack 2");
 			gameObject.GetComponent<Animator> ().SetTrigger ("Special");
 			Movement.canMove = false;
+			gameObject.GetComponent<Animator> ().SetBool ("IsWalking", Movement.canMove);
 			attacking = true;
 			special_atk = true;
 			t.Begin (anim_time);
