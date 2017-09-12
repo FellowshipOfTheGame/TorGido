@@ -11,8 +11,6 @@ public class TorController : MonoBehaviour {
 	private float next_attack = 0.0f;
 
 	private StatsManager sm;
-	public AudioClip[] audioClip;
-	private AudioSource audio;
 
 	public float CDspecialAttack = 5f;
 	public float rangeSpecialAttack = 5f;
@@ -27,8 +25,10 @@ public class TorController : MonoBehaviour {
 
 	public float Speed;
 
+
+
 	void Start () {
-		audio =  gameObject.GetComponent<AudioSource> ();
+		
 		gameObject.GetComponent<MovementManager> ().Target = GameObject.FindGameObjectWithTag ("Mouse"); 
 
 		sm = gameObject.GetComponent<StatsManager> ();
@@ -45,6 +45,17 @@ public class TorController : MonoBehaviour {
 
 		rangex = 3f;
 		rangey = 3f;
+
+		if (Input.GetMouseButton (0)) {
+			if (Time.time > next_attack) {
+				
+
+
+				gameObject.GetComponent<Animator> ().SetTrigger ("Attack");
+
+				NormalAttack ();
+
+				next_attack = Time.time + (float)(1f/(sm.attack_speed));
 
 		if (Input.GetMouseButton (1) && Time.time > nextSpecialAttack) {
 			nextSpecialAttack = Time.time + CDspecialAttack;
@@ -63,9 +74,12 @@ public class TorController : MonoBehaviour {
 					NormalAttack ();
 					next_attack = Time.time + (float)(1f / (sm.attack_speed));
 				}
+
 			}
 		}
 
+	}
+}
 	}
 
 	void Howl(){
@@ -125,18 +139,17 @@ public class TorController : MonoBehaviour {
 			//enemy.gameObject.GetComponent<EnemyTestController> ().GetComponent<HPManager> ().DealDamage (damage);
 			enemy.gameObject.GetComponent<EnemyController> ().CalculateDamage(sm.damage, gameObject.GetComponent<Rigidbody2D>().position);
 			Debug.Log ("ataquei o " + i + " inimigo ");
+
 /*			if (audioClip != null && !audio.isPlaying) {
 				PlaySound (0);
 			}
 */
+
 		}
-	
-	
 	}
-	public void PlaySound(int clip){
-		audio.clip = audioClip [clip];
-		audio.Play ();
+
 	}
-}
+
+
 
 

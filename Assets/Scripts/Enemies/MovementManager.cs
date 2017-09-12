@@ -80,7 +80,7 @@ public class MovementManager : MonoBehaviour {
 
 				Rigid.velocity = direction.normalized * sm.speed;
 				if (audio != null) {
-					if (!audio.isPlaying) {
+					if (!audio.isPlaying && gameObject.tag != "tor") {
 						PlaySound (0);
 					}
 				}
@@ -131,9 +131,9 @@ public class MovementManager : MonoBehaviour {
 			Rigid.AddForce (direction*40 );
 	}
 	public void PlaySound(int clip){
-		if (audio != null) {
+		if (audio != null && audio.clip != null) {
 			audio.clip = audioClip [clip];
-			audio.Play ();
+			if(audio.clip != null) audio.Play ();
 		}
 
 	}
