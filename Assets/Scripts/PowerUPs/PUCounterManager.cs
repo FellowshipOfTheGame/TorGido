@@ -13,6 +13,9 @@ public class PUCounterManager : MonoBehaviour {
 	private float speed = 0.0f;
 	public Text speedtxt;
 
+	private float attackspeed = 0.0f;
+	public Text attackspeedtxt;
+
 	private float wave = 0.0f;
 
 	// Use this for initialization
@@ -20,6 +23,7 @@ public class PUCounterManager : MonoBehaviour {
 		attacktxt.text = attack.ToString();
 		defensetxt.text = defense.ToString();
 		speedtxt.text = speed.ToString();
+		attackspeedtxt.text = attack.ToString (); 
 	}
 	
 	// Update is called once per frame
@@ -42,6 +46,11 @@ public class PUCounterManager : MonoBehaviour {
 	public void UpDefense(){
 		defense = defense + 1;
 		defensetxt.text = defense.ToString();
+
+	}
+	public void UpAttackSpeed(){
+		attackspeed = attackspeed + 1;
+		attackspeedtxt.text = attackspeed.ToString();
 
 	}
 
