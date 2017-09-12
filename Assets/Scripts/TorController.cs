@@ -11,11 +11,10 @@ public class TorController : MonoBehaviour {
 	private float next_attack = 0.0f;
 
 	private StatsManager sm;
-	public AudioClip[] audioClip;
-	private AudioSource audio;
+
 
 	void Start () {
-		audio =  gameObject.GetComponent<AudioSource> ();
+		
 		gameObject.GetComponent<MovementManager> ().Target = GameObject.FindGameObjectWithTag ("Mouse"); 
 
 		sm = gameObject.GetComponent<StatsManager> ();
@@ -78,18 +77,12 @@ public class TorController : MonoBehaviour {
 			//enemy.gameObject.GetComponent<EnemyTestController> ().GetComponent<HPManager> ().DealDamage (damage);
 			enemy.gameObject.GetComponent<EnemyController> ().CalculateDamage(sm.damage, gameObject.GetComponent<Rigidbody2D>().position);
 			Debug.Log ("ataquei o " + i + " inimigo ");
-			if (!audio.isPlaying) {
-				PlaySound (0);
-			}
+
 
 		}
-	
-	
 	}
-	public void PlaySound(int clip){
-		audio.clip = audioClip [clip];
-		audio.Play ();
-	}
+
+
 }
 
 
