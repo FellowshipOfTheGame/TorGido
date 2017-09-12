@@ -39,6 +39,10 @@ public class HPManager : MonoBehaviour {
 		CurrentHealth -= damage;
 		bar.value = CalculateHealth ();
 
+		if (gameObject.tag == "Enemy") {
+			gameObject.GetComponent<Animator> ().SetTrigger ("Damage");
+		}
+
 		if (CurrentHealth <= 0) {
 	//	-	Die ();
 			return false;

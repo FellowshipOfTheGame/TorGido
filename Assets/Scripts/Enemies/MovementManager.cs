@@ -75,6 +75,9 @@ public class MovementManager : MonoBehaviour {
 				//transform.position = Vector2.MoveTowards(transform.position, target.position, e_speed * Time.deltaTime);
 				Vector2 direction = new Vector2 (tTarget.position.x - transform.position.x, tTarget.position.y - transform.position.y);
 
+				if (gameObject.tag == "Tor")
+					gameObject.GetComponent<Animator> ().SetBool ("IsWalking", true);
+
 				Rigid.velocity = direction.normalized * sm.speed;
 				if (audio != null) {
 					if (!audio.isPlaying) {
@@ -86,6 +89,8 @@ public class MovementManager : MonoBehaviour {
 				Rigid.velocity = new Vector2 (0f, 0f);
 				if(gameObject.tag == "Enemy" || gameObject.tag == "Boss")
 					gameObject.GetComponent<EnemyController>().attack = true;
+				if (gameObject.tag == "Tor")
+					gameObject.GetComponent<Animator> ().SetBool ("IsWalking", false);
 			}
 		}
 	}

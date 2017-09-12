@@ -109,6 +109,7 @@ public class BossController : EnemyController {
 	public void boss_death () {
 		BossPosition = gameObject.transform.position;
 		Instantiate (PowerUP [my_powerup], BossPosition, Quaternion.identity);
+		Destroy (gameObject);
 	}
 
 	private void SpecialAttack () {

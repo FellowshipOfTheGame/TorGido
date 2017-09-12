@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 1eb3a069a7bbd4742bb1c377b17dd7af
-timeCreated: 1502055515
+timeCreated: 1505168115
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -9,6 +9,17 @@ TextureImporter:
     21300004: GidoSpriteSheet_2
     21300006: GidoSpriteSheet_3
     21300008: GidoSpriteSheet_4
+    21300010: GidoSpriteSheet_5
+    21300012: GidoSpriteSheet_6
+    21300014: GidoSpriteSheet_7
+    21300016: GidoSpriteSheet_8
+    21300018: GidoSpriteSheet_9
+    21300020: GidoSpriteSheet_10
+    21300022: GidoSpriteSheet_11
+    21300024: GidoSpriteSheet_12
+    21300026: GidoSpriteSheet_13
+    21300028: GidoSpriteSheet_14
+    21300030: GidoSpriteSheet_15
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -79,7 +90,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 96
         width: 32
         height: 32
       alignment: 7
@@ -92,7 +103,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 96
         width: 32
         height: 32
       alignment: 7
@@ -105,7 +116,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 32
+        y: 96
         width: 32
         height: 32
       alignment: 7
@@ -118,7 +129,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 32
+        y: 96
         width: 32
         height: 32
       alignment: 7
@@ -131,11 +142,102 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GidoSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 64
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.655, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GidoSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 64
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.686, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GidoSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 64
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.687, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GidoSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 32
+        width: 44
+        height: 32
+      alignment: 9
+      pivot: {x: 0.636, y: 0.1575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GidoSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.719, y: 0.22}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GidoSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 44
+        height: 32
+      alignment: 9
+      pivot: {x: 0.636, y: 0.345}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GidoSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 71
         y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.719, y: 0.3757}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
