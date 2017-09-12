@@ -53,7 +53,11 @@ public class CreateArena : MonoBehaviour {
 
 
 				if (Random.Range (0, 9) < 1) {
-					newTile = tiles [Random.Range (0, tiles.Length)];
+					//if (Random.Range (0, 9) < 5) {
+						newTile = tiles [Random.Range (1, tiles.Length)];
+					//} else {
+					//	newTile = tiles [26];
+					//}
 				} else {
 					newTile = tiles [0];
 				}
