@@ -50,7 +50,7 @@ public class MovementManager : MonoBehaviour {
 		float distance = Vector2.Distance (transform.position, tTarget.position);
 
 		if (!isOnPush && distance <= sm.field) {
-			
+			gameObject.GetComponent<Animator> ().SetBool ("IsWalking", canMove);
 			sm.SetFieldGlobal ();
 
 			//verificacao da orientacao do sprite
@@ -100,6 +100,7 @@ public class MovementManager : MonoBehaviour {
 		if (gameObject.tag == "Enemy" || gameObject.tag == "Boss") {
 			if (coll.gameObject.tag == "Player" ) {
 				canMove = false;
+				gameObject.GetComponent<Animator> ().SetBool ("IsWalking", canMove);
 			} else {
 				Rigid.velocity = new Vector2 (0f, 0f);
 			}

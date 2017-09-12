@@ -16,8 +16,6 @@ public class MenuArena : MonoBehaviour {
 	}
 
 	public void backToMenu(){
-
-		Debug.Log ("cliquei no botao de menu da arena");
 		SceneManager.LoadScene ("Menu");
 	}
 }

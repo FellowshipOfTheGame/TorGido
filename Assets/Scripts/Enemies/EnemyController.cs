@@ -52,7 +52,7 @@ public class EnemyController : MonoBehaviour {
 			else if (normal_atk && t.Finished)
 				NormalAttack ();
 		}
-*/		gameObject.GetComponent<Animator> ().SetBool ("IsWalking", Move.canMove);
+*/		//gameObject.GetComponent<Animator> ().SetBool ("IsWalking", Move.canMove);
 	}
 
 	public bool attack{
