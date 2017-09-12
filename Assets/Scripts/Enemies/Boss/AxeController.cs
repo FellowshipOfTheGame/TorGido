@@ -48,7 +48,8 @@ public class AxeController : MonoBehaviour {
 		timeCounter += Time.deltaTime;
 		Rigid.AddForce (Vector3.Normalize (Direction) * acceleration);
 		if ((Vector3.Distance (BossPos, gameObject.transform.position) <= 0.5f) && (timeCounter >= DescrutingTime)) {
-			Boss.gameObject.GetComponent<MovementManager> ().canMove = true;
+			if(Boss != null)
+				Boss.gameObject.GetComponent<MovementManager> ().canMove = true;
 			Destroy (gameObject);
 		}
 		if (timeCounter <= DescrutingTime)
