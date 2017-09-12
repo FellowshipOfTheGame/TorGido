@@ -25,7 +25,6 @@ public class TorController : MonoBehaviour {
 
 	public float Speed;
 
-	void Start () {
 
 
 	void Start () {
@@ -79,6 +78,8 @@ public class TorController : MonoBehaviour {
 			}
 		}
 
+	}
+}
 	}
 
 	void Howl(){
@@ -147,7 +148,8 @@ public class TorController : MonoBehaviour {
 		}
 	}
 
+	}
 
-}
+
 
 
