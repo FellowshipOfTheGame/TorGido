@@ -58,6 +58,7 @@ public class TorController : MonoBehaviour {
 			if (Input.GetMouseButton (0)) {
 				if (Time.time > next_attack) {
 					Debug.Log ("ataque normal do tor");
+					gameObject.GetComponent<Animator> ().SetTrigger ("Attack");
 					NormalAttack ();
 					next_attack = Time.time + (float)(1f / (sm.attack_speed));
 				}
