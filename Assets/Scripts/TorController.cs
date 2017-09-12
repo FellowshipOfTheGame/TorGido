@@ -94,12 +94,12 @@ public class TorController : MonoBehaviour {
 			GameObject enemy = colliders [i].gameObject;
 
 			//enemy.gameObject.GetComponent<EnemyTestController> ().GetComponent<HPManager> ().DealDamage (damage);
-			enemy.gameObject.GetComponent<EnemyController> ().CalculateDamage(sm.damage * 2, gameObject.GetComponent<Rigidbody2D>().position);
+			enemy.gameObject.GetComponent<EnemyController> ().CalculateDamage(sm.damage * 0.5f, gameObject.GetComponent<Rigidbody2D>().position);
 			Debug.Log ("ataquei o " + i + " inimigo ");
 
 		}
 
-		//Movement.canMove = true;
+		Movement.canMove = true;
 	}
 
 	void MoveAgain(){
