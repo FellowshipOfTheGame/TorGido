@@ -46,13 +46,7 @@ public class EnemyController : MonoBehaviour {
 
 		move();
 
-/*		if (Time.time > next_attack && gameObject.tag == "Enemy") {
-			if (!attacking)
-				attack_gido ();
-			else if (normal_atk && t.Finished)
-				NormalAttack ();
-		}
-*/		gameObject.GetComponent<Animator> ().SetBool ("IsWalking", Move.canMove);
+		gameObject.GetComponent<Animator> ().SetBool ("IsWalking", Move.canMove);
 	}
 
 	public bool attack{
@@ -65,15 +59,6 @@ public class EnemyController : MonoBehaviour {
 
 	}
 
-/*	void attack_gido(){
-		if (kAttack) {
-			gameObject.GetComponent<Animator> ().SetTrigger ("Attack");
-			attacking = true;
-			normal_atk = true;
-			t.Begin (anim_time);
-		}
-	}
-*/
 	public void CalculateDamage(float damage, Vector3 attackDir){
 		gameObject.GetComponent<AttackManager> ().CalculateDamage (damage);
 
@@ -101,12 +86,4 @@ public class EnemyController : MonoBehaviour {
 		sm.defense += 0.1f * level;
 	}
 
-/*	private void NormalAttack() {
-		EnemyPosition = gameObject.transform.position;
-		Instantiate (Special, EnemyPosition, Quaternion.identity);
-		gameObject.GetComponent<MovementManager> ().Target.gameObject.GetComponent<GidoController> ().CalculateDamage (sm.damage, Rigid.position);
-		next_attack = Time.time + (float)(1f / (sm.attack_speed));
-		attacking = false;
-		normal_atk = false;
-	}*/
 }

@@ -20,6 +20,7 @@ public class BossController : EnemyController {
 
 	public GameObject AXE;
 	public GameObject SpecialEffect;
+	public GameObject Death;
 	private Vector3 GidoPosition;
 	private Vector3 BossPosition;
 
@@ -108,7 +109,8 @@ public class BossController : EnemyController {
 
 	public void boss_death () {
 		BossPosition = gameObject.transform.position;
-		Instantiate (PowerUP [my_powerup], BossPosition, Quaternion.identity);
+		Death.GetComponent <BossDeath> ().PU = PowerUP [my_powerup];
+		Instantiate (Death, BossPosition, Quaternion.identity);
 		Destroy (gameObject);
 	}
 
