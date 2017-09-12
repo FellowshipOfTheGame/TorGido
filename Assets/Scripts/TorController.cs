@@ -47,7 +47,6 @@ public class TorController : MonoBehaviour {
 		rangex = 3f;
 		rangey = 3f;
 
-<<<<<<< HEAD
 		if (Input.GetMouseButton (0)) {
 			if (Time.time > next_attack) {
 				
@@ -58,7 +57,6 @@ public class TorController : MonoBehaviour {
 				NormalAttack ();
 
 				next_attack = Time.time + (float)(1f/(sm.attack_speed));
-=======
 
 		if (Input.GetMouseButton (1) && Time.time > nextSpecialAttack) {
 			nextSpecialAttack = Time.time + CDspecialAttack;
@@ -141,6 +139,10 @@ public class TorController : MonoBehaviour {
 			enemy.gameObject.GetComponent<EnemyController> ().CalculateDamage(sm.damage, gameObject.GetComponent<Rigidbody2D>().position);
 			Debug.Log ("ataquei o " + i + " inimigo ");
 
+/*			if (audioClip != null && !audio.isPlaying) {
+				PlaySound (0);
+			}
+*/
 
 		}
 	}
