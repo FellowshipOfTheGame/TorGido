@@ -68,7 +68,7 @@ public class BossController : EnemyController {
 		attack = true;
 
 		CDspecialAttack2 = CDspecialAttack2 - (Mathf.Sqrt (Status.attack_speed));
-		nextSpecialAttack2 = CDspecialAttack2 / 2;
+		nextSpecialAttack2 = Time.time + CDspecialAttack2 / 2;
 	}
 	
 	// Update is called once per frame

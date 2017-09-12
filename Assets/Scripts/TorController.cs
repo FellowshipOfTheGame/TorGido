@@ -22,6 +22,7 @@ public class TorController : MonoBehaviour {
 	private Vector3 Direction;
 	private Vector2 InitialVelocity;
 	private Rigidbody2D Rigid;
+	private MovementManager Movement;
 
 	public float Speed;
 
@@ -35,6 +36,8 @@ public class TorController : MonoBehaviour {
 
 		Rigid = gameObject.GetComponent<Rigidbody2D> ();
 
+		Movement = gameObject.GetComponent<MovementManager> ();
+
 		//sm.speed = 10f;
 		//sm.damage = 1f;
 		//sm.range = 0.2f; // para movimentação
@@ -46,21 +49,13 @@ public class TorController : MonoBehaviour {
 		rangex = 3f;
 		rangey = 3f;
 
-		if (Input.GetMouseButton (0)) {
-			if (Time.time > next_attack) {
-				
-
-
-				gameObject.GetComponent<Animator> ().SetTrigger ("Attack");
-
-				NormalAttack ();
-
-				next_attack = Time.time + (float)(1f/(sm.attack_speed));
 
 		if (Input.GetMouseButton (1) && Time.time > nextSpecialAttack) {
 			nextSpecialAttack = Time.time + CDspecialAttack;
+			gameObject.GetComponent<Animator> ().SetTrigger ("Special");
 
-			Howl();
+			Movement.canMove = false;
+			//Howl();
 
 			//proximo ataque normal, somente quando acabar animação do dash
 			//next_attack = Time.time + (float)(1f / (sm.attack_speed));
@@ -74,12 +69,9 @@ public class TorController : MonoBehaviour {
 					NormalAttack ();
 					next_attack = Time.time + (float)(1f / (sm.attack_speed));
 				}
-
 			}
 		}
 
-	}
-}
 	}
 
 	void Howl(){
@@ -106,8 +98,14 @@ public class TorController : MonoBehaviour {
 			Debug.Log ("ataquei o " + i + " inimigo ");
 
 		}
+
+		//Movement.canMove = true;
 	}
 
+	void MoveAgain(){
+		Movement.canMove = true;
+	}
+		
 	void Move(){
 		gameObject.GetComponent<MovementManager> ().move();
 	}

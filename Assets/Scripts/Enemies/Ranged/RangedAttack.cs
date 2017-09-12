@@ -77,4 +77,8 @@ public class RangedAttack : MonoBehaviour {
 
 		Move.canMove = true;
 	}
+
+	public void MoveAgain(){
+		Move.canMove = true;
+	}
 }
