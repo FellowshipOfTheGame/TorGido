@@ -125,10 +125,10 @@ public class TorController : MonoBehaviour {
 			//enemy.gameObject.GetComponent<EnemyTestController> ().GetComponent<HPManager> ().DealDamage (damage);
 			enemy.gameObject.GetComponent<EnemyController> ().CalculateDamage(sm.damage, gameObject.GetComponent<Rigidbody2D>().position);
 			Debug.Log ("ataquei o " + i + " inimigo ");
-			if (!audio.isPlaying) {
+/*			if (audioClip != null && !audio.isPlaying) {
 				PlaySound (0);
 			}
-
+*/
 		}
 	
 	
