@@ -28,6 +28,15 @@
 	"buffers":
 	[
 		{
+			"contents": "Segundo parágrafo do texto, toda vez que citar o nome do jogo, deixe em negrito.\n\nFeature 1bla bla bla\nFeature 2bla bla bla\nFeature 3bla bla bla\nFeature 4bla bla bla\n\nPercorra uma cripta com seu companheiro espiritual para achar o criador da discordia do mundo, enquanto inúmeras hordas tentarão impedí-lo. Só você pode ajudar a acabar com tudo isso!\n\n​Em Eodun você deve controlar os personagens em sua cruzada. \n\nMate os infiéis que aparecerem em seu caminho com Tor, enquanto desvia de seus ataques com Gido. Fique mais forte durante a jornada. Mas tenha cuidado, seus inimigos também  se fortalecem. Até onde você consegue chegar?​",
+			"settings":
+			{
+				"buffer_size": 635,
+				"line_ending": "Windows",
+				"name": "Segundo parágrafo do texto, toda vez que citar o n"
+			}
+		},
+		{
 			"contents": "\t101--\n\t102\n\t103\n\t104\n\t110\n\t112\n\t113\n\t\t114\n\t116\n\t117\n\tlevaridge town\n\tslateport city\n\trusturf tunnel\n\tfiery path\n\tpetalburg woods\n\t\n\tdewford city\n\tgranite cave\n-----\n111\n114\n115\nvendaturf town\nlavaridge town\nfallbor \nmeteor falls\nrustboro city\npetalburg city\nlittleroot town\noldale town\n\n1x 5*\n3x 4*MAX\n5x 3*MAX (possivel 3 quando colocar 4 4* lv MAX)\n\nfalta:\n1x 4*MAX\n11x 4* (5- rainbowmon)\n\ntotal duas quests:\n15 4* -> 15+3*15 = 60 3* -> 60+2*60 = 180 2*\n\n\n====\n\n   using System.Collections;\nusing System.Collections.Generic;\nusing UnityEngine;\n\npublic class GidoController : MonoBehaviour {\n\n\tprivate Rigidbody2D Rigid;\n\tprivate Animator anim;\n\tprivate SpriteRenderer spriteRend;\n\tprivate bool facingRight = true;\n\n\tprivate StatsManager sm;\n\n\t// Use this for initialization\n\tvoid Start () {\n\t\tRigid = gameObject.GetComponent<Rigidbody2D>();\n\t\tanim = gameObject.GetComponent<Animator> ();\n\t\tspriteRend = gameObject.GetComponent<SpriteRenderer> ();\n\n\t\tgameObject.GetComponent<HPManager> ().HP = 10; //setando 10 de hp para o gido\n\n\t\tsm = gameObject.GetComponent<StatsManager> ();\n\t\tsm.defense = 0f;\n\t\tsm.speed = 6f;\n\t}\n\t\n\t// Update is called once per frame\n\tvoid Update () {\n\t\tMove ();\n\t}\n\n\tvoid Move() {\n\t\tfloat h = Input.GetAxis (\"Horizontal\");\n\t\tfloat v = Input.GetAxis (\"Vertical\");\n\n\t\tif (h != 0.0f || v != 0.0f) {\n\t\t\tif (h > 0.0f && !facingRight) {\n\t\t\t\tfacingRight = true;\n\t\t\t\t//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);\n\t\t\t\tspriteRend.flipX = false;\n\t\t\t} else if (h < 0.0f && facingRight) {\n\t\t\t\tfacingRight = false;\n\t\t\t\t//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);\n\t\t\t\tspriteRend.flipX = true;\n\t\t\t}\n\t\t\tanim.SetBool (\"isWalking\", true);\n\t\t} else \n\t\t\tanim.SetBool (\"isWalking\", false);\n\n\t\tVector2 movement= new Vector2 (h, v);\n\n\t\t//Rigid.velocity = movement.normalized * sm.speed;\n\t\tRigid.AddForce( new Vector2 (h*sm.speed, v*sm.speed));\n\t}\n\n\tpublic void CalculateDamage(float damage){\n\t\tgameObject.GetComponent<AttackManager> ().CalculateDamage (damage);\n\n\t\tanim.SetTrigger (\"Damage\");\n\t}\n}\n",
 			"settings":
 			{
@@ -37,71 +46,26 @@
 			}
 		},
 		{
-			"contents": "https://www.gog.com/forum/terraria/jungle_solution_or_corruptionimmune_jungles_mod\n\nC:\\Users\\Henrique\\Documents\\My Games\\Terraria\\ModLoader\n\nhttps://www.reddit.com/r/Terraria/comments/5ssv2n/list_of_mods_worth_checking_out_tmodloader/\n\nthorium\ncalamity\n---\nbetter yoyos\nboss checklist\nbags of holding\nendless items\nhelpful hotkeys\nimksushi\nitem check list\nlunar desconstructor\nloot bags mod\nmagic storage\nmagic fertilizer\nmore loot bags\nmutant mod\nomniswing\nreduced grinding\nrecipe browser\nshort respawn time\nwing slot\nwhat mod is this from\n\n\tno flare\n\t\tsummoners's association\n\tsolidified potions\n\n\nhttps://www.facebook.com/BauruBoxGames/?ref=py_c    - (shopping) (14) 3206-9395\n\nhttps://www.facebook.com/Planneta-Game-BAURU-161646967379797/?hc_location=ufi \n\nhttps://www.google.com.br/maps/place/Planneta+Game/@-22.3239202,-49.0741439,20z/data=!4m13!1m7!3m6!1s0x94bf67a7d96ce645:0xdc4e81f713be4bd9!2sR.+Treze+de+Maio,+Bauru+-+SP!3b1!8m2!3d-22.3302705!4d-49.0719817!3m4!1s0x0:0xe4e45c209bb38c71!8m2!3d-22.3238509!4d-49.0736888\n\n\n(14) 3214-3466\n\nhttps://www.facebook.com/gameplaystorebauru/?ref=page_internal\n(14) 3245-3027\n\n\nhttps://www.facebook.com/PowerGameBauru/?ref=page_internal\n(14) 3313-9889\n\n\n\nhttps://www.facebook.com/willgamesbauru/?ref=py_c  (parece q nao vende produto da nintendo)\n\n(14) 3206-4037\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n====\n\nbella 220 (+15% totem)\nspectra 252 (+15% totem)\n\n\nbonus megan: 14.55\nB -> 206\nS -> 238\n\n\n=====\n\n5* - 0\n4*m- 2 + 5\n\n4* - 1\n3*m- 1\n\n3* - 4\n2*m- 0\n==============\nneed:\n4*m- 18\n4* - 18*4 = 54\ntotal 4* -> 54+18 = 72\n\n3*m- 72\n3* - 72*3 = 216\ntotal 3* -> 216+72 = 288\n\n2*m- 288\n2* - 288*2 = 576\ntotal 2* -> 576+288 = 864\n\nequivalencias:\n4* = 4 3* = 12 2* = 24 1*\n3* = 3 2* = 6 1*\n\n\n\nhttps://www.reddit.com/r/summonerswar/comments/5nzkn6/indepth_toah_guide_low_rune_requirement_100/\n\n\n----\nREAD:\nhttps://www.reddit.com/r/summonerswar/comments/5nzkn6/indepth_toah_guide_low_rune_requirement_100/\n\nhttps://www.reddit.com/r/summonerswar/comments/6yhvfq/for_anyone_struggling_with_artamiel_on_hard_mode/\n\ndb10:\nhttps://www.reddit.com/r/summonerswar/comments/5sl8gi/am_i_the_only_one_who_finds_meganspectra_db10/\n\nhttps://www.reddit.com/r/summonerswar/comments/5lzj23/db10_avoiding_death_at_zaiross_stage_based_on/?st=iyvjoe07&sh=21aad8d7\n\nraid:\nhttps://www.reddit.com/r/summonerswar/comments/5zbyy5/raid_team_templatesprogression/\n\n\n253.6/-/251 - Spectra [239, 285] >\n224/-/228 - Veromos [235, min(Spectra's Speed,265)] > \n232.82/-/220 - Megan [179, Spectra's Speed] > \n231.48/-/219 - Belladon [159, Megan's speed] > \n132.64/-/155 - Sigmarus [136, 142]\n\nvitoria/falha\n14/5\n5/1\n\n\nBaretta\n2) Mav\n3) Veromos\n\t\t4) Neal - 15 skill ups (wind é 2*)\n5) Spectra\n6) Belladeon\n\n\t\t1) Krakdon (Replaced by Basalt or Woochi)\n\t2) Lapis (Replaced by Gildong or Mantra)\n\t\t3) Hemos (Replaced by Thrain) - 14 skills ups (wind dropa em aiden forest)\n\t4) Colleen\n\nShellter -> HCAnraki\nRizzoma -> henrique_anraki@outlook.com\n\n\n\n\n1) a diferença basica do problema do livro (gaussian elimination) pro nosso (Gauss-jordan) é que o do livro só zera as colunas de baixo do pivo e a diagonal principal é 1 (não citou nada sobre poder ter alguma coluna cheia de 0 por exemplo)\n\n2) no livro ele cita dois modos de partição: 1-D (cada thread ser uma ou mais linha/coluna -> nossa abordagem) e 2-D (cada thread ser um 'quadrado' de posições da matriz -> basicamente cada celula da matriz é uma tarefa)\n\n2.1)No livro ele cria as threads no começo e trabalha com elas até o final do problema (diferente da abordagem que a gente tava pensando de criar, processar(divisão/subtração), destruir, processar(swap de linhas), repete)\n\n3) ele cita uma abordagem assincrona dos processos (bem no estilo de 'pipeline') para aumentar a eficiencia\n\n4)o swap de linhas/colunas, no caso do 1-D, é feito baseado na divisão das threads para facilitar a busca do pivo diferente de zero (se tenho um thread de linhas, ele procura o pivo nessa linha para trocar a coluna e assim evitar comunicações entre diferentes threads)\n\n4.1) no caso 2-D, ele fala como fazer (e cita pra restringir o numero de elementos a ser comparados para diminuir o numero de comunicações), mas no final fala que o partial pivoting (a troca de linha/coluna) não da muito certo com o 'pipeline' para este caso (2-D)\n\no que acho depois de ver isso:\nA) a unica coisa q mudaria do modo que a gente fez seria essa parte de criar/destruir threads para cada ciclo\n\nB)tirando isso, acho que nossa abordagem esta boa para esse trab, ja que não da pra saber se ele quer o modo mais eficiente ou não... (embora to achando que ele vai querer a elhor opção pra uma nota boa)\n\nC) (caso a sugestão A seja implementada) se quisermos verificar/aumentar a eficiencia precisariamos discutir se ficamos com threads sendo colunas/linhas\n\t->linhas implica que todas as threads serão usadas em todos os ciclos, mas o swap fica custoso \n\t->colunas implica que uma thread não vai ser usada mais usada em cada ciclo, mas o swap fica mais facil \n\n\n\n\n\n\n12 - 0.5\n10 - x\n\n\t -boss não lança machado\n\n\t\t--duas paredes\n\t -boss olha na direção contraria\n\t -boss nao ataca?\n\t\t-não pega power-up (só na minha cena...)\t \n-speed boss esta 0...\n\n\t-ataque especial gido --->> v1: circulo de raio 5f em volta do tor que da o dobro de dano\n\t -area de atk do boss --->> range aumentado de 1 para 1.5",
+			"contents": "https://www.gog.com/forum/terraria/jungle_solution_or_corruptionimmune_jungles_mod\n\nC:\\Users\\Henrique\\Documents\\My Games\\Terraria\\ModLoader\n\nhttps://www.reddit.com/r/Terraria/comments/5ssv2n/list_of_mods_worth_checking_out_tmodloader/\n\nthorium\ncalamity\n---\nbetter yoyos\nboss checklist\nbags of holding\nendless items\nhelpful hotkeys\nimksushi\nitem check list\nlunar desconstructor\nloot bags mod\nmagic storage\nmagic fertilizer\nmore loot bags\nmutant mod\nomniswing\nreduced grinding\nrecipe browser\nshort respawn time\nwing slot\nwhat mod is this from\n\n\tno flare\n\t\tsummoners's association\n\tsolidified potions\n\n\nhttps://www.facebook.com/BauruBoxGames/?ref=py_c    - (shopping) (14) 3206-9395\n\nhttps://www.facebook.com/Planneta-Game-BAURU-161646967379797/?hc_location=ufi \n\nhttps://www.google.com.br/maps/place/Planneta+Game/@-22.3239202,-49.0741439,20z/data=!4m13!1m7!3m6!1s0x94bf67a7d96ce645:0xdc4e81f713be4bd9!2sR.+Treze+de+Maio,+Bauru+-+SP!3b1!8m2!3d-22.3302705!4d-49.0719817!3m4!1s0x0:0xe4e45c209bb38c71!8m2!3d-22.3238509!4d-49.0736888\n\n\n(14) 3214-3466\n\nhttps://www.facebook.com/gameplaystorebauru/?ref=page_internal\n(14) 3245-3027\n\n\nhttps://www.facebook.com/PowerGameBauru/?ref=page_internal\n(14) 3313-9889\n\n\n\nhttps://www.facebook.com/willgamesbauru/?ref=py_c  (parece q nao vende produto da nintendo)\n\n(14) 3206-4037\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n====\n\nbella 220 (+15% totem)\nspectra 252 (+15% totem)\n\n\nbonus megan: 14.55\nB -> 206\nS -> 238\n\n\n=====\n\n5* - 0\n4*m- 2 + 5\n\n4* - 1\n3*m- 1\n\n3* - 4\n2*m- 0\n==============\nneed:\n4*m- 18\n4* - 18*4 = 54\ntotal 4* -> 54+18 = 72\n\n3*m- 72\n3* - 72*3 = 216\ntotal 3* -> 216+72 = 288\n\n2*m- 288\n2* - 288*2 = 576\ntotal 2* -> 576+288 = 864\n\nequivalencias:\n4* = 4 3* = 12 2* = 24 1*\n3* = 3 2* = 6 1*\n\n\n\nhttps://www.reddit.com/r/summonerswar/comments/5nzkn6/indepth_toah_guide_low_rune_requirement_100/\n\n\n----\nREAD:\nhttps://www.reddit.com/r/summonerswar/comments/5nzkn6/indepth_toah_guide_low_rune_requirement_100/\n\nhttps://www.reddit.com/r/summonerswar/comments/6yhvfq/for_anyone_struggling_with_artamiel_on_hard_mode/\n\ndb10:\nhttps://www.reddit.com/r/summonerswar/comments/5sl8gi/am_i_the_only_one_who_finds_meganspectra_db10/\n\nhttps://www.reddit.com/r/summonerswar/comments/5lzj23/db10_avoiding_death_at_zaiross_stage_based_on/?st=iyvjoe07&sh=21aad8d7\n\nraid:\nhttps://www.reddit.com/r/summonerswar/comments/5zbyy5/raid_team_templatesprogression/\n\n\n253.6/-/251 - Spectra [239, 285] >\n224/-/228 - Veromos [235, min(Spectra's Speed,265)] > \n232.82/-/220 - Megan [179, Spectra's Speed] > \n231.48/-/219 - Belladon [159, Megan's speed] > \n132.64/-/155 - Sigmarus [136, 142]\n\nvitoria/falha\n14/5\n5/1\n\n\nBaretta\n2) Mav\n3) Veromos\n\t4) Neal - 15 skill ups (wind é 2*)\n5) Spectra\n6) Belladeon\n\n\t\t1) Krakdon (Replaced by Basalt or Woochi)\n\t2) Lapis (Replaced by Gildong or Mantra)\n\t\t3) Hemos (Replaced by Thrain) - 14 skills ups (wind dropa em aiden forest)\n\t4) Colleen\n\nShellter -> HCAnraki\nRizzoma -> henrique_anraki@outlook.com\n\n\n\n\n1) a diferença basica do problema do livro (gaussian elimination) pro nosso (Gauss-jordan) é que o do livro só zera as colunas de baixo do pivo e a diagonal principal é 1 (não citou nada sobre poder ter alguma coluna cheia de 0 por exemplo)\n\n2) no livro ele cita dois modos de partição: 1-D (cada thread ser uma ou mais linha/coluna -> nossa abordagem) e 2-D (cada thread ser um 'quadrado' de posições da matriz -> basicamente cada celula da matriz é uma tarefa)\n\n2.1)No livro ele cria as threads no começo e trabalha com elas até o final do problema (diferente da abordagem que a gente tava pensando de criar, processar(divisão/subtração), destruir, processar(swap de linhas), repete)\n\n3) ele cita uma abordagem assincrona dos processos (bem no estilo de 'pipeline') para aumentar a eficiencia\n\n4)o swap de linhas/colunas, no caso do 1-D, é feito baseado na divisão das threads para facilitar a busca do pivo diferente de zero (se tenho um thread de linhas, ele procura o pivo nessa linha para trocar a coluna e assim evitar comunicações entre diferentes threads)\n\n4.1) no caso 2-D, ele fala como fazer (e cita pra restringir o numero de elementos a ser comparados para diminuir o numero de comunicações), mas no final fala que o partial pivoting (a troca de linha/coluna) não da muito certo com o 'pipeline' para este caso (2-D)\n\no que acho depois de ver isso:\nA) a unica coisa q mudaria do modo que a gente fez seria essa parte de criar/destruir threads para cada ciclo\n\nB)tirando isso, acho que nossa abordagem esta boa para esse trab, ja que não da pra saber se ele quer o modo mais eficiente ou não... (embora to achando que ele vai querer a elhor opção pra uma nota boa)\n\nC) (caso a sugestão A seja implementada) se quisermos verificar/aumentar a eficiencia precisariamos discutir se ficamos com threads sendo colunas/linhas\n\t->linhas implica que todas as threads serão usadas em todos os ciclos, mas o swap fica custoso \n\t->colunas implica que uma thread não vai ser usada mais usada em cada ciclo, mas o swap fica mais facil \n\n\n\n\n\n\n12 - 0.5\n10 - x\n\n\t -boss não lança machado\n\n\t\t--duas paredes\n\t -boss olha na direção contraria\n\t -boss nao ataca?\n\t\t-não pega power-up (só na minha cena...)\t \n-speed boss esta 0...\n\n\t-ataque especial gido --->> v1: circulo de raio 5f em volta do tor que da o dobro de dano\n\t -area de atk do boss --->> range aumentado de 1 para 1.5\n\n\n\n\n--falar sobre trocas de linhas para achar pivo",
 			"file": "/C/jogos/terraria/link-mods.txt",
 			"file_size": 5528,
 			"file_write_time": 131496352387324919,
 			"settings":
 			{
-				"buffer_size": 5298,
+				"buffer_size": 5348,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "1-aproveite o momento\n2-achar as respostas dentro de você\n\n-aprender a jogar fora o que não precisa\n\t--esvaziar a mente para prestar atenção no agora\n-nao deixe suas emoçoes controlarem voce\n-tudo  tem um proposito\n-sempre tem alguma coisa acontecendo, nada na vida é banal\n-conhecimento não é o mesmo que sabedoria\n-",
-			"settings":
-			{
-				"buffer_size": 317,
-				"line_ending": "Windows",
-				"name": "1-aproveite o momento"
-			}
-		},
-		{
-			"contents": "1º anotar o que foi feito, o que deixou de fazer(tentem estipular quanto tempo demorou para fazer cada coisa)\n2º o que sera feito(baseado no que ainda falta faze e o tempo que temos até a entrega)\n3º atualizar o trello com o que sera feito\n\n\n=====\n\n\nDUvidas:\n\n-O QUE FAZER DURANTE O KNOCK BACK/EMPURRAO:\n\t1-para a movimentação e dar o empurrao, só voltando o controle pro player depois do efeito do empurrao ter acabado\n\t2-deixar player se movimentar mas dar o empurrao ao msm tempo\n\n\n--atualizar prefab gido\n--fazer direção do push certo\n\n============\nAdd(+), Problemas(-) e duvidas(*):\n\nGeral:\n\t+power ups/poderes\n\t+gido morrer\n\t+menu\n\t+boss\n\t+novos inimigos\n\t+tela game over\n\t+imunidade\n\t+empurrar ao dar dano (tor/inimigo)\n\t+HUD com HP (e outras informações) gido\n\t+alterar velocidade para forca no movimento\n\n\t*range do ataque do tor está bom? (pega inimigos em embaixo/em cima...)\n\t*tor vai poder levar dano/morrer?\n\t*colocar ataques do tor e do inimigo no atk manager? os dois são bem diferentes\n\nComponentes:\n\t+DeathManager (DeathEnemyManager & DeathGidoManager?)?\n\nArena:\n\t-inimigos se empurram e fazem o gido ser empurrado (pathfinding???)\n\t\n\t*itens/power-ups dropados ou gerados randomicamente na arena?\n\t*tamanho da arena?\n\t*Waves?\n\t\t-modificação dos atributos dos inimigos conforme a wave?\n\t\t-aumento de numero de inimigos?\n\t\t-mix dos dois?\n\t*spawn constante? (sem waves)\n\t*boss?\n\n\n====\nmovimento - addForce - https://megaike.itch.io/autumn-and-the-mystic-lake\n\n\n\n=====\n\n\nhttps://gamedev.stackexchange.com/questions/14309/how-to-develop-rpg-damage-formulas\n\nhttps://gamedev.stackexchange.com/questions/129319/rpg-formula-attack-and-defense\n\nhttps://rpgmaker.net/forums/topics/21673/\n\n\nX: 0,7\nY: 0,35\n\n\nrotate:\nZ: 63.43\n\n\nunity: nav mesh 2d\n->player prefs\n\nidieas:\n\t\t-novo tor\n\t\t-um/dois niveis\n\t-novo inimigo\n-terminar arena (paredes, modificar waves (aumentar numero de bosses))\n-traps\n-balanceamento\n\t-atk especial do tor\n\t-animação correta dos inimigos\n-efeitos sonoros\n-confirmação botão menu\n\n\n\nBugs:\n\t-collider box boss\n-bug do hp -> olhar como esta preenchendo a barra grafica\n-botoes 'voltar ao menu' com erro de som\n-textura do cursor??\n\t-animator invalido\n\t-tor com animação 'invertida'\n\t-machado voa infinitamente caso boss seja morto antes do final da animação\n\t-configuração de 'volume' -> volume no max, mas barra no meio\n\t-configuração de volume reseta quando muda cenas\n-\n\nfeito:\n-tor ataca segurando o botao de ataque\n-tor não passa pelas paredes(boundary) (relevante: http://answers.unity3d.com/questions/1070001/having-trigger-colliders-collide-with-objects.html)\n-tor não faz mais moon walk\n\n\n\natk especial do tor:\n-dash\n\t-setar speed pra ficar maior\n\t-alterar o movimento de alguma maneira\n\t\n\n\ntor controller:\n\nvoid Update () {\n\t\ttransform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.y);\n\n\t\trangex = 3f;\n\t\trangey = 3f;\n\n\n\t\tif (Input.GetMouseButton (1) && Time.time > nextSpecialAttack) {\n\t\t\tnextSpecialAttack = Time.time + CDspecialAttack;\n\n\t\t\tHowl();\n\n\t\t\t//proximo ataque normal, somente quando acabar animação do dash\n\t\t\t//next_attack = Time.time + (float)(1f / (sm.attack_speed));\n\t\t} else {\n\t\t\tMove ();\n\n\t\t\tif (Input.GetMouseButton (0)) {\n\t\t\t\tif (Time.time > next_attack) {\n\t\t\t\t\tDebug.Log (\"ataque normal do tor\");\n\t\t\t\t\tgameObject.GetComponent<Animator> ().SetTrigger (\"Attack\");\n\t\t\t\t\tNormalAttack ();\n\t\t\t\t\tnext_attack = Time.time + (float)(1f / (sm.attack_speed));\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t}",
+			"contents": "1º anotar o que foi feito, o que deixou de fazer(tentem estipular quanto tempo demorou para fazer cada coisa)\n2º o que sera feito(baseado no que ainda falta faze e o tempo que temos até a entrega)\n3º atualizar o trello com o que sera feito\n\n\n=====\n\n\nDUvidas:\n\n-O QUE FAZER DURANTE O KNOCK BACK/EMPURRAO:\n\t1-para a movimentação e dar o empurrao, só voltando o controle pro player depois do efeito do empurrao ter acabado\n\t2-deixar player se movimentar mas dar o empurrao ao msm tempo\n\n\n--atualizar prefab gido\n--fazer direção do push certo\n\n============\nAdd(+), Problemas(-) e duvidas(*):\n\nGeral:\n\t+power ups/poderes\n\t+gido morrer\n\t+menu\n\t+boss\n\t+novos inimigos\n\t+tela game over\n\t+imunidade\n\t+empurrar ao dar dano (tor/inimigo)\n\t+HUD com HP (e outras informações) gido\n\t+alterar velocidade para forca no movimento\n\n\t*range do ataque do tor está bom? (pega inimigos em embaixo/em cima...)\n\t*tor vai poder levar dano/morrer?\n\t*colocar ataques do tor e do inimigo no atk manager? os dois são bem diferentes\n\nComponentes:\n\t+DeathManager (DeathEnemyManager & DeathGidoManager?)?\n\nArena:\n\t-inimigos se empurram e fazem o gido ser empurrado (pathfinding???)\n\t\n\t*itens/power-ups dropados ou gerados randomicamente na arena?\n\t*tamanho da arena?\n\t*Waves?\n\t\t-modificação dos atributos dos inimigos conforme a wave?\n\t\t-aumento de numero de inimigos?\n\t\t-mix dos dois?\n\t*spawn constante? (sem waves)\n\t*boss?\n\n\n====\nmovimento - addForce - https://megaike.itch.io/autumn-and-the-mystic-lake\n\n\n\n=====\n\n\nhttps://gamedev.stackexchange.com/questions/14309/how-to-develop-rpg-damage-formulas\n\nhttps://gamedev.stackexchange.com/questions/129319/rpg-formula-attack-and-defense\n\nhttps://rpgmaker.net/forums/topics/21673/\n\n\nX: 0,7\nY: 0,35\n\n\nrotate:\nZ: 63.43\n\n\nunity: nav mesh 2d\n->player prefs\n\nidieas:\n\t\t-novo tor\n\t\t-um/dois niveis\n\t-novo inimigo\n-terminar arena (paredes, modificar waves (aumentar numero de bosses))\n-traps\n-balanceamento\n\t-atk especial do tor\n\t-animação correta dos inimigos\n-efeitos sonoros\n-confirmação botão menu\n\n\n\nBugs:\n\t-collider box boss\n-bug do hp -> olhar como esta preenchendo a barra grafica\n-botoes 'voltar ao menu' com erro de som\n-textura do cursor??\n\t-animator invalido\n\t-tor com animação 'invertida'\n\t-machado voa infinitamente caso boss seja morto antes do final da animação\n\t-configuração de 'volume' -> volume no max, mas barra no meio\n\t-configuração de volume reseta quando muda cenas\n-\n\nfeito:\n-tor ataca segurando o botao de ataque\n-tor não passa pelas paredes(boundary) (relevante: http://answers.unity3d.com/questions/1070001/having-trigger-colliders-collide-with-objects.html)\n-tor não faz mais moon walk\n\n\n\natk especial do tor:\n-dash\n\t-setar speed pra ficar maior\n\t-alterar o movimento de alguma maneira\n\t\n\n\n\nVER COM URGENCIA:\n-nome\n-alterar HUD\n\t-instruções\n-TELA em diferentes resoluções\n\t-spawner na cena da arena\n-criar build\n-sons\n\t-animar uivo\n-mudar contador de wave -> quando boss terminar animação\n\t-cooldown inicial no special do boss\n\t-as vezes boss nasce com speed 0\n-animação gido\n-começar CD do atk special depois q pegar machado?\n-da pra cancelar animação de uivo com o ataque normal do tor -> ataque duplo?\n-alterar RangedAttack e TorController para ativar 'canMove' após animação\n-efeito de ataque não esta rotacionando\n\n\n\n==========================\ntor controller:\n\n\tvoid Update () {\n\t\ttransform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.y);\n\n\t\trangex = 3f;\n\t\trangey = 3f;\n\n\n\t\tif (Input.GetMouseButton (1) && Time.time > nextSpecialAttack) {\n\t\t\tnextSpecialAttack = Time.time + CDspecialAttack;\n\n\t\t\tHowl();\n\n\t\t\t//proximo ataque normal, somente quando acabar animação do dash\n\t\t\t//next_attack = Time.time + (float)(1f / (sm.attack_speed));\n\t\t} else {\n\t\t\tMove ();\n\n\t\t\tif (Input.GetMouseButton (0)) {\n\t\t\t\tif (Time.time > next_attack) {\n\t\t\t\t\tDebug.Log (\"ataque normal do tor\");\n\t\t\t\t\tgameObject.GetComponent<Animator> ().SetTrigger (\"Attack\");\n\t\t\t\t\tNormalAttack ();\n\t\t\t\t\tnext_attack = Time.time + (float)(1f / (sm.attack_speed));\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t}\n\n",
 			"file": "/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/ToDo.txt",
-			"file_size": 2871,
-			"file_write_time": 131496368945343799,
+			"file_size": 4242,
+			"file_write_time": 131497220293801582,
 			"settings":
 			{
-				"buffer_size": 3465,
-				"encoding": "UTF-8",
+				"buffer_size": 4027,
 				"line_ending": "Windows",
 				"name": "-matar gido quando hp chegar em 0"
-			}
-		},
-		{
-			"file": "Assets/Scripts/TorController.cs",
-			"settings":
-			{
-				"buffer_size": 3696,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "1. Create a 1ist of natural numbers 2, 3, 4,...,n, none of which is marked.\n\n2, Set k to 2, the first unmarked number on the list.\n\n3. Repeat\n\t(a) Mark all multiples of k between k^2 and n\n\t(b) find Ihe smallest number greater than k that is unmarked. Set k to this new value\nUntil k' > n\n\n4. The unmarked numbers are primes\n\n\n\n====\n07/2012 ~01/2013\n\n\nlista do que colocar:\n\n-semear\n-certificados semcomp\n-projeto gamejam \n-olimpiadas\n\n",
-			"settings":
-			{
-				"buffer_size": 436,
-				"line_ending": "Windows",
-				"name": "1. Create a 1ist of natural numbers 2, 3, 4,...,n,"
-			}
-		},
-		{
-			"file": "/C/Users/Henrique/Desktop/USP/BCC/6sem/IA/ex_prolog/lista1-3.pl",
-			"settings":
-			{
-				"buffer_size": 1062,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Git/GameJam/Collor_atualizado/Collor/Assets/Scripts/ScoreManager.cs",
-			"settings":
-			{
-				"buffer_size": 879,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -165,6 +129,9 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Henrique/Desktop/USP/BCC/6sem/IA/ex_prolog/lista1-3.pl",
+		"/C/Git/GameJam/Collor_atualizado/Collor/Assets/Scripts/ScoreManager.cs",
+		"/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/TorGido/Assets/Scripts/TorController.cs",
 		"/C/Users/Henrique/Downloads/Sisterhood True Edition (2014) - Guest Poster.epub",
 		"/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/TorGido/Assets/Scripts/SpawnController.cs",
 		"/C/Users/Henrique/Desktop/USP/BCC/3sem/web/Aula11/Prototipo_Projeto.html",
@@ -176,7 +143,6 @@
 		"/C/Users/Henrique/Downloads/2108dd8652498e179096eecf746ea8301c3cbe0b.flac",
 		"/C/Users/Henrique/Desktop/USP/BCC/6sem/IA/ex_prolog/lista1-1.pl",
 		"/C/Users/Henrique/Desktop/USP/BCC/6sem/IA/ex_prolog/lista1-2.pl",
-		"/C/Users/Henrique/Desktop/USP/BCC/6sem/IA/ex_prolog/lista1-3.pl",
 		"/C/Users/Henrique/Desktop/USP/BCC/6sem/IA/ex_prolog/lista1-4.pl",
 		"/C/Users/Henrique/Desktop/USP/BCC/6sem/IA/ex_prolog/likes.pl",
 		"/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/TorGido/Assets/Scripts/CameraLimits.cs",
@@ -235,11 +201,39 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 635,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								602,
+								602
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Segundo parágrafo do texto, toda vez que citar o n",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
 					"semi_transient": false,
 					"settings":
 					{
@@ -267,20 +261,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
 					"file": "/C/jogos/terraria/link-mods.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5298,
+						"buffer_size": 5348,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5063,
-								5063
+								5348,
+								5348
 							]
 						],
 						"settings":
@@ -288,38 +282,10 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3337.0,
+						"translation.y": 3826.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 317,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								317,
-								317
-							]
-						],
-						"settings":
-						{
-							"auto_name": "1-aproveite o momento",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -328,15 +294,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3465,
+						"buffer_size": 4027,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3465,
-								3465
+								4027,
+								4027
 							]
 						],
 						"settings":
@@ -345,123 +311,10 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1778.0,
+						"translation.y": 2489.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "Assets/Scripts/TorController.cs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3696,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1663,
-								943
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 684.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 436,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								436,
-								436
-							]
-						],
-						"settings":
-						{
-							"auto_name": "1. Create a 1ist of natural numbers 2, 3, 4,...,n,",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/C/Users/Henrique/Desktop/USP/BCC/6sem/IA/ex_prolog/lista1-3.pl",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1062,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								119,
-								119
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Perl/Perl.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/C/Git/GameJam/Collor_atualizado/Collor/Assets/Scripts/ScoreManager.cs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 879,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								879,
-								879
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
