@@ -8,7 +8,6 @@ public class CreateArena : MonoBehaviour {
 	public GameObject[] walls;
 
 	private int rows = 18;
-	//private int columns = 10;
 
 	private float Xinit = 10.5f;
 	private float Yinit = 5.25f;
@@ -30,8 +29,8 @@ public class CreateArena : MonoBehaviour {
 
 		possiblePositions.Clear ();
 
-		float Xmax = (rows - 1) * incX; //(rows / 2) * incX;
-		float Ymax = rows * incY; //(rows / 2) * incY;
+		float Xmax = (rows - 1) * incX; 
+		float Ymax = rows * incY; 
 
 
 		for (int x = 0; x < rows; x++) {
@@ -53,11 +52,7 @@ public class CreateArena : MonoBehaviour {
 
 
 				if (Random.Range (0, 9) < 1) {
-					//if (Random.Range (0, 9) < 5) {
-						newTile = tiles [Random.Range (1, tiles.Length)];
-					//} else {
-					//	newTile = tiles [26];
-					//}
+					newTile = tiles [Random.Range (1, tiles.Length)];
 				} else {
 					newTile = tiles [0];
 				}

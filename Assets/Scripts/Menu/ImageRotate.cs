@@ -13,18 +13,6 @@ public class ImageRotate : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		/*if (_time <= 2f) {
-			_time += Time.deltaTime;
-		} else {
-			if (transform.localRotation.y == 0)
-				transform.eulerAngles = new Vector2 (0, 180);
-			else
-				transform.eulerAngles = new Vector2 (0, 0);
-
-			_time = 0;
-		}*/
-
-
 	}
 
 	public void Rotateto0(){

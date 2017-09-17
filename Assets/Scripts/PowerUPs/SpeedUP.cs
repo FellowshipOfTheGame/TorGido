@@ -22,7 +22,6 @@ public class SpeedUP : PowerUP {
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "Player") {
 			upcounter.GetComponent<PUCounterManager>().UpSpeed ();
-			//GameObject.Find ("PlayerHealthBarCanvas").GetComponent<UIGidoStatusManager>().UpSpeed();
 			col.gameObject.GetComponent<StatsManager> ().speed += Increase;
 			Destroy (gameObject);
 		}

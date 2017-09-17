@@ -38,9 +38,6 @@ public class TorController : MonoBehaviour {
 
 		Movement = gameObject.GetComponent<MovementManager> ();
 
-		//sm.speed = 10f;
-		//sm.damage = 1f;
-		//sm.range = 0.2f; // para movimentação
 	}
 
 	void Update () {
@@ -55,16 +52,12 @@ public class TorController : MonoBehaviour {
 			gameObject.GetComponent<Animator> ().SetTrigger ("Special");
 
 			Movement.canMove = false;
-			//Howl();
 
-			//proximo ataque normal, somente quando acabar animação do dash
-			//next_attack = Time.time + (float)(1f / (sm.attack_speed));
 		} else {
 			Move ();
 
 			if (Input.GetMouseButton (0)) {
 				if (Time.time > next_attack) {
-					Debug.Log ("ataque normal do tor");
 					gameObject.GetComponent<Animator> ().SetTrigger ("Attack");
 					NormalAttack ();
 					next_attack = Time.time + (float)(1f / (sm.attack_speed));
@@ -75,14 +68,6 @@ public class TorController : MonoBehaviour {
 	}
 
 	void Howl(){
-		Debug.Log ("ataque especial do tor");
-
-		//MousePos = gameObject.GetComponent<MovementManager> ().Target.gameObject.transform.position;
-		//TorPos = gameObject.transform.position;
-
-		//Direction = MousePos - TorPos;
-		//InitialVelocity = Vector3.Normalize (Direction) * Speed;
-		//Rigid.velocity = InitialVelocity;
 
 		Vector2 Center = new Vector2 (transform.position.x, transform.position.y);
 
@@ -93,9 +78,7 @@ public class TorController : MonoBehaviour {
 
 			GameObject enemy = colliders [i].gameObject;
 
-			//enemy.gameObject.GetComponent<EnemyTestController> ().GetComponent<HPManager> ().DealDamage (damage);
 			enemy.gameObject.GetComponent<EnemyController> ().CalculateDamage(sm.damage * 0.5f, gameObject.GetComponent<Rigidbody2D>().position);
-			Debug.Log ("ataquei o " + i + " inimigo ");
 
 		}
 
@@ -111,6 +94,8 @@ public class TorController : MonoBehaviour {
 	}
 
 	void NormalAttack(){
+		Movement.canMove = true;
+
 		//verificação da area do ataque
 		Vector3 wayPointPos = GameObject.FindGameObjectWithTag ("Mouse").transform.position;
 
@@ -119,9 +104,6 @@ public class TorController : MonoBehaviour {
 
 		if (transform.position.x > wayPointPos.x)
 			offset = -0.5f;
-		//if (transform.position.y > wayPointPos.y)
-		//	offset = -1f;
-		
 
 		rangex = 1.5f;
 		rangey = 1.5f;
@@ -134,9 +116,7 @@ public class TorController : MonoBehaviour {
 
 			GameObject enemy = colliders [i].gameObject;
 
-			//enemy.gameObject.GetComponent<EnemyTestController> ().GetComponent<HPManager> ().DealDamage (damage);
 			enemy.gameObject.GetComponent<EnemyController> ().CalculateDamage(sm.damage, gameObject.GetComponent<Rigidbody2D>().position);
-			Debug.Log ("ataquei o " + i + " inimigo ");
 
 /*			if (audioClip != null && !audio.isPlaying) {
 				PlaySound (0);
@@ -144,6 +124,8 @@ public class TorController : MonoBehaviour {
 */
 
 		}
+
+
 	}
 
 	}

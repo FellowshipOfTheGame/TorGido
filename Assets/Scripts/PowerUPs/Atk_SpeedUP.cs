@@ -22,7 +22,6 @@ public class Atk_SpeedUP : PowerUP {
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "Player") {
 			
-			//GameObject.Find ("PlayerHealthBarCanvas").GetComponent<UIGidoStatusManager>().UpAttack();
 			Tor.gameObject.GetComponent<StatsManager> ().attack_speed += Increase;
 			Destroy (gameObject);
 		}

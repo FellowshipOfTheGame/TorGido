@@ -13,7 +13,6 @@ public class RangedAttack : MonoBehaviour {
 	private Timer t;
 	private EnemyController control;
 
-//	public GameObject SpecialEffect;
 	private Vector3 SkeletonPosition;
 	private Vector3 GidoPosition;
 	private bool attacking = false;
@@ -55,10 +54,6 @@ public class RangedAttack : MonoBehaviour {
 		}
 	}
 
-/*	public void Attack(float Damage,Vector3 Pos) {
-		gameObject.GetComponent<MovementManager> ().Target.gameObject.GetComponent<GidoController> ().CalculateDamage (Damage, Pos);
-	}
-*/
 	private void NormalAttack() {
 		SkeletonPosition = gameObject.transform.position;
 		GidoPosition = gameObject.GetComponent<MovementManager> ().Target.gameObject.transform.position;
@@ -67,7 +62,7 @@ public class RangedAttack : MonoBehaviour {
 		GidoController Gido = gameObject.GetComponent<MovementManager> ().Target.gameObject.GetComponent<GidoController> ();
 		Arrow.GetComponent<ArrowController> ().GidoControl = Gido;
 		Arrow.GetComponent<ArrowController> ().ArrowDamage = gameObject.GetComponent<StatsManager> ().damage;
-//		Arrow.GetComponent<ArrowController> ().Skeleton = gameObject;
+
 		Arrow.GetComponent<ArrowController> ().SkelPos = SkeletonPosition;
 		Arrow.GetComponent<ArrowController> ().GidoPos = GidoPosition;
 		Instantiate (Arrow, SkeletonPosition, Quaternion.identity);

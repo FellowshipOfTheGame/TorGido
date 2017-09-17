@@ -20,8 +20,6 @@ public class ArrowController : MonoBehaviour {
 		Direction = GidoPos - SkelPos;
 		float angle = Mathf.Atan2 (Direction.y, Direction.x) * Mathf.Rad2Deg;
 
-//		ArrowDamage = Skeleton.gameObject.GetComponent<StatsManager> ().damage;
-
 		transform.rotation = Quaternion.Euler (0f, 0f, angle);
 		Rigid.velocity = Vector3.Normalize (Direction) * Speed;
 	}
@@ -33,7 +31,6 @@ public class ArrowController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "Player") {
-//			Skeleton.GetComponent<BossController> ().Attack (ArrowDamage, Rigid.position);
 			GidoControl.CalculateDamage (ArrowDamage, Rigid.position);
 			Destroy (gameObject);
 		}

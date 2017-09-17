@@ -13,7 +13,6 @@ public class MovementManager : MonoBehaviour {
 	private StatsManager sm;
 
 	private bool facingRight = true;
-	//private bool attack = false;
 	public bool canMove = true;
 
 	private bool isOnPush = false;
@@ -56,13 +55,11 @@ public class MovementManager : MonoBehaviour {
 			//verificacao da orientacao do sprite
 			if (transform.position.x < tTarget.position.x) {
 				if (!facingRight) {
-					//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
 					facingRight = true;
 					spriteRend.flipX = false;
 				}
 			} else {
 				if (facingRight) {
-					//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
 					facingRight = false;
 					spriteRend.flipX = true;
 				}
@@ -70,9 +67,8 @@ public class MovementManager : MonoBehaviour {
 
 			//movimento
 			if (sm.range < distance && canMove) {
-				if(gameObject.tag == "Enemy" /*|| gameObject.tag == "Boss"*/)
+				if(gameObject.tag == "Enemy")
 					gameObject.GetComponent<EnemyController>().attack = false;
-				//transform.position = Vector2.MoveTowards(transform.position, target.position, e_speed * Time.deltaTime);
 				Vector2 direction = new Vector2 (tTarget.position.x - transform.position.x, tTarget.position.y - transform.position.y);
 
 				if (gameObject.tag == "Tor")

@@ -39,8 +39,6 @@ public class AxeController : MonoBehaviour {
 		Distancia = Vector3.Distance (BossPos, GidoPos) + MoreDist;
 		acceleration = (-Mathf.Pow (Speed, 2)) / (2 * Distancia);	// Eq. de Torricelli :D
 		DescrutingTime = (-Speed / acceleration);					// Função horária do MUV :D
-
-//		Debug.Log ("Destructing time = " + DescrutingTime);
 	}
 	
 	// Update is called once per frame

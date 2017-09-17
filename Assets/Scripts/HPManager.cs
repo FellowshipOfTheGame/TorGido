@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class HPManager : MonoBehaviour {
 
-	//public float HP;
 	public float CurrentHealth;
 	public float MaxHealth = 0.0f;
 	public Slider bar;
@@ -15,11 +14,7 @@ public class HPManager : MonoBehaviour {
 	public float HP{
 		get { return CurrentHealth; }
 		set { 
-			/*if (MaxHealth == 0) {
-				MaxHealth = value; 
-				CurrentHealth = MaxHealth;
-				bar.value = CalculateHealth ();
-			}*/
+
 		}
 	}
 
@@ -44,7 +39,6 @@ public class HPManager : MonoBehaviour {
 		}
 
 		if (CurrentHealth <= 0) {
-	//	-	Die ();
 			return false;
 		}
 

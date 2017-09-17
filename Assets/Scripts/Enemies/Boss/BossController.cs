@@ -10,10 +10,6 @@ public class BossController : EnemyController {
 	private MovementManager Movement;
 	private int my_powerup;
 
-//	public float CDspecialAttack1 = 5f;
-//	public float rangeSpecialAttack1 = 5f;
-//	private float nextSpecialAttack1 = 0f;
-
 	public float CDspecialAttack2 = 10f;
 	public float rangeSpecialAttack2 = 1000f;
 	private float nextSpecialAttack2 = 10f;
@@ -87,7 +83,6 @@ public class BossController : EnemyController {
 		float distance = Vector2.Distance (transform.position, gameObject.GetComponent<MovementManager>().Target.transform.position);
 
 		if (Time.time > nextSpecialAttack2 && rangeSpecialAttack2 >= distance) { // SPECIAL ATTACK
-			Debug.Log ("boss usou S. Attack 2");
 			gameObject.GetComponent<Animator> ().SetTrigger ("Special");
 			Movement.canMove = false;
 			gameObject.GetComponent<Animator> ().SetBool ("IsWalking", Movement.canMove);
@@ -96,7 +91,6 @@ public class BossController : EnemyController {
 			t.Begin (anim_time);
 		}
 		else if (Status.range >= distance) {									// NORMAL ATTACK
-			Debug.Log ("boss usou attack normal");
 			gameObject.GetComponent<Animator> ().SetTrigger ("Attack");
 			attacking = true;
 			normal_atk = true;

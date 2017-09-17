@@ -26,11 +26,7 @@ public class GidoController : MonoBehaviour {
 		anim = gameObject.GetComponent<Animator> ();
 		spriteRend = gameObject.GetComponent<SpriteRenderer> ();
 
-		//gameObject.GetComponent<HPManager> ().HP = 10; //setando 10 de hp para o gido
-
 		sm = gameObject.GetComponent<StatsManager> ();
-		//sm.defense = 0f;
-		//sm.speed = 6f;
 	}
 	
 	// Update is called once per frame
@@ -57,11 +53,9 @@ public class GidoController : MonoBehaviour {
 		if (h != 0.0f || v != 0.0f) {
 			if (h > 0.0f && !facingRight) {
 				facingRight = true;
-				//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
 				spriteRend.flipX = false;
 			} else if (h < 0.0f && facingRight) {
 				facingRight = false;
-				//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
 				spriteRend.flipX = true;
 			}
 			anim.SetBool ("isWalking", true);
@@ -95,8 +89,6 @@ public class GidoController : MonoBehaviour {
 			if (!gameObject.GetComponent<AttackManager> ().CalculateDamage (damage)) {
 				GameObject SpawnerArena = GameObject.FindGameObjectWithTag ("SpawnerArena");
 				SpawnerArena.GetComponent<SpawnController> ().FinishArena ();
-
-				//gameObject.SetActive (false);
 
 			} else {
 

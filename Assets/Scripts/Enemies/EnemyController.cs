@@ -16,22 +16,10 @@ public class EnemyController : MonoBehaviour {
 	private MovementManager Move;
 	private StatsManager sm;
 
-/*	public GameObject Special;
-	private Vector3 EnemyPosition;
-	private Timer t;
-	private bool attacking = false;
-	private bool normal_atk = false;
-	private float anim_time;
-*/
-//	private Dictionary<EnemyType, StatsManager> EnemyList = new List<int> ();
-
 	// Use this for initialization
 	void Start () {
 		Move = gameObject.GetComponent<MovementManager> ();
 		Rigid = gameObject.GetComponent<Rigidbody2D>();
-//		t = gameObject.GetComponent<Timer> ();
-
-//		anim_time = 25.0f / 60.0f;
 
 		gameObject.GetComponent<MovementManager> ().Target = GameObject.FindGameObjectWithTag ("Player"); 
 
@@ -45,8 +33,6 @@ public class EnemyController : MonoBehaviour {
 		transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.y);
 
 		move();
-
-		//gameObject.GetComponent<Animator> ().SetBool ("IsWalking", Move.canMove);
 	}
 
 	public bool attack{
@@ -71,7 +57,6 @@ public class EnemyController : MonoBehaviour {
 
 	//alterar
 	public void IncreaseStats(int level){
-		Debug.Log ("level do inimigo: " + level);
 		gameObject.GetComponent<HPManager> ().IncreaseHP(level);
 
 		if (sm == null) {

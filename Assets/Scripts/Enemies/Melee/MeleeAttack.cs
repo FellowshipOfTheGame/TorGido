@@ -50,8 +50,6 @@ public class MeleeAttack : MonoBehaviour {
 	private void NormalAttack() {
 		SkeletonPosition = gameObject.transform.position;
 		Instantiate (SpecialEffect, SkeletonPosition, Quaternion.identity);
-		//GameObject spa = (Instantiate (SpecialEffect, SkeletonPosition, Quaternion.identity) as GameObject);
-		//spa.transform.localScale = new Vector3(spa.transform.localScale.x * (transform.localScale.x % 1), spa.transform.localScale.y, spa.transform.localScale.z);
 		gameObject.GetComponent<MovementManager> ().Target.gameObject.GetComponent<GidoController> ().CalculateDamage (sm.damage, Rigid.position);
 		next_attack = Time.time + (float)(1f / (sm.attack_speed));
 		attacking = false;

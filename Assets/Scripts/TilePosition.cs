@@ -8,11 +8,9 @@ public class TilePosition : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//if (gameObject.tag == "Wall") {
-		//	transform.position = new Vector3 (transform.position.x, transform.position.y, k - transform.position.y);
-		//} else {
+		
 		transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z + k + transform.position.y);
-		//}
+
 		transform.localScale = new Vector3 (5, 5, 1);
 	}
 	

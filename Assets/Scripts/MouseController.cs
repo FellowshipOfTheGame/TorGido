@@ -16,9 +16,6 @@ public class MouseController : MonoBehaviour {
 		pos.z = transform.position.z - Camera.main.transform.position.z;
 		transform.position = Camera.main.ScreenToWorldPoint(pos);
 
-		/*if (Input.GetMouseButtonDown (0)) {
-			gameObject.GetComponent<Animator> ().SetTrigger ("Click");
-		}*/
 	}
 
 }
