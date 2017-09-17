@@ -1,0 +1,100 @@
+Initialize engine version: 5.6.2f1 (a2913c821e27)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics Family (ID=0xa16)
+    Vendor:   Intel
+    VRAM:     2032 MB
+    Driver:   10.18.10.3277
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\Eodun(Windows-V1)_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\Eodun(Windows-V1)_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\Eodun(Windows-V1)_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\Eodun(Windows-V1)_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\Eodun(Windows-V1)_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\Eodun(Windows-V1)_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\Eodun(Windows-V1)_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\Eodun(Windows-V1)_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.127 seconds
+Platform assembly: C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\Eodun(Windows-V1)_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Henrique\Desktop\USP\BCC\FoG\PSel\TorGido\TorGido\Eodun(Windows-V1)_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Error: Cannot create FMOD::Sound instance for resource sharedassets0.resource, (Unsupported file or audio format. )
+ 
+(Filename:  Line: 880)
+
+Function __thiscall SoundHandle::Instance::~Instance(void) may only be called from main thread!
+ 
+(Filename:  Line: 21)
+
+UnloadTime: 5.799875 ms
+Error: Cannot create FMOD::Sound instance for resource sharedassets0.resource, (Unsupported file or audio format. )
+ 
+(Filename:  Line: 880)
+
+Error: Cannot create FMOD::Sound instance for resource sharedassets0.resource, (Unsupported file or audio format. )
+ 
+(Filename:  Line: 880)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 25.677513 ms
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1326.
+Total: 2.340567 ms (FindLiveObjects: 0.169573 ms CreateObjectMapping: 0.181622 ms MarkObjects: 1.941621 ms  DeleteObjects: 0.046855 ms)
+
+Error: Cannot create FMOD::Sound instance for resource sharedassets0.resource, (Unsupported file or audio format. )
+ 
+(Filename:  Line: 880)
+
+Function __thiscall SoundHandle::Instance::~Instance(void) may only be called from main thread!
+ 
+(Filename:  Line: 21)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 11.518088 ms
+Error: Cannot create FMOD::Sound instance for resource sharedassets0.resource, (Unsupported file or audio format. )
+ 
+(Filename:  Line: 880)
+
+Error: Cannot create FMOD::Sound instance for resource sharedassets0.resource, (Unsupported file or audio format. )
+ 
+(Filename:  Line: 880)
+
+
+Unloading 430 unused Assets to reduce memory usage. Loaded Objects now: 849.
+Total: 6.003810 ms (FindLiveObjects: 0.308803 ms CreateObjectMapping: 0.278458 ms MarkObjects: 2.276307 ms  DeleteObjects: 3.134887 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.003204 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1326.
+Total: 3.279917 ms (FindLiveObjects: 0.215537 ms CreateObjectMapping: 0.273103 ms MarkObjects: 2.739512 ms  DeleteObjects: 0.050425 ms)
+
+Error: Cannot create FMOD::Sound instance for resource sharedassets0.resource, (Unsupported file or audio format. )
+ 
+(Filename:  Line: 880)
+
+Function __thiscall SoundHandle::Instance::~Instance(void) may only be called from main thread!
+ 
+(Filename:  Line: 21)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 10.411395 ms
+Error: Cannot create FMOD::Sound instance for resource sharedassets0.resource, (Unsupported file or audio format. )
+ 
+(Filename:  Line: 880)
+
+Error: Cannot create FMOD::Sound instance for resource sharedassets0.resource, (Unsupported file or audio format. )
+ 
+(Filename:  Line: 880)
+
+
+Unloading 430 unused Assets to reduce memory usage. Loaded Objects now: 849.
+Total: 4.440160 ms (FindLiveObjects: 0.225801 ms CreateObjectMapping: 0.231602 ms MarkObjects: 1.389167 ms  DeleteObjects: 2.592250 ms)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1d50 -> priority: 1 
+  Thread -> id: 1614 -> priority: 1 
