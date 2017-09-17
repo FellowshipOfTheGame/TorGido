@@ -29,8 +29,11 @@ public class BossController : EnemyController {
 	public AudioClip[] audioClip;
 	private AudioSource audio;
 
+	private SpriteRenderer bossRenderer;
+
 	// Use this for initialization
 	void Start () {
+		bossRenderer = gameObject.GetComponent<SpriteRenderer> ();
 		Status = gameObject.GetComponent<StatsManager> ();
 		RigidB = gameObject.GetComponent<Rigidbody2D> ();
 		Movement = gameObject.GetComponent<MovementManager> ();
@@ -120,13 +123,21 @@ public class BossController : EnemyController {
 		AXE.GetComponent<AxeController> ().BossPos = BossPosition;
 		AXE.GetComponent<AxeController> ().GidoPos = GidoPosition;
 		Instantiate (AXE, BossPosition, Quaternion.identity);
+
+
 		attacking = false;
 		special_atk = false;
 	}
 
 	private void NormalAttack() {
+		GameObject specialEffect;
+
 		BossPosition = gameObject.transform.position;
-		Instantiate (SpecialEffect, BossPosition, Quaternion.identity);
+
+		specialEffect = Instantiate (SpecialEffect, BossPosition, Quaternion.identity);
+
+		specialEffect.GetComponent<SpriteRenderer> ().flipX = bossRenderer.flipX;
+
 		Attack (Status.damage, RigidB.position);
 		next_attack = Time.time + (float)(1f / (Status.attack_speed));
 		attacking = false;
