@@ -17,8 +17,11 @@ public class MeleeAttack : MonoBehaviour {
 	private bool normal_atk = false;
 	private float anim_time;
 
+	private SpriteRenderer enemyRenderer;
+
 	// Use this for initialization
 	void Start () {
+		enemyRenderer = gameObject.GetComponent<SpriteRenderer> ();
 		Rigid = gameObject.GetComponent<Rigidbody2D>();
 		sm = gameObject.GetComponent<StatsManager> ();
 		control = gameObject.GetComponent<EnemyController> ();
@@ -48,8 +51,14 @@ public class MeleeAttack : MonoBehaviour {
 	}
 
 	private void NormalAttack() {
+		GameObject specialEffect;
+
 		SkeletonPosition = gameObject.transform.position;
-		Instantiate (SpecialEffect, SkeletonPosition, Quaternion.identity);
+
+		specialEffect = Instantiate (SpecialEffect, SkeletonPosition, Quaternion.identity);
+
+		specialEffect.GetComponent<SpriteRenderer> ().flipX = enemyRenderer.flipX;
+
 		gameObject.GetComponent<MovementManager> ().Target.gameObject.GetComponent<GidoController> ().CalculateDamage (sm.damage, Rigid.position);
 		next_attack = Time.time + (float)(1f / (sm.attack_speed));
 		attacking = false;

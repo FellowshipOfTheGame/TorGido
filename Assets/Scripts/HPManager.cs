@@ -23,6 +23,10 @@ public class HPManager : MonoBehaviour {
 		bar.value = CalculateHealth ();
 
 	}
+
+	void Awake(){
+		bar.value = CalculateHealth ();
+	}
 	
 	// Update is called once per frame
 	void Update () {
