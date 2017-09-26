@@ -28,32 +28,32 @@
 	"buffers":
 	[
 		{
-			"contents": "Segundo parágrafo do texto, toda vez que citar o nome do jogo, deixe em negrito.\n\nFeature 1bla bla bla\nFeature 2bla bla bla\nFeature 3bla bla bla\nFeature 4bla bla bla\n\nPercorra uma cripta com seu companheiro espiritual para achar o criador da discordia do mundo, enquanto inúmeras hordas tentarão impedí-lo. Só você pode ajudar a acabar com tudo isso!\n\n​Em Eodun você deve controlar os personagens em sua cruzada. \n\nMate os infiéis que aparecerem em seu caminho com Tor, enquanto desvia de seus ataques com Gido. Fique mais forte durante a jornada. Mas tenha cuidado, seus inimigos também  se fortalecem. Até onde você consegue chegar?​",
+			"contents": "\t101--\n\t102\n\t103\n\t104\n\t110\n\t112\n\t113\n\t\t114\n\t116\n\t117\n\tlevaridge town\n\tslateport city\n\trusturf tunnel\n\tfiery path\n\tpetalburg woods\n\t\n\tdewford city\n\tgranite cave\n-----\n111\n114\n115\nvendaturf town\nlavaridge town\nfallbor \nmeteor falls\nrustboro city\npetalburg city\nlittleroot town\noldale town\n\n1x 5*\n3x 4*MAX\n5x 3*MAX (possivel 3 quando colocar 4 4* lv MAX)\n\nfalta:\n1x 4*MAX\n11x 4* (5- rainbowmon)\n\ntotal duas quests:\n15 4* -> 15+3*15 = 60 3* -> 60+2*60 = 180 2*\n\n\n====\n",
 			"settings":
 			{
-				"buffer_size": 635,
-				"line_ending": "Windows",
-				"name": "Segundo parágrafo do texto, toda vez que citar o n"
-			}
-		},
-		{
-			"contents": "\t101--\n\t102\n\t103\n\t104\n\t110\n\t112\n\t113\n\t\t114\n\t116\n\t117\n\tlevaridge town\n\tslateport city\n\trusturf tunnel\n\tfiery path\n\tpetalburg woods\n\t\n\tdewford city\n\tgranite cave\n-----\n111\n114\n115\nvendaturf town\nlavaridge town\nfallbor \nmeteor falls\nrustboro city\npetalburg city\nlittleroot town\noldale town\n\n1x 5*\n3x 4*MAX\n5x 3*MAX (possivel 3 quando colocar 4 4* lv MAX)\n\nfalta:\n1x 4*MAX\n11x 4* (5- rainbowmon)\n\ntotal duas quests:\n15 4* -> 15+3*15 = 60 3* -> 60+2*60 = 180 2*\n\n\n====\n\n   using System.Collections;\nusing System.Collections.Generic;\nusing UnityEngine;\n\npublic class GidoController : MonoBehaviour {\n\n\tprivate Rigidbody2D Rigid;\n\tprivate Animator anim;\n\tprivate SpriteRenderer spriteRend;\n\tprivate bool facingRight = true;\n\n\tprivate StatsManager sm;\n\n\t// Use this for initialization\n\tvoid Start () {\n\t\tRigid = gameObject.GetComponent<Rigidbody2D>();\n\t\tanim = gameObject.GetComponent<Animator> ();\n\t\tspriteRend = gameObject.GetComponent<SpriteRenderer> ();\n\n\t\tgameObject.GetComponent<HPManager> ().HP = 10; //setando 10 de hp para o gido\n\n\t\tsm = gameObject.GetComponent<StatsManager> ();\n\t\tsm.defense = 0f;\n\t\tsm.speed = 6f;\n\t}\n\t\n\t// Update is called once per frame\n\tvoid Update () {\n\t\tMove ();\n\t}\n\n\tvoid Move() {\n\t\tfloat h = Input.GetAxis (\"Horizontal\");\n\t\tfloat v = Input.GetAxis (\"Vertical\");\n\n\t\tif (h != 0.0f || v != 0.0f) {\n\t\t\tif (h > 0.0f && !facingRight) {\n\t\t\t\tfacingRight = true;\n\t\t\t\t//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);\n\t\t\t\tspriteRend.flipX = false;\n\t\t\t} else if (h < 0.0f && facingRight) {\n\t\t\t\tfacingRight = false;\n\t\t\t\t//transform.localScale = new Vector3 (transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);\n\t\t\t\tspriteRend.flipX = true;\n\t\t\t}\n\t\t\tanim.SetBool (\"isWalking\", true);\n\t\t} else \n\t\t\tanim.SetBool (\"isWalking\", false);\n\n\t\tVector2 movement= new Vector2 (h, v);\n\n\t\t//Rigid.velocity = movement.normalized * sm.speed;\n\t\tRigid.AddForce( new Vector2 (h*sm.speed, v*sm.speed));\n\t}\n\n\tpublic void CalculateDamage(float damage){\n\t\tgameObject.GetComponent<AttackManager> ().CalculateDamage (damage);\n\n\t\tanim.SetTrigger (\"Damage\");\n\t}\n}\n",
-			"settings":
-			{
-				"buffer_size": 2145,
+				"buffer_size": 464,
 				"line_ending": "Windows",
 				"name": "101--"
 			}
 		},
 		{
-			"contents": "https://www.gog.com/forum/terraria/jungle_solution_or_corruptionimmune_jungles_mod\n\nC:\\Users\\Henrique\\Documents\\My Games\\Terraria\\ModLoader\n\nhttps://www.reddit.com/r/Terraria/comments/5ssv2n/list_of_mods_worth_checking_out_tmodloader/\n\nthorium\ncalamity\n---\nbetter yoyos\nboss checklist\nbags of holding\nendless items\nhelpful hotkeys\nimksushi\nitem check list\nlunar desconstructor\nloot bags mod\nmagic storage\nmagic fertilizer\nmore loot bags\nmutant mod\nomniswing\nreduced grinding\nrecipe browser\nshort respawn time\nwing slot\nwhat mod is this from\n\n\tno flare\n\t\tsummoners's association\n\tsolidified potions\n\n\nhttps://www.facebook.com/BauruBoxGames/?ref=py_c    - (shopping) (14) 3206-9395\n\nhttps://www.facebook.com/Planneta-Game-BAURU-161646967379797/?hc_location=ufi \n\nhttps://www.google.com.br/maps/place/Planneta+Game/@-22.3239202,-49.0741439,20z/data=!4m13!1m7!3m6!1s0x94bf67a7d96ce645:0xdc4e81f713be4bd9!2sR.+Treze+de+Maio,+Bauru+-+SP!3b1!8m2!3d-22.3302705!4d-49.0719817!3m4!1s0x0:0xe4e45c209bb38c71!8m2!3d-22.3238509!4d-49.0736888\n\n\n(14) 3214-3466\n\nhttps://www.facebook.com/gameplaystorebauru/?ref=page_internal\n(14) 3245-3027\n\n\nhttps://www.facebook.com/PowerGameBauru/?ref=page_internal\n(14) 3313-9889\n\n\n\nhttps://www.facebook.com/willgamesbauru/?ref=py_c  (parece q nao vende produto da nintendo)\n\n(14) 3206-4037\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n====\n\nbella 220 (+15% totem)\nspectra 252 (+15% totem)\n\n\nbonus megan: 14.55\nB -> 206\nS -> 238\n\n\n=====\n\n5* - 0\n4*m- 2 + 5\n\n4* - 1\n3*m- 1\n\n3* - 4\n2*m- 0\n==============\nneed:\n4*m- 18\n4* - 18*4 = 54\ntotal 4* -> 54+18 = 72\n\n3*m- 72\n3* - 72*3 = 216\ntotal 3* -> 216+72 = 288\n\n2*m- 288\n2* - 288*2 = 576\ntotal 2* -> 576+288 = 864\n\nequivalencias:\n4* = 4 3* = 12 2* = 24 1*\n3* = 3 2* = 6 1*\n\n\n\nhttps://www.reddit.com/r/summonerswar/comments/5nzkn6/indepth_toah_guide_low_rune_requirement_100/\n\n\n----\nREAD:\nhttps://www.reddit.com/r/summonerswar/comments/5nzkn6/indepth_toah_guide_low_rune_requirement_100/\n\nhttps://www.reddit.com/r/summonerswar/comments/6yhvfq/for_anyone_struggling_with_artamiel_on_hard_mode/\n\ndb10:\nhttps://www.reddit.com/r/summonerswar/comments/5sl8gi/am_i_the_only_one_who_finds_meganspectra_db10/\n\nhttps://www.reddit.com/r/summonerswar/comments/5lzj23/db10_avoiding_death_at_zaiross_stage_based_on/?st=iyvjoe07&sh=21aad8d7\n\nraid:\nhttps://www.reddit.com/r/summonerswar/comments/5zbyy5/raid_team_templatesprogression/\n\n\n253.6/-/251 - Spectra [239, 285] >\n224/-/228 - Veromos [235, min(Spectra's Speed,265)] > \n232.82/-/220 - Megan [179, Spectra's Speed] > \n231.48/-/219 - Belladon [159, Megan's speed] > \n132.64/-/155 - Sigmarus [136, 142]\n\nvitoria/falha\n14/5\n5/1\n\n\nBaretta\n2) Mav\n3) Veromos\n\t4) Neal - 15 skill ups (wind é 2*)\n5) Spectra\n6) Belladeon\n\n\t\t1) Krakdon (Replaced by Basalt or Woochi)\n\t2) Lapis (Replaced by Gildong or Mantra)\n\t\t3) Hemos (Replaced by Thrain) - 14 skills ups (wind dropa em aiden forest)\n\t4) Colleen\n\nShellter -> HCAnraki\nRizzoma -> henrique_anraki@outlook.com\n\n\n\n\n1) a diferença basica do problema do livro (gaussian elimination) pro nosso (Gauss-jordan) é que o do livro só zera as colunas de baixo do pivo e a diagonal principal é 1 (não citou nada sobre poder ter alguma coluna cheia de 0 por exemplo)\n\n2) no livro ele cita dois modos de partição: 1-D (cada thread ser uma ou mais linha/coluna -> nossa abordagem) e 2-D (cada thread ser um 'quadrado' de posições da matriz -> basicamente cada celula da matriz é uma tarefa)\n\n2.1)No livro ele cria as threads no começo e trabalha com elas até o final do problema (diferente da abordagem que a gente tava pensando de criar, processar(divisão/subtração), destruir, processar(swap de linhas), repete)\n\n3) ele cita uma abordagem assincrona dos processos (bem no estilo de 'pipeline') para aumentar a eficiencia\n\n4)o swap de linhas/colunas, no caso do 1-D, é feito baseado na divisão das threads para facilitar a busca do pivo diferente de zero (se tenho um thread de linhas, ele procura o pivo nessa linha para trocar a coluna e assim evitar comunicações entre diferentes threads)\n\n4.1) no caso 2-D, ele fala como fazer (e cita pra restringir o numero de elementos a ser comparados para diminuir o numero de comunicações), mas no final fala que o partial pivoting (a troca de linha/coluna) não da muito certo com o 'pipeline' para este caso (2-D)\n\no que acho depois de ver isso:\nA) a unica coisa q mudaria do modo que a gente fez seria essa parte de criar/destruir threads para cada ciclo\n\nB)tirando isso, acho que nossa abordagem esta boa para esse trab, ja que não da pra saber se ele quer o modo mais eficiente ou não... (embora to achando que ele vai querer a elhor opção pra uma nota boa)\n\nC) (caso a sugestão A seja implementada) se quisermos verificar/aumentar a eficiencia precisariamos discutir se ficamos com threads sendo colunas/linhas\n\t->linhas implica que todas as threads serão usadas em todos os ciclos, mas o swap fica custoso \n\t->colunas implica que uma thread não vai ser usada mais usada em cada ciclo, mas o swap fica mais facil \n\n\n\n\n\n\n12 - 0.5\n10 - x\n\n\t -boss não lança machado\n\n\t\t--duas paredes\n\t -boss olha na direção contraria\n\t -boss nao ataca?\n\t\t-não pega power-up (só na minha cena...)\t \n-speed boss esta 0...\n\n\t-ataque especial gido --->> v1: circulo de raio 5f em volta do tor que da o dobro de dano\n\t -area de atk do boss --->> range aumentado de 1 para 1.5\n\n\n\n\n--falar sobre trocas de linhas para achar pivo\n\n\n\nDevelopments - Route by dewelar (complete, ca. 335.000 words; Last Update: 2015-08-11)\nPoV: various; Pairings: Hisao X Emi/Hanako; Begins: during Lilly Act 4\nWarnings: ; Remarks: \n\nSisterhood: True Edition - Epilogue by Guest Poster (complete, ca. 45.0115 words; Last Update: 2014-09-19)\nPoV: various; Pairings: Hisao X Hanako; Begins: after Hanako good end\nWarnings: ; Remarks:\n\nAfter The Dream – Epilogue by brythain (ongoing, wordcount pending)\nAfter The Dream (Akira's Tale) - Side Story by brythain (complete, ca. 11.500 words)\nAfter The Dream (Emi's Story) – Side Story by brythain (complete, ca. 10.000 words)\nAfter The Dream (Hanako's Story) – Side Story by brythain (complete, ca. 15.500 words)\nAfter The Dream (Hideaki's Journey) - Side Story by brythain (complete, ca. 22.500 words)\nAfter The Dream (Hisao's Arc) - Side Story by brythain (complete, ca. 14.500 words)\nAfter The Dream (Lilly's Story) – Side Story by brythain (complete, ca. 8.800 words)\nAfter The Dream (Miki's Story) - Side Story by brythain (complete, ca. 17.000 words)\nAfter The Dream (Misha's Story) – Side Story by brythain (complete, ca. 14.500 words)\nAfter The Dream (Mutou's Memoirs) - Side Story by brythain (complete, ca. 15.300 words)\nAfter The Dream (Natsume's Narrative) - Side Story by brythain (complete, ca. 25.400 words)\nAfter The Dream (Rika's Story) – Side Story by brythain (complete, ca. 12.000 words)\nAfter The Dream (Rin's Story) – Side Story by brythain (complete, ca. 14.700 words)\nAfter The Dream Sakura—The Kenji Saga - Side Story by brythain (ongoing, ca. 150.000 words)\nAfter The Dream (Shizune's Story) – Side Story by brythain (complete, ca. 6.600 words)\nAfter The Dream (Straw—A Dream of Suzu) - Side Story by brythain (ongoing, word count pending)\nPoV: various Pairings: various Begins: after Lilly neutral end\nRemarks: multitude of interlocking life stories\n\nFractures - Epilogue by Sadako (complete, ca. 53.000 words; Last Update: 2015-11-07)\nPoV: narrator; Pairings: None; Begins: several years after Kenji end\nWarnings: violence; Remarks: genre: thriller\n\nA pseudo-pseudo Suzu route - Route by Scissorlips (complete, wordcount pending; Last Update: 2013-02-27)\nPoV: Suzu; Pairings: Hisao X Suzu; Begins: during Act 1 - Monday\nWarnings: Sex; Remarks: branching storyline\n",
+			"contents": "https://www.gog.com/forum/terraria/jungle_solution_or_corruptionimmune_jungles_mod\n\nC:\\Users\\Henrique\\Documents\\My Games\\Terraria\\ModLoader\n\nhttps://www.reddit.com/r/Terraria/comments/5ssv2n/list_of_mods_worth_checking_out_tmodloader/\n\nthorium\ncalamity\n---\nbetter yoyos\nboss checklist\nbags of holding\nendless items\nhelpful hotkeys\nimksushi\nitem check list\nlunar desconstructor\nloot bags mod\nmagic storage\nmagic fertilizer\nmore loot bags\nmutant mod\nomniswing\nreduced grinding\nrecipe browser\nshort respawn time\nwing slot\nwhat mod is this from\n\n\tno flare\n\t\tsummoners's association\n\tsolidified potions\n\n\nhttps://www.facebook.com/BauruBoxGames/?ref=py_c    - (shopping) (14) 3206-9395\n\nhttps://www.facebook.com/Planneta-Game-BAURU-161646967379797/?hc_location=ufi \n\nhttps://www.google.com.br/maps/place/Planneta+Game/@-22.3239202,-49.0741439,20z/data=!4m13!1m7!3m6!1s0x94bf67a7d96ce645:0xdc4e81f713be4bd9!2sR.+Treze+de+Maio,+Bauru+-+SP!3b1!8m2!3d-22.3302705!4d-49.0719817!3m4!1s0x0:0xe4e45c209bb38c71!8m2!3d-22.3238509!4d-49.0736888\n\n\n(14) 3214-3466\n\nhttps://www.facebook.com/gameplaystorebauru/?ref=page_internal\n(14) 3245-3027\n\n\nhttps://www.facebook.com/PowerGameBauru/?ref=page_internal\n(14) 3313-9889\n\n\n\nhttps://www.facebook.com/willgamesbauru/?ref=py_c  (parece q nao vende produto da nintendo)\n\n(14) 3206-4037\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n====\n\nbella 220 (+15% totem)\nspectra 252 (+15% totem)\n\n\nbonus megan: 14.55\nB -> 206\nS -> 238\n\n\n=====\n\n5* - 0\n4*m- 2 + 5\n\n4* - 1\n3*m- 1\n\n3* - 4\n2*m- 0\n==============\nneed:\n4*m- 18\n4* - 18*4 = 54\ntotal 4* -> 54+18 = 72\n\n3*m- 72\n3* - 72*3 = 216\ntotal 3* -> 216+72 = 288\n\n2*m- 288\n2* - 288*2 = 576\ntotal 2* -> 576+288 = 864\n\nequivalencias:\n4* = 4 3* = 12 2* = 24 1*\n3* = 3 2* = 6 1*\n\n\n\nhttps://www.reddit.com/r/summonerswar/comments/5nzkn6/indepth_toah_guide_low_rune_requirement_100/\n\n\n----\nREAD:\nhttps://www.reddit.com/r/summonerswar/comments/5nzkn6/indepth_toah_guide_low_rune_requirement_100/\n\nhttps://www.reddit.com/r/summonerswar/comments/6yhvfq/for_anyone_struggling_with_artamiel_on_hard_mode/\n\ndb10:\nhttps://www.reddit.com/r/summonerswar/comments/5sl8gi/am_i_the_only_one_who_finds_meganspectra_db10/\n\nhttps://www.reddit.com/r/summonerswar/comments/5lzj23/db10_avoiding_death_at_zaiross_stage_based_on/?st=iyvjoe07&sh=21aad8d7\n\nraid:\nhttps://www.reddit.com/r/summonerswar/comments/5zbyy5/raid_team_templatesprogression/\n\nhttps://www.reddit.com/r/summonerswar/comments/70ymnw/extirpatives_r5_guide/\n\n253.6/-/251 - Spectra [239, 285] >\n224/-/228 - Veromos [235, min(Spectra's Speed,265)] > \n232.82/-/220 - Megan [179, Spectra's Speed] > \n231.48/-/219 - Belladon [159, Megan's speed] > \n132.64/-/155 - Sigmarus [136, 142]\n\nvitoria/falha\n14/5\n5/1\n\n\nBaretta\n2) Mav\n3) Veromos\n\t4) Neal - 15 skill ups (wind é 2*)\n5) Spectra\n6) Belladeon\n\n\t\t1) Krakdon (Replaced by Basalt or Woochi)\n\t2) Lapis (Replaced by Gildong or Mantra)\n\t\t3) Hemos (Replaced by Thrain) - 14 skills ups (wind dropa em aiden forest)\n\t4) Colleen\n\nShellter -> HCAnraki\nRizzoma -> henrique_anraki@outlook.com\n\n\n\n\n1) a diferença basica do problema do livro (gaussian elimination) pro nosso (Gauss-jordan) é que o do livro só zera as colunas de baixo do pivo e a diagonal principal é 1 (não citou nada sobre poder ter alguma coluna cheia de 0 por exemplo)\n\n2) no livro ele cita dois modos de partição: 1-D (cada thread ser uma ou mais linha/coluna -> nossa abordagem) e 2-D (cada thread ser um 'quadrado' de posições da matriz -> basicamente cada celula da matriz é uma tarefa)\n\n2.1)No livro ele cria as threads no começo e trabalha com elas até o final do problema (diferente da abordagem que a gente tava pensando de criar, processar(divisão/subtração), destruir, processar(swap de linhas), repete)\n\n3) ele cita uma abordagem assincrona dos processos (bem no estilo de 'pipeline') para aumentar a eficiencia\n\n4)o swap de linhas/colunas, no caso do 1-D, é feito baseado na divisão das threads para facilitar a busca do pivo diferente de zero (se tenho um thread de linhas, ele procura o pivo nessa linha para trocar a coluna e assim evitar comunicações entre diferentes threads)\n\n4.1) no caso 2-D, ele fala como fazer (e cita pra restringir o numero de elementos a ser comparados para diminuir o numero de comunicações), mas no final fala que o partial pivoting (a troca de linha/coluna) não da muito certo com o 'pipeline' para este caso (2-D)\n\no que acho depois de ver isso:\nA) a unica coisa q mudaria do modo que a gente fez seria essa parte de criar/destruir threads para cada ciclo\n\nB)tirando isso, acho que nossa abordagem esta boa para esse trab, ja que não da pra saber se ele quer o modo mais eficiente ou não... (embora to achando que ele vai querer a elhor opção pra uma nota boa)\n\nC) (caso a sugestão A seja implementada) se quisermos verificar/aumentar a eficiencia precisariamos discutir se ficamos com threads sendo colunas/linhas\n\t->linhas implica que todas as threads serão usadas em todos os ciclos, mas o swap fica custoso \n\t->colunas implica que uma thread não vai ser usada mais usada em cada ciclo, mas o swap fica mais facil \n\n\n\n\n\n\n12 - 0.5\n10 - x\n\n\t -boss não lança machado\n\n\t\t--duas paredes\n\t -boss olha na direção contraria\n\t -boss nao ataca?\n\t\t-não pega power-up (só na minha cena...)\t \n-speed boss esta 0...\n\n\t-ataque especial gido --->> v1: circulo de raio 5f em volta do tor que da o dobro de dano\n\t -area de atk do boss --->> range aumentado de 1 para 1.5\n\n\n\n\n--falar sobre trocas de linhas para achar pivo\n\n\n\nDevelopments - Route by dewelar (complete, ca. 335.000 words; Last Update: 2015-08-11)\nPoV: various; Pairings: Hisao X Emi/Hanako; Begins: during Lilly Act 4\nWarnings: ; Remarks: \n\nSisterhood: True Edition - Epilogue by Guest Poster (complete, ca. 45.0115 words; Last Update: 2014-09-19)\nPoV: various; Pairings: Hisao X Hanako; Begins: after Hanako good end\nWarnings: ; Remarks:\n\nAfter The Dream – Epilogue by brythain (ongoing, wordcount pending)\nAfter The Dream (Akira's Tale) - Side Story by brythain (complete, ca. 11.500 words)\nAfter The Dream (Emi's Story) – Side Story by brythain (complete, ca. 10.000 words)\nAfter The Dream (Hanako's Story) – Side Story by brythain (complete, ca. 15.500 words)\nAfter The Dream (Hideaki's Journey) - Side Story by brythain (complete, ca. 22.500 words)\nAfter The Dream (Hisao's Arc) - Side Story by brythain (complete, ca. 14.500 words)\nAfter The Dream (Lilly's Story) – Side Story by brythain (complete, ca. 8.800 words)\nAfter The Dream (Miki's Story) - Side Story by brythain (complete, ca. 17.000 words)\nAfter The Dream (Misha's Story) – Side Story by brythain (complete, ca. 14.500 words)\nAfter The Dream (Mutou's Memoirs) - Side Story by brythain (complete, ca. 15.300 words)\nAfter The Dream (Natsume's Narrative) - Side Story by brythain (complete, ca. 25.400 words)\nAfter The Dream (Rika's Story) – Side Story by brythain (complete, ca. 12.000 words)\nAfter The Dream (Rin's Story) – Side Story by brythain (complete, ca. 14.700 words)\nAfter The Dream Sakura—The Kenji Saga - Side Story by brythain (ongoing, ca. 150.000 words)\nAfter The Dream (Shizune's Story) – Side Story by brythain (complete, ca. 6.600 words)\nAfter The Dream (Straw—A Dream of Suzu) - Side Story by brythain (ongoing, word count pending)\nPoV: various Pairings: various Begins: after Lilly neutral end\nRemarks: multitude of interlocking life stories\n\nFractures - Epilogue by Sadako (complete, ca. 53.000 words; Last Update: 2015-11-07)\nPoV: narrator; Pairings: None; Begins: several years after Kenji end\nWarnings: violence; Remarks: genre: thriller\n\nA pseudo-pseudo Suzu route - Route by Scissorlips (complete, wordcount pending; Last Update: 2013-02-27)\nPoV: Suzu; Pairings: Hisao X Suzu; Begins: during Act 1 - Monday\nWarnings: Sex; Remarks: branching storyline\n\n\n\nduring Lilly Act 4 - Developments\nafter Lilly neutral end - After The Dream\nafter Hanako good end - Sisterhood\nseveral years after Kenji end - Fractures\n\n\n\n\tDaily login\n\t7-Day login\n\tDaily pet draw\n\tDaily carnival\nDaily friend gifts\n\tPet Pack\nDaily quest\n12-hour CD accelerate\n12-hour CD PVP pass\n\tDaily raid passes\nDaily MVPs \n\n\n20 16 16 14 12 10\n18 18 16 14 12 10\n\n17 9 8 8 7 10 \n\n\n\n",
 			"file": "/C/jogos/terraria/link-mods.txt",
 			"file_size": 5528,
 			"file_write_time": 131496352387324919,
 			"settings":
 			{
-				"buffer_size": 7635,
+				"buffer_size": 8100,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "RO idle\nEverything that says Dmg/m.dmg is a translation error, and is supposed to say Def\n\nMUST HAVE: \nthose should be the CC Combat Pets,\n:--|:--|:--|:--\nIM Hornet | IP Hornet | Stone Curse | Stage 520 \nIM Gourmandices | IP Eclipse | Sleep | Stage 5 \nIM Molar | IP Bigfoot | Freeze | Stage 160 \nIM Super Bat | IP Familiar | Stun | Stage 535\n\n\nalong with:\nSteam Goblin, Angeling\n\nmaybe:\nArcher & Swordsman :Deniro, Steam Goblin, Angeling\nMagician: Jakk, Steam Goblin, Angeling\n\n\nFor me the perfect pet setup would be:\n-deniro (96 - purple)\n-high orc (285 - purple)\n-hornet (520 - blue)\n-bapho(after rebirth and if you get lucky)\n-angeling\n-steam goblin. \n===>>trocar angeling e steam goblin depois\n\norc warrior (42 - blue)\ndeniro\nhigh orc\nhornet\nbapho\nangeling\n\n\nhttp://gamersaur.com/ro-idle-poring-beginner-guide/\n\nhttps://www.reddit.com/r/IdlePoring/comments/70xipb/my_first_weekend_playing_this_game_and_what_i/\n\nhttps://www.reddit.com/r/IdlePoring/comments/70zi0c/some_quick_random_questions/\n\nhttps://www.reddit.com/r/IdlePoring/comments/70lke8/cc_combat_pet/\n\nhttps://www.reddit.com/r/IdlePoring/comments/714b1m/general_consensus_on_spending_diamonds/",
+			"settings":
+			{
+				"buffer_size": 1157,
+				"line_ending": "Windows",
+				"name": "RO idle"
 			}
 		},
 		{
@@ -66,6 +66,24 @@
 				"buffer_size": 4027,
 				"line_ending": "Windows",
 				"name": "-matar gido quando hp chegar em 0"
+			}
+		},
+		{
+			"file": "/C/Users/Henrique/Desktop/USP/BCC/6sem/Concorrentes/p1-compilado.txt",
+			"settings":
+			{
+				"buffer_size": 2976,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "1) Montar um gráfico de dependência dá multiplicaç"
+			}
+		},
+		{
+			"file": "/C/Users/Henrique/AppData/Local/Temp/Rar$DRa0.252/hello_openmp.c",
+			"settings":
+			{
+				"buffer_size": 1901,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -129,6 +147,10 @@
 	],
 	"file_history":
 	[
+		"/C/anime-manga/_outros/VN/Katawa Shoujo/Developments_pt2_ch6~19.txt",
+		"/C/anime-manga/_outros/VN/Katawa Shoujo/Developments_interlude2~ch33.txt",
+		"/C/anime-manga/_outros/Developments_interlude2~ch33 - Copia.txt",
+		"/C/Users/Henrique/Documents/Developments_ch6~19.txt",
 		"/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/TorGido/WebBuild/index.html",
 		"/C/Users/Henrique/Desktop/USP/BCC/FoG/PSel/TorGido/TorGido/Assets/Scripts/TorController.cs",
 		"/C/Users/Henrique/Desktop/USP/BCC/6sem/IA/ex_prolog/lista1-3.pl",
@@ -202,7 +224,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -210,43 +232,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 635,
+						"buffer_size": 464,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								602,
-								602
-							]
-						],
-						"settings":
-						{
-							"auto_name": "Segundo parágrafo do texto, toda vez que citar o n",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2145,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2144,
-								2144
+								464,
+								464
 							]
 						],
 						"settings":
@@ -255,27 +249,27 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 259.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "/C/jogos/terraria/link-mods.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7635,
+						"buffer_size": 8100,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7635,
-								7635
+								8100,
+								8100
 							]
 						],
 						"settings":
@@ -283,10 +277,38 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 4226.0,
+						"translation.y": 1436.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1157,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								343,
+								343
+							]
+						],
+						"settings":
+						{
+							"auto_name": "RO idle",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -312,10 +334,69 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2489.0,
+						"translation.y": 838.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Henrique/Desktop/USP/BCC/6sem/Concorrentes/p1-compilado.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2976,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								876,
+								876
+							]
+						],
+						"settings":
+						{
+							"auto_name": "1) Montar um gráfico de dependência dá multiplicaç",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/Henrique/AppData/Local/Temp/Rar$DRa0.252/hello_openmp.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1901,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1714,
+								1714
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 816.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -398,7 +479,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 117.0,
+	"side_bar_width": 63.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
